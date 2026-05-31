@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>AWG AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/telegram-web-app.js"></script>
+</head>
+<body>
+    <svg width="0" height="0" style="position:absolute">
+        <defs>
+            <!-- Custom Premium Icons -->
+            <symbol id="icon-pair" viewbox="0 0 24 24">
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" fill="#0e1424" stroke="#93bbfd" stroke-width="1.5"></path>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#93bbfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </symbol>
+            <symbol id="icon-time" viewbox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" stroke="#64748b" stroke-width="2" fill="none"></circle>
+                <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </symbol>
+            <symbol id="icon-acc" viewbox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke="#64748b" stroke-width="2" fill="none"></circle>
+                <circle cx="12" cy="12" r="3" fill="#4ade80"></circle>
+                <path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke="#64748b" stroke-width="2" stroke-linecap="round"></path>
+            </symbol>
+            <symbol id="icon-up" viewbox="0 0 24 24">
+                <path d="M13 5l7 7-7 7M5 12h16" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-45 12 12)"></path>
+            </symbol>
+            <symbol id="icon-down" viewbox="0 0 24 24">
+                <path d="M13 5l7 7-7 7M5 12h16" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="rotate(45 12 12)"></path>
+            </symbol>
+            <symbol id="icon-win" viewbox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#4ade80" stroke-width="2" stroke-linejoin="round"></path>
+            </symbol>
+            <symbol id="icon-lose" viewbox="0 0 24 24">
+                <path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z" stroke="#fb7185" stroke-width="2" fill="none"></path>
+                <path d="M15 9l-6 6M9 9l6 6" stroke="#fb7185" stroke-width="2" stroke-linecap="round"></path>
+            </symbol>
+            <!-- Nav icons: Lucide (ISC) https://lucide.dev -->
+            <symbol id="icon-nav-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            </symbol>
+            <symbol id="icon-nav-profile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="10" r="3"></circle>
+                <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
+            </symbol>
+            <symbol id="icon-nav-photo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                <circle cx="12" cy="13" r="3"></circle>
+            </symbol>
+            <symbol id="icon-photo-empty" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <path d="m21 15-5-5L5 21"></path>
+            </symbol>
+            <symbol id="icon-lock" viewbox="0 0 24 24">
+                <rect x="5" y="11" width="14" height="10" rx="2" ry="2" stroke="#fb7185" stroke-width="2" fill="none"></rect>
+                <path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="#fb7185" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+            </symbol>
+        </defs>
+    </svg>
+
+    <div class="app-background"></div>
+    <div class="blue-glow-top"></div>
+
+    <header class="header">
+        <div class="top-row">
+            <div class="brand-title">AWG <span class="highlight">AI</span></div>
+            <div class="right-controls">
+                <button type="button" class="lang-btn" id="langBtn" aria-label="Change language">
+                    <img id="currentLangFlag" class="lang-btn-flag" src="img/flags/gb.svg" alt="en">
+                </button>
+                <div class="user-pill">
+                    <img id="userAvatar" class="avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="user">
+                    <span id="userInfo">Guest</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Language Modal -->
+    <div class="modal hidden" id="langModal">
+        <div class="modal-content lang-modal-content">
+            <div class="modal-header">
+                <span data-i18n="select_language">Select Language</span>
+                <button id="closeLangBtn" class="modal-close">×</button>
+            </div>
+            <div class="lang-list">
+                <div class="lang-item" data-lang="ru">
+                    <img src="img/flags/ru.svg" class="lang-flag" alt="ru">
+                    <span class="lang-name">Русский</span>
+                </div>
+                <div class="lang-item selected" data-lang="en">
+                    <img src="img/flags/gb.svg" class="lang-flag" alt="en">
+                    <span class="lang-name">English</span>
+                </div>
+                <div class="lang-item" data-lang="uz">
+                    <img src="img/flags/uz.svg" class="lang-flag" alt="uz">
+                    <span class="lang-name">O'zbek</span>
+                </div>
+                <div class="lang-item" data-lang="hi">
+                    <img src="img/flags/in.svg" class="lang-flag" alt="hi">
+                    <span class="lang-name">हिन्दी</span>
+                </div>
+                <div class="lang-item" data-lang="pt">
+                    <img src="img/flags/br.svg" class="lang-flag" alt="pt">
+                    <span class="lang-name">Português</span>
+                </div>
+                <div class="lang-item" data-lang="ar">
+                    <img src="img/flags/sa.svg" class="lang-flag" alt="ar">
+                    <span class="lang-name">العربية</span>
+                </div>
+                <div class="lang-item" data-lang="kz">
+                    <img src="img/flags/kz.svg" class="lang-flag" alt="kz">
+                    <span class="lang-name">Қазақша</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="pairModal">
+        <div class="modal-content lang-modal-content pair-modal-content">
+            <div class="modal-header">
+                <span data-i18n="select_pair">Select pair</span>
+                <button type="button" id="closePairBtn" class="modal-close" aria-label="Close">×</button>
+            </div>
+            <div class="pair-modal-search-wrap">
+                <input type="search" id="pairSearchInput" class="pair-search-input" data-i18n-placeholder="pair_search_placeholder" placeholder="Search pair..." autocomplete="off" enterkeyhint="search">
+            </div>
+            <div class="pair-list lang-list" id="pairList"></div>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="tfModal">
+        <div class="modal-content lang-modal-content tf-modal-content">
+            <div class="modal-header">
+                <span data-i18n="tf_label">Timeframe</span>
+                <button type="button" id="closeTfBtn" class="modal-close" aria-label="Close">×</button>
+            </div>
+            <div class="tf-list lang-list" id="tfList"></div>
+        </div>
+    </div>
+
+    <div id="homeView" class="app-view">
+    <div class="main-content">
+        <section class="trade-controls" aria-label="Market and filters">
+        <div class="market-toggle-container">
+            <button type="button" class="market-btn active" id="btnRegular">
+                <span class="market-btn__dot" aria-hidden="true"></span>
+                <span class="market-btn__text" data-i18n="market_regular">Forex</span>
+            </button>
+            <button type="button" class="market-btn" id="btnOTC">
+                <span class="market-btn__dot" aria-hidden="true"></span>
+                <span class="market-btn__text" data-i18n="market_otc">OTC</span>
+            </button>
+        </div>
+
+        <div class="filters-container">
+            <div class="pair-picker custom-select filter-card filter-card--pair" id="pairPicker">
+                <button type="button" class="select-trigger filter-card__btn" id="pairSelectTrigger" aria-haspopup="dialog" aria-controls="pairModal" data-i18n-aria="select_pair">
+                    <div class="flag-icon" id="pairFlagDisplay"></div>
+                    <span class="filter-card__value" id="pairTextDisplay">EUR/USD</span>
+                    <span class="filter-card__arrow" aria-hidden="true"></span>
+                </button>
+                <select id="pair" class="visually-hidden-select" tabindex="-1" aria-hidden="true">
+                    <option value="EURUSD">EUR/USD</option>
+                    <option value="GBPUSD">GBP/USD</option>
+                    <option value="USDJPY">USD/JPY</option>
+                    <option value="USDCHF">USD/CHF</option>
+                    <option value="USDCAD">USD/CAD</option>
+                    <option value="AUDUSD">AUD/USD</option>
+                    <option value="GBPJPY">GBP/JPY</option>
+                    <option value="EURJPY">EUR/JPY</option>
+                    <option value="EURGBP">EUR/GBP</option>
+                    <option value="EURCAD">EUR/CAD</option>
+                    <option value="GBPCHF">GBP/CHF</option>
+                    <option value="CADJPY">CAD/JPY</option>
+                    <option value="AUDCAD">AUD/CAD</option>
+                    <option value="AUDJPY">AUD/JPY</option>
+                    <option value="EURCHF">EUR/CHF</option>
+                    <option value="CADCHF">CAD/CHF</option>
+                </select>
+            </div>
+
+            <div class="custom-select small filter-card filter-card--time" id="tfPicker">
+                <button type="button" class="select-trigger filter-card__btn" id="tfSelectTrigger" aria-haspopup="dialog" aria-controls="tfModal">
+                    <span class="filter-card__value filter-card__value--tf" id="tfTextDisplay">1m</span>
+                    <span class="filter-card__arrow" aria-hidden="true"></span>
+                </button>
+                <select id="timeframe" class="visually-hidden-select" tabindex="-1" aria-hidden="true">
+                    <option value="1m">1m</option>
+                    <option value="3m">3m</option>
+                    <option value="5m">5m</option>
+                    <option value="15m">15m</option>
+                </select>
+            </div>
+        </div>
+        </section>
+
+        <!-- Main Signal Card -->
+        <div class="signal-card-container" id="mainCard">
+            <div class="card-glow-border"></div>
+            <div class="card-content">
+                <div class="card-body">
+                    <span id="resultStamp" class="result-stamp hidden">WIN</span>
+                    <div class="signal-pair">
+                        <div id="cardPairFlags" class="signal-pair__flags big-flags">🇪🇺🇺🇸</div>
+                        <div class="signal-pair__text">
+                            <span class="signal-pair__label" data-i18n="pair_label">Currency Pair</span>
+                            <span id="metaPair" class="signal-pair__name big-value">EUR/USD</span>
+                        </div>
+                    </div>
+
+                    <div class="signal-grid">
+                        <div class="signal-chip" id="chipTf">
+                            <span class="signal-chip__label" data-i18n="tf_label">Timeframe</span>
+                            <span id="metaTf" class="signal-chip__value value">1m</span>
+                        </div>
+                        <div class="signal-chip" id="chipAcc">
+                            <span class="signal-chip__label" data-i18n="accuracy_label">Accuracy</span>
+                            <span id="metaAcc" class="signal-chip__value value accent">--%</span>
+                        </div>
+                    </div>
+
+                    <div class="signal-dir direction-block" id="dirBlock">
+                        <div class="signal-dir__icon-wrap">
+                            <svg id="dirIcon" class="signal-dir__icon icon-big" viewBox="0 0 24 24" aria-hidden="true">
+                                <use id="dirIconUse" href="#icon-up"></use>
+                            </svg>
+                        </div>
+                        <div class="signal-dir__meta">
+                            <span class="signal-dir__label" data-i18n="direction_label">Direction</span>
+                            <span id="metaDir" class="signal-dir__value dir-text">--</span>
+                        </div>
+                        <div class="signal-dir__until dir-timer hidden" aria-hidden="true">
+                            <span class="until-label" data-i18n="until_label">until</span>
+                            <span id="metaUntil" class="until-val">--:--</span>
+                        </div>
+                    </div>
+
+                    <div class="signal-progress progress-container">
+                        <div id="progressTrack" class="signal-progress__track progress-track">
+                            <div id="progressBar" class="signal-progress__fill progress-fill" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+                        </div>
+                        <div class="signal-progress__meta progress-labels">
+                            <span id="statusText" data-i18n="waiting_status">Waiting...</span>
+                            <span id="progressLabel">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Big Action Button -->
+        <div class="action-area">
+            <button id="getSignalBtn" class="mega-btn">
+                <span data-i18n="get_signal_btn">GET SIGNAL</span>
+                <div class="btn-glow"></div>
+            </button>
+        </div>
+    </div>
+    </div>
+
+    <div id="photoView" class="app-view hidden">
+        <div class="main-content photo-page">
+            <section class="trade-controls photo-trade-controls" aria-label="Market and filters">
+                <div class="market-toggle-container" id="photoMarketToggle">
+                    <button type="button" class="market-btn active" id="photoBtnRegular">
+                        <span class="market-btn__dot" aria-hidden="true"></span>
+                        <span class="market-btn__text" data-i18n="market_regular">Forex</span>
+                    </button>
+                    <button type="button" class="market-btn" id="photoBtnOTC">
+                        <span class="market-btn__dot" aria-hidden="true"></span>
+                        <span class="market-btn__text" data-i18n="market_otc">OTC</span>
+                    </button>
+                </div>
+                <div class="filters-container">
+                    <div class="pair-picker custom-select filter-card filter-card--pair" id="photoPairPicker">
+                        <button type="button" class="select-trigger filter-card__btn" id="photoPairSelectTrigger" aria-haspopup="dialog" aria-controls="pairModal" data-i18n-aria="select_pair">
+                            <div class="flag-icon" id="photoPairFlagDisplay"></div>
+                            <span class="filter-card__value" id="photoPairTextDisplay">EUR/USD</span>
+                            <span class="filter-card__arrow" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="custom-select small filter-card filter-card--time" id="photoTfPicker">
+                        <button type="button" class="select-trigger filter-card__btn" id="photoTfSelectTrigger" aria-haspopup="dialog" aria-controls="tfModal">
+                            <span class="filter-card__value filter-card__value--tf" id="photoTfTextDisplay">1m</span>
+                            <span class="filter-card__arrow" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="photo-preview-slot" id="photoPreviewSlot">
+            <div class="photo-preview" id="photoPreview">
+                <div class="photo-preview__empty" id="photoPreviewEmpty">
+                    <svg class="photo-preview__icon" aria-hidden="true"><use href="#icon-photo-empty"></use></svg>
+                    <span data-i18n="photo_preview_empty">No image selected</span>
+                </div>
+                <img id="photoPreviewImg" class="photo-preview__img hidden" alt="">
+            </div>
+                <div id="photoSignalWrap" class="photo-signal-wrap hidden">
+                    <div class="signal-card-container photo-signal-card" id="photoMainCard">
+                        <div class="card-glow-border"></div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <span id="photoResultStamp" class="result-stamp hidden">WIN</span>
+                                <div class="signal-pair photo-signal-pair">
+                                    <div id="photoCardPairFlags" class="signal-pair__flags big-flags"></div>
+                                    <div class="signal-pair__text">
+                                        <span class="signal-pair__label" data-i18n="pair_label">Currency Pair</span>
+                                        <span id="photoMetaPair" class="signal-pair__name big-value">--</span>
+                                    </div>
+                                </div>
+                                <div class="signal-grid">
+                                    <div class="signal-chip" id="photoChipTf">
+                                        <span class="signal-chip__label" data-i18n="tf_label">Timeframe</span>
+                                        <span id="photoMetaTf" class="signal-chip__value value">--</span>
+                                    </div>
+                                    <div class="signal-chip" id="photoChipAcc">
+                                        <span class="signal-chip__label" data-i18n="accuracy_label">Accuracy</span>
+                                        <span id="photoMetaAcc" class="signal-chip__value value accent">--%</span>
+                                    </div>
+                                </div>
+                                <div class="signal-dir direction-block" id="photoDirBlock">
+                                    <div class="signal-dir__icon-wrap">
+                                        <svg id="photoDirIcon" class="signal-dir__icon icon-big" viewBox="0 0 24 24" aria-hidden="true">
+                                            <use id="photoDirIconUse" href="#icon-up"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="signal-dir__meta">
+                                        <span class="signal-dir__label" data-i18n="direction_label">Direction</span>
+                                        <span id="photoMetaDir" class="signal-dir__value dir-text">--</span>
+                                    </div>
+                                    <div class="signal-dir__until dir-timer hidden" aria-hidden="true">
+                                        <span class="until-label" data-i18n="until_label">until</span>
+                                        <span id="photoMetaUntil" class="until-val">--:--</span>
+                                    </div>
+                                </div>
+                                <div class="signal-progress progress-container">
+                                    <div id="photoProgressTrack" class="signal-progress__track progress-track">
+                                        <div id="photoProgressBar" class="signal-progress__fill progress-fill" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+                                    </div>
+                                    <div class="signal-progress__meta progress-labels">
+                                        <span id="photoStatusText" data-i18n="waiting_status">Waiting...</span>
+                                        <span id="photoProgressLabel">0%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-controls">
+                <div class="photo-actions">
+                    <button type="button" class="photo-action-btn photo-action-btn--primary" id="photoCaptureBtn">
+                        <svg class="photo-action-btn__icon" aria-hidden="true"><use href="#icon-nav-photo"></use></svg>
+                        <span data-i18n="photo_take_btn">Take photo</span>
+                    </button>
+                    <button type="button" class="photo-action-btn" id="photoUploadBtn">
+                        <span data-i18n="photo_upload_btn">Upload</span>
+                    </button>
+                </div>
+                <input type="file" id="photoCameraInput" class="visually-hidden" accept="image/*" capture="environment">
+                <input type="file" id="photoFileInput" class="visually-hidden" accept="image/*">
+                <button type="button" class="photo-analyze-btn" id="photoAnalyzeBtn" disabled>
+                    <span id="photoAnalyzeBtnLabel" data-i18n="photo_analyze_btn">Analyze chart</span>
+                </button>
+                <button type="button" class="photo-clear-btn hidden" id="photoClearBtn" data-i18n="photo_clear_btn">Remove photo</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="profileView" class="app-view hidden">
+        <div class="main-content profile-page" id="profileRoot">
+            <section class="profile-hero">
+                <div class="profile-hero__avatar-wrap">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" id="profileAvatar" class="profile-hero__avatar">
+                </div>
+                <h1 id="profileName" class="profile-hero__name">Guest</h1>
+                <p id="userSubtitle" class="profile-hero__username">@username</p>
+            </section>
+            <div class="profile-stat-grid">
+                <div class="profile-stat-card">
+                    <span class="profile-stat-card__label" data-i18n="total_signals">Total Signals</span>
+                    <span id="totalSignals" class="profile-stat-card__value">0</span>
+                </div>
+                <div class="profile-stat-card profile-stat-card--wins">
+                    <span class="profile-stat-card__label" data-i18n="stat_wins">Wins</span>
+                    <span id="winCount" class="profile-stat-card__value profile-stat-card__value--green">0</span>
+                </div>
+                <div class="profile-stat-card profile-stat-card--rate">
+                    <span class="profile-stat-card__label" data-i18n="win_rate_label">Win Rate</span>
+                    <span id="winRate" class="profile-stat-card__value profile-stat-card__value--accent">0%</span>
+                </div>
+            </div>
+
+            <h2 class="profile-section-title" data-i18n="history_title">TRADING HISTORY</h2>
+            <div class="filter-tabs profile-filter-tabs" role="tablist">
+                <button type="button" class="filter-tab active" data-period="today" data-i18n="filter_today">Today</button>
+                <button type="button" class="filter-tab" data-period="week" data-i18n="filter_week">Week</button>
+                <button type="button" class="filter-tab" data-period="month" data-i18n="filter_month">Month</button>
+                <button type="button" class="filter-tab" data-period="all" data-i18n="filter_all">All</button>
+            </div>
+            <div id="historyList" class="history-list" aria-live="polite"></div>
+        </div>
+    </div>
+
+    <div class="spinner-overlay hidden" id="spinnerOverlay">
+        <div class="ai-loader" id="aiLoader" aria-hidden="true">
+            <div class="ai-loader__sonar" aria-hidden="true">
+                <span class="ai-loader__sonar-ring"></span>
+                <span class="ai-loader__sonar-ring"></span>
+                <span class="ai-loader__sonar-ring"></span>
+            </div>
+            <svg class="ai-loader__progress-ring" viewBox="0 0 120 120" aria-hidden="true">
+                <defs>
+                    <filter id="aiRingGlow" x="-40%" y="-40%" width="180%" height="180%">
+                        <feGaussianBlur stdDeviation="2.5" result="blur"></feGaussianBlur>
+                        <feMerge>
+                            <feMergeNode in="blur"></feMergeNode>
+                            <feMergeNode in="SourceGraphic"></feMergeNode>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <circle class="ai-loader__progress-ring-track" cx="60" cy="60" r="54"></circle>
+                <circle class="ai-loader__progress-ring-glow" id="spinnerRingGlow" cx="60" cy="60" r="54" filter="url(#aiRingGlow)"></circle>
+                <circle class="ai-loader__progress-ring-fill" id="spinnerRingFill" cx="60" cy="60" r="54"></circle>
+            </svg>
+            <div class="ai-loader__orbit">
+                <span class="ai-loader__glow"></span>
+            </div>
+            <svg class="ai-loader__brain" viewBox="0 0 80 80" fill="none">
+                <g class="ai-loader__links" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                    <line class="ai-loader__link" id="link-1" x1="22" y1="26" x2="40" y2="40"></line>
+                    <line class="ai-loader__link" id="link-2" x1="22" y1="40" x2="40" y2="40"></line>
+                    <line class="ai-loader__link" id="link-3" x1="22" y1="54" x2="40" y2="40"></line>
+                    <line class="ai-loader__link" id="link-4" x1="40" y1="40" x2="58" y2="30"></line>
+                    <line class="ai-loader__link" id="link-5" x1="40" y1="40" x2="58" y2="50"></line>
+                </g>
+                <g class="ai-loader__nodes" fill="currentColor">
+                    <circle class="ai-loader__node" id="node-in-1" cx="22" cy="26" r="5"></circle>
+                    <circle class="ai-loader__node" id="node-in-2" cx="22" cy="40" r="5"></circle>
+                    <circle class="ai-loader__node" id="node-in-3" cx="22" cy="54" r="5"></circle>
+                    <circle class="ai-loader__node ai-loader__node--core" id="node-core" cx="40" cy="40" r="6.5"></circle>
+                    <circle class="ai-loader__node" id="node-out-1" cx="58" cy="30" r="5"></circle>
+                    <circle class="ai-loader__node" id="node-out-2" cx="58" cy="50" r="5"></circle>
+                </g>
+            </svg>
+        </div>
+        <div class="ai-loader__text-wrap" aria-live="polite">
+            <p class="ai-loader__meta" id="spinnerMetaText"></p>
+            <p class="ai-loader__step" id="spinnerStepText"></p>
+        </div>
+        <div class="ai-loader__progress">
+            <div class="ai-loader__bar-track">
+                <span class="ai-loader__bar-fill" id="spinnerBarFill"></span>
+            </div>
+            <span class="ai-loader__pct" id="spinnerPctText">0%</span>
+        </div>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+        <button type="button" class="nav-item active" data-view="home">
+            <svg class="nav-icon-svg" aria-hidden="true"><use href="#icon-nav-home"></use></svg>
+            <span data-i18n="nav_home">HOME</span>
+        </button>
+        <button type="button" class="nav-item nav-item--photo" data-view="photo" id="navPhotoBtn">
+            <span class="nav-photo-fab" aria-hidden="true">
+                <svg class="nav-icon-svg nav-icon-svg--photo"><use href="#icon-nav-photo"></use></svg>
+            </span>
+            <span data-i18n="nav_photo">PHOTO</span>
+        </button>
+        <button type="button" class="nav-item" data-view="profile">
+            <svg class="nav-icon-svg" aria-hidden="true"><use href="#icon-nav-profile"></use></svg>
+            <span data-i18n="nav_profile">PROFILE</span>
+        </button>
+    </nav>
+
+    <!-- Alert Modal -->
+    <div id="alertModal" class="modal hidden">
+        <div class="modal-content alert-modal-content">
+            <div class="alert-icon-wrapper">
+                <svg class="alert-icon-svg"><use href="#icon-lock"></use></svg>
+            </div>
+            <h3 class="alert-title" data-i18n="alert_title">Signal Unavailable</h3>
+            <p class="alert-desc" data-i18n="alert_desc">You cannot get a new signal right now because the previous signal is still active. Please wait for the timeframe to end.</p>
+            <button id="closeAlertBtn" class="alert-btn" data-i18n="alert_btn_got_it">Got it</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
