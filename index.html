@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/telegram-web-app.js"></script>
 </head>
-<body>
+<body class="app-locked">
     <svg width="0" height="0" style="position:absolute">
         <defs>
             <!-- Custom Premium Icons -->
@@ -68,6 +68,13 @@
 
     <div class="app-background"></div>
     <div class="blue-glow-top"></div>
+
+    <div id="accessGate" class="access-gate" role="alertdialog" aria-modal="true" aria-labelledby="accessGateTitle">
+        <div class="access-gate__card">
+            <h2 id="accessGateTitle" class="access-gate__title" data-i18n="access_denied_title">Доступ только через Telegram</h2>
+            <p class="access-gate__desc" data-i18n="access_denied_desc">Откройте приложение через официального бота AWG AI.</p>
+        </div>
+    </div>
 
     <header class="header">
         <div class="top-row">

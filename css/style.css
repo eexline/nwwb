@@ -72,6 +72,54 @@ body {
     padding-bottom: var(--nav-offset);
 }
 
+.access-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(5, 8, 16, 0.92);
+    backdrop-filter: blur(12px);
+}
+
+.access-gate.hidden {
+    display: none;
+}
+
+.access-gate__card {
+    max-width: 320px;
+    padding: 24px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    background: rgba(var(--surface-rgb), 0.92);
+    text-align: center;
+}
+
+.access-gate__title {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.access-gate__desc {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--text-muted);
+}
+
+body.app-locked .header,
+body.app-locked .app-view,
+body.app-locked .bottom-nav,
+body.app-locked .spinner-overlay,
+body.app-locked .modal {
+    pointer-events: none;
+    user-select: none;
+}
+
 button,
 input,
 select,
