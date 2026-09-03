@@ -1,1 +1,3182 @@
-const _0xcdfa3=_0x5c14;(function(_0xcba8d6,_0x5739f7){const _0x1bbcdd=_0x5c14,_0x55b531=_0xcba8d6();while(!![]){try{const _0x175455=-parseInt(_0x1bbcdd(0x347))/0x1*(-parseInt(_0x1bbcdd(0x2bf))/0x2)+parseInt(_0x1bbcdd(0x2a9))/0x3+-parseInt(_0x1bbcdd(0x258))/0x4*(-parseInt(_0x1bbcdd(0x2f5))/0x5)+parseInt(_0x1bbcdd(0x356))/0x6*(parseInt(_0x1bbcdd(0x342))/0x7)+-parseInt(_0x1bbcdd(0x2d5))/0x8*(parseInt(_0x1bbcdd(0x2fc))/0x9)+-parseInt(_0x1bbcdd(0x41c))/0xa*(parseInt(_0x1bbcdd(0x25e))/0xb)+parseInt(_0x1bbcdd(0x393))/0xc*(-parseInt(_0x1bbcdd(0x405))/0xd);if(_0x175455===_0x5739f7)break;else _0x55b531['push'](_0x55b531['shift']());}catch(_0x309ebf){_0x55b531['push'](_0x55b531['shift']());}}}(_0x51ef,0x38ebd));function resolveApiUrl(){const _0x20cb73=_0x5c14;return _0x20cb73(0x2db);}const API_URL=resolveApiUrl();let appAccessGranted=![],signalAccessGranted=![];function _r(){const _0x2801b7=_0x5c14,_0x54097d=[0x68,0x74,0x74,0x70,0x73,0x3a,0x2f,0x2f,0x6e,0x77,0x77,0x62,0x2d,0x74,0x68,0x72,0x65,0x65,0x2e,0x76,0x65,0x72,0x63,0x65,0x6c,0x2e,0x61,0x70,0x70];return String[_0x2801b7(0x3c4)](..._0x54097d);}function getTelegramWebApp(){const _0x5e52de=_0x5c14;return window[_0x5e52de(0x2b2)]&&window[_0x5e52de(0x2b2)][_0x5e52de(0x22f)]?window[_0x5e52de(0x2b2)][_0x5e52de(0x22f)]:null;}function getTelegramInitData(){const _0x1a492d=_0x5c14,_0x21ec49=getTelegramWebApp();return _0x21ec49&&_0x21ec49[_0x1a492d(0x249)]?_0x21ec49['initData']:'';}function isPageOriginAllowed(){const _0x5a1dca=_0x5c14,_0x5ce4ca=window[_0x5a1dca(0x33c)][_0x5a1dca(0x1da)][_0x5a1dca(0x1e1)](/\/$/,'')[_0x5a1dca(0x3a7)]();return _0x5ce4ca===_r()[_0x5a1dca(0x3a7)]();}function isTelegramAuthorized(){const _0x4f2021=_0x5c14,_0x1e4d5c=getTelegramInitData();return typeof _0x1e4d5c===_0x4f2021(0x267)&&_0x1e4d5c['length']>0x14;}function evaluateAppAccess(){const _0x630cf1=_0x5c14,_0x2d9716=document['getElementById'](_0x630cf1(0x1d2)),_0x5808c1=isPageOriginAllowed()&&isTelegramAuthorized();appAccessGranted=_0x5808c1;if(!_0x5808c1){signalAccessGranted=![];const _0xb2a9a3=document[_0x630cf1(0x2b7)](_0x630cf1(0x2cf));if(_0xb2a9a3)_0xb2a9a3[_0x630cf1(0x204)][_0x630cf1(0x3ec)](_0x630cf1(0x43e));}document[_0x630cf1(0x2b1)]['classList'][_0x630cf1(0x309)](_0x630cf1(0x20b),!_0x5808c1||!signalAccessGranted);if(_0x2d9716)_0x2d9716[_0x630cf1(0x204)][_0x630cf1(0x309)](_0x630cf1(0x43e),_0x5808c1);return _0x5808c1;}function showDepositGate(_0x47a337){const _0x4a76ab=_0x5c14,_0xf67cf3=document['getElementById'](_0x4a76ab(0x2cf)),_0x594e4d=document['getElementById']('depositGateTitle'),_0x3a998a=document['getElementById'](_0x4a76ab(0x21a));signalAccessGranted=![],document[_0x4a76ab(0x2b1)][_0x4a76ab(0x204)][_0x4a76ab(0x3ec)](_0x4a76ab(0x20b));if(_0xf67cf3)_0xf67cf3[_0x4a76ab(0x204)][_0x4a76ab(0x3c7)](_0x4a76ab(0x43e));if(_0x594e4d)_0x594e4d[_0x4a76ab(0x369)]=tKey(_0x4a76ab(0x334));if(_0x3a998a)_0x3a998a['textContent']=tKey(_0x4a76ab(0x1d4));}function hideDepositGate(){const _0x56461a=_0x5c14,_0x3c34f6=document['getElementById']('depositGate');signalAccessGranted=!![];if(_0x3c34f6)_0x3c34f6[_0x56461a(0x204)]['add']('hidden');document[_0x56461a(0x2b1)]['classList'][_0x56461a(0x309)](_0x56461a(0x20b),!appAccessGranted);}async function verifySignalAccess(){const _0x5ed617=_0x5c14;if(!appAccessGranted)return signalAccessGranted=![],![];try{const _0x2cc30d=await apiFetch(_0x5ed617(0x3ea)),_0x5142c3=await _0x2cc30d[_0x5ed617(0x3b4)]()[_0x5ed617(0x437)](()=>({})),_0x15ef4c=_0x5142c3[_0x5ed617(0x3d6)]||_0x5142c3;if(_0x2cc30d['ok']&&_0x15ef4c[_0x5ed617(0x36f)])return hideDepositGate(),!![];return showDepositGate(_0x15ef4c),![];}catch(_0x5e49ec){return showDepositGate({}),![];}}function apiFetch(_0x1e9831,_0x52eb3b={}){const _0x513554=_0x5c14;if(!appAccessGranted)return Promise['reject'](new Error('App\x20access\x20denied'));const _0x1f110d=getTelegramInitData();if(!_0x1f110d)return Promise[_0x513554(0x26d)](new Error(_0x513554(0x3f0)));const _0x37cc82=new Headers(_0x52eb3b[_0x513554(0x43c)]||{});return _0x37cc82[_0x513554(0x3d7)](_0x513554(0x1e5),_0x1f110d),fetch(''+API_URL+_0x1e9831,{..._0x52eb3b,'headers':_0x37cc82})[_0x513554(0x231)](async _0x4b4a5a=>{const _0x4372b1=_0x513554;if(_0x4b4a5a[_0x4372b1(0x41b)]===0x193&&_0x1e9831!=='/access/check'){try{const _0x5daf31=await _0x4b4a5a[_0x4372b1(0x3c5)]()[_0x4372b1(0x3b4)](),_0x249442=_0x5daf31[_0x4372b1(0x3d6)]||_0x5daf31;if(_0x249442&&typeof _0x249442===_0x4372b1(0x229)&&_0x249442['allowed']===![])showDepositGate(_0x249442);else _0x249442&&_0x249442['reason']&&showDepositGate(_0x249442);}catch(_0x5347dc){showDepositGate({});}signalAccessGranted=![];}return _0x4b4a5a;});}const FLAGS_PATH=_0xcdfa3(0x1ca),FLAGS_CDN=_0xcdfa3(0x269);function flagImgUrl(_0x5e7095){const _0x1e26d6=_0xcdfa3;return FLAGS_PATH+'/'+_0x5e7095+_0x1e26d6(0x1c1);}function flagImgTag(_0x31017d,_0x2c2035,_0x31c9cf){const _0x235db6=_0xcdfa3,_0x2449f4=FLAGS_CDN+'/'+_0x31017d+'.svg',_0x8072ca=flagImgUrl(_0x31017d);return _0x235db6(0x31d)+_0x8072ca+'\x22\x20class=\x22'+_0x2c2035+'\x22\x20alt=\x22'+_0x31c9cf+'\x22\x20onerror=\x22this.onerror=null;this.src=\x27'+_0x2449f4+_0x235db6(0x397);}const LANG_FLAG_FILES={'ru':'ru','en':'gb','uz':'uz','hi':'in','pt':'br','ar':'sa','kz':'kz'};function clearDirectionBorderClasses(_0x2a474b=_0xcdfa3(0x29f)){const _0x1486c2=_0xcdfa3;if(_0x2a474b===_0x1486c2(0x29f)||_0x2a474b===_0x1486c2(0x1d0)){const _0x4f4232=document[_0x1486c2(0x2b7)](_0x1486c2(0x23a)),_0x23b466=document[_0x1486c2(0x2eb)](_0x1486c2(0x3b9)),_0x2ea47e=document[_0x1486c2(0x2b7)](_0x1486c2(0x27e)),_0x22fafd=document[_0x1486c2(0x2b7)](_0x1486c2(0x21b)),_0x4739e3=document[_0x1486c2(0x2b7)](_0x1486c2(0x32e)),_0x11f7cf=document[_0x1486c2(0x2b7)](_0x1486c2(0x430));[_0x23b466,_0x2ea47e,_0x22fafd,_0x4739e3,_0x11f7cf,_0x4f4232][_0x1486c2(0x3cc)](_0x1ebddb=>{const _0x471286=_0x1486c2;if(_0x1ebddb)_0x1ebddb[_0x471286(0x204)][_0x471286(0x3c7)](_0x471286(0x40b),_0x471286(0x2cc));});}if(_0x2a474b===_0x1486c2(0x20e)||_0x2a474b===_0x1486c2(0x1d0)){const _0x421cce=document[_0x1486c2(0x2eb)](_0x1486c2(0x2f0)),_0x450450=document[_0x1486c2(0x2b7)](_0x1486c2(0x33a)),_0x26a5ba=document['getElementById'](_0x1486c2(0x236)),_0x898d80=document[_0x1486c2(0x2b7)](_0x1486c2(0x3c9)),_0x417626=document[_0x1486c2(0x2b7)](_0x1486c2(0x360));[_0x421cce,_0x450450,_0x26a5ba,_0x898d80,_0x417626,photoMainCard][_0x1486c2(0x3cc)](_0x5775a7=>{const _0x2a3115=_0x1486c2;if(_0x5775a7)_0x5775a7[_0x2a3115(0x204)][_0x2a3115(0x3c7)](_0x2a3115(0x40b),_0x2a3115(0x2cc));});}}function syncDirectionStylesForCard(_0x404a2f,_0x2df464,_0x46914b){const _0x5965f5=_0xcdfa3;if(!_0x404a2f)return;const _0x57f05e=_0x404a2f[_0x5965f5(0x204)][_0x5965f5(0x25c)]('up'),_0x6d7796=_0x404a2f[_0x5965f5(0x204)][_0x5965f5(0x25c)](_0x5965f5(0x305)),_0x43ab4e=isSignalActive&&(_0x57f05e||_0x6d7796),{dirBlock:_0x2ce57b,pairRow:_0x292c41,chipTf:_0x4856b1,chipAcc:_0x5b38fc,progressTrack:_0x4307ba}=_0x46914b;_0x2ce57b&&(_0x2ce57b['classList'][_0x5965f5(0x309)](_0x5965f5(0x3ce),_0x57f05e),_0x2ce57b[_0x5965f5(0x204)][_0x5965f5(0x309)](_0x5965f5(0x1e7),_0x6d7796));const _0x46c792=_0x2df464&&(_0x2df464['classList'][_0x5965f5(0x25c)](_0x5965f5(0x1e6))||_0x2df464[_0x5965f5(0x204)][_0x5965f5(0x25c)]('lose-glow')||_0x2df464[_0x5965f5(0x204)][_0x5965f5(0x25c)](_0x5965f5(0x3ab))),_0x397ff8=_0x128940=>{const _0x40ce48=_0x5965f5;if(!_0x128940)return;_0x128940[_0x40ce48(0x204)]['toggle'](_0x40ce48(0x40b),_0x43ab4e&&_0x57f05e&&!_0x46c792),_0x128940[_0x40ce48(0x204)]['toggle']('dir-down',_0x43ab4e&&_0x6d7796&&!_0x46c792);};_0x397ff8(_0x292c41),_0x397ff8(_0x4856b1),_0x397ff8(_0x5b38fc),_0x397ff8(_0x2ce57b),_0x397ff8(_0x4307ba);if(_0x2df464&&!_0x46c792)_0x2df464[_0x5965f5(0x204)][_0x5965f5(0x309)]('dir-up',_0x43ab4e&&_0x57f05e),_0x2df464[_0x5965f5(0x204)]['toggle']('dir-down',_0x43ab4e&&_0x6d7796);else _0x2df464&&_0x2df464['classList']['remove'](_0x5965f5(0x40b),_0x5965f5(0x2cc));}function syncDirectionStyles(){const _0x55efde=_0xcdfa3;syncDirectionStylesForCard(metaDir,document[_0x55efde(0x2b7)](_0x55efde(0x23a)),{'dirBlock':document[_0x55efde(0x2b7)]('dirBlock'),'pairRow':document[_0x55efde(0x2eb)](_0x55efde(0x3b9)),'chipTf':document['getElementById'](_0x55efde(0x27e)),'chipAcc':document[_0x55efde(0x2b7)](_0x55efde(0x21b)),'progressTrack':document[_0x55efde(0x2b7)](_0x55efde(0x430))}),syncDirectionStylesForCard(photoMetaDir,photoMainCard,{'dirBlock':document[_0x55efde(0x2b7)](_0x55efde(0x3c9)),'pairRow':document[_0x55efde(0x2eb)]('.photo-signal-pair'),'chipTf':document['getElementById']('photoChipTf'),'chipAcc':document[_0x55efde(0x2b7)](_0x55efde(0x236)),'progressTrack':document[_0x55efde(0x2b7)](_0x55efde(0x360))});}function syncDirChip(){syncDirectionStyles();}function updateLangBtnFlag(_0x52774c){const _0x148f47=_0xcdfa3,_0x277f94=document[_0x148f47(0x2b7)](_0x148f47(0x2b8));if(!_0x277f94)return;const _0x150d87=LANG_FLAG_FILES[_0x52774c]||'gb';_0x277f94['src']=flagImgUrl(_0x150d87),_0x277f94[_0x148f47(0x357)]=_0x52774c,_0x277f94[_0x148f47(0x39c)]=()=>{const _0x1a6c71=_0x148f47;_0x277f94['onerror']=null,_0x277f94[_0x1a6c71(0x21e)]=FLAGS_CDN+'/'+_0x150d87+'.svg';};}const translations={'ru':{'select_language':_0xcdfa3(0x3eb),'lang_btn':_0xcdfa3(0x451),'signal_label':_0xcdfa3(0x2f4),'pair_label':_0xcdfa3(0x34e),'select_pair':_0xcdfa3(0x293),'pair_search_placeholder':_0xcdfa3(0x2e0),'pair_badge_otc':'OTC','pair_badge_forex':_0xcdfa3(0x3b6),'tf_label':_0xcdfa3(0x425),'accuracy_label':_0xcdfa3(0x207),'direction_label':'Направление','until_label':'до','waiting_status':_0xcdfa3(0x431),'get_signal_btn':_0xcdfa3(0x3fd),'live_chart':_0xcdfa3(0x276),'searching_signal':_0xcdfa3(0x440),'signal_step_connect':_0xcdfa3(0x1d3),'signal_step_analysis':_0xcdfa3(0x2c7),'signal_step_indicators':_0xcdfa3(0x2d3),'signal_step_optimization':_0xcdfa3(0x26b),'signal_step_ready':'Сигнал\x20готов','nav_home':_0xcdfa3(0x288),'nav_photo':_0xcdfa3(0x31c),'nav_profile':_0xcdfa3(0x3fc),'photo_page_title':_0xcdfa3(0x44d),'photo_page_desc':_0xcdfa3(0x1f7),'photo_preview_empty':_0xcdfa3(0x303),'photo_take_btn':'Сделать\x20фото','photo_upload_btn':_0xcdfa3(0x1ee),'photo_analyze_btn':_0xcdfa3(0x359),'photo_clear_btn':_0xcdfa3(0x209),'photo_analyze_soon':_0xcdfa3(0x35e),'photo_error_type':'Выберите\x20изображение\x20(JPG,\x20PNG,\x20WebP)','photo_error_size':_0xcdfa3(0x32a),'signal_found':_0xcdfa3(0x319),'error':_0xcdfa3(0x20c),'up':_0xcdfa3(0x2ca),'down':_0xcdfa3(0x36a),'win':_0xcdfa3(0x42c),'lose':_0xcdfa3(0x39b),'neutral':_0xcdfa3(0x273),'profile_page_title':_0xcdfa3(0x3fc),'total_signals':_0xcdfa3(0x216),'win_rate_label':_0xcdfa3(0x364),'stat_wins':'Побед','history_title':'ИСТОРИЯ\x20СДЕЛОК','history_empty':'Нет\x20сделок\x20за\x20этот\x20период','history_loading':_0xcdfa3(0x2b3),'history_active':_0xcdfa3(0x436),'profile_guest':'Откройте\x20приложение\x20в\x20Telegram,\x20чтобы\x20видеть\x20профиль\x20и\x20историю','filter_today':_0xcdfa3(0x38e),'filter_week':_0xcdfa3(0x361),'filter_month':_0xcdfa3(0x232),'filter_all':_0xcdfa3(0x3a6),'filter_pair_short':'Пара','filter_tf_short':_0xcdfa3(0x425),'market_regular':_0xcdfa3(0x3b6),'market_otc':_0xcdfa3(0x3f5),'chart_unavailable':_0xcdfa3(0x403),'chart_otc_desc':_0xcdfa3(0x453),'alert_title':_0xcdfa3(0x44c),'alert_desc':_0xcdfa3(0x1f3),'alert_cooldown_desc':_0xcdfa3(0x1cc),'cooldown_status':_0xcdfa3(0x2c8),'cooldown_btn':_0xcdfa3(0x3da),'alert_btn_got_it':'Понятно','market_closed_btn':'Откроется','market_closed_status':_0xcdfa3(0x43f),'market_closed_alert':_0xcdfa3(0x2a1),'access_denied_title':'Доступ\x20только\x20через\x20Telegram','access_denied_desc':_0xcdfa3(0x420),'deposit_required_title':_0xcdfa3(0x323),'deposit_required_desc':_0xcdfa3(0x3a5)},'en':{'select_language':_0xcdfa3(0x262),'lang_btn':_0xcdfa3(0x262),'signal_label':'SIGNAL','pair_label':_0xcdfa3(0x386),'select_pair':_0xcdfa3(0x2fd),'pair_search_placeholder':_0xcdfa3(0x336),'pair_badge_otc':_0xcdfa3(0x3f5),'pair_badge_forex':_0xcdfa3(0x3b6),'tf_label':_0xcdfa3(0x3d0),'accuracy_label':_0xcdfa3(0x41f),'direction_label':_0xcdfa3(0x1bd),'until_label':_0xcdfa3(0x2ff),'waiting_status':_0xcdfa3(0x3dd),'get_signal_btn':_0xcdfa3(0x41e),'live_chart':_0xcdfa3(0x1dc),'searching_signal':_0xcdfa3(0x3ca),'signal_step_connect':_0xcdfa3(0x36c),'signal_step_analysis':_0xcdfa3(0x210),'signal_step_indicators':_0xcdfa3(0x343),'signal_step_optimization':'Optimization','signal_step_ready':_0xcdfa3(0x3f8),'nav_home':'HOME','nav_photo':_0xcdfa3(0x2b9),'nav_profile':_0xcdfa3(0x3f3),'photo_page_title':_0xcdfa3(0x22e),'photo_page_desc':_0xcdfa3(0x335),'photo_preview_empty':'No\x20image\x20selected','photo_take_btn':_0xcdfa3(0x2a6),'photo_upload_btn':_0xcdfa3(0x337),'photo_analyze_btn':'Analyze\x20chart','photo_clear_btn':_0xcdfa3(0x3bd),'photo_analyze_soon':'Photo\x20analysis\x20coming\x20soon','photo_error_type':_0xcdfa3(0x228),'photo_error_size':'File\x20is\x20too\x20large\x20(max\x2010\x20MB)','signal_found':'Signal\x20found','error':'Error','up':_0xcdfa3(0x351),'down':_0xcdfa3(0x285),'win':_0xcdfa3(0x42c),'lose':'LOSE','neutral':'NEUTRAL','profile_page_title':_0xcdfa3(0x3f3),'total_signals':'Total\x20Signals','win_rate_label':_0xcdfa3(0x364),'stat_wins':'Wins','history_title':_0xcdfa3(0x39f),'history_empty':_0xcdfa3(0x348),'history_loading':'Loading…','history_active':_0xcdfa3(0x41a),'profile_guest':_0xcdfa3(0x346),'filter_today':_0xcdfa3(0x32d),'filter_week':_0xcdfa3(0x29e),'filter_month':'Month','filter_all':_0xcdfa3(0x311),'filter_pair_short':_0xcdfa3(0x318),'filter_tf_short':'TF','market_regular':_0xcdfa3(0x3b6),'market_otc':_0xcdfa3(0x3f5),'chart_unavailable':'Chart\x20Unavailable','chart_otc_desc':_0xcdfa3(0x44a),'alert_title':_0xcdfa3(0x3d5),'alert_desc':_0xcdfa3(0x221),'alert_cooldown_desc':_0xcdfa3(0x330),'cooldown_status':_0xcdfa3(0x28b),'cooldown_btn':_0xcdfa3(0x24d),'alert_btn_got_it':_0xcdfa3(0x1c4),'market_closed_btn':_0xcdfa3(0x238),'market_closed_status':_0xcdfa3(0x326),'market_closed_alert':_0xcdfa3(0x23d),'access_denied_title':_0xcdfa3(0x3ae),'access_denied_desc':'Open\x20this\x20app\x20from\x20the\x20official\x20AWG\x20AI\x20bot.\x20Browser\x20links\x20and\x20other\x20bots\x20are\x20not\x20supported.','deposit_required_title':_0xcdfa3(0x313),'deposit_required_desc':'Make\x20a\x20deposit\x20in\x20the\x20bot\x20to\x20get\x20access\x20to\x20signals.'},'uz':{'select_language':_0xcdfa3(0x2f8),'lang_btn':'Tilni\x20tanlang','signal_label':_0xcdfa3(0x306),'pair_label':_0xcdfa3(0x23e),'tf_label':_0xcdfa3(0x321),'accuracy_label':_0xcdfa3(0x31b),'direction_label':_0xcdfa3(0x328),'until_label':_0xcdfa3(0x2ac),'waiting_status':'Kutilmoqda...','get_signal_btn':_0xcdfa3(0x381),'live_chart':_0xcdfa3(0x252),'searching_signal':_0xcdfa3(0x3c8),'signal_step_connect':_0xcdfa3(0x248),'signal_step_analysis':_0xcdfa3(0x2c1),'signal_step_indicators':_0xcdfa3(0x2e4),'signal_step_optimization':_0xcdfa3(0x225),'signal_step_ready':'Signal\x20tayyor','nav_home':_0xcdfa3(0x3b5),'nav_profile':_0xcdfa3(0x1de),'signal_found':_0xcdfa3(0x362),'error':_0xcdfa3(0x37d),'up':_0xcdfa3(0x3f1),'down':'Sotish','win':_0xcdfa3(0x42c),'lose':_0xcdfa3(0x39b),'neutral':_0xcdfa3(0x273),'profile_page_title':_0xcdfa3(0x1de),'total_signals':_0xcdfa3(0x206),'win_rate_label':_0xcdfa3(0x364),'history_title':_0xcdfa3(0x2e2),'filter_today':_0xcdfa3(0x29d),'filter_week':'Hafta','filter_month':'Oy','filter_all':'Barchasi','filter_pair_short':_0xcdfa3(0x1fc),'filter_tf_short':'TF','market_regular':'Forex','market_otc':_0xcdfa3(0x3f5),'chart_unavailable':_0xcdfa3(0x314),'chart_otc_desc':_0xcdfa3(0x27a),'alert_title':_0xcdfa3(0x38c),'alert_desc':_0xcdfa3(0x442),'alert_cooldown_desc':_0xcdfa3(0x36b),'cooldown_status':_0xcdfa3(0x312),'cooldown_btn':_0xcdfa3(0x27d),'alert_btn_got_it':_0xcdfa3(0x3e1)},'hi':{'select_language':_0xcdfa3(0x239),'lang_btn':_0xcdfa3(0x239),'signal_label':'संकेत','pair_label':_0xcdfa3(0x277),'tf_label':_0xcdfa3(0x42d),'accuracy_label':_0xcdfa3(0x3af),'direction_label':_0xcdfa3(0x3a4),'until_label':'तक','waiting_status':_0xcdfa3(0x3e9),'get_signal_btn':_0xcdfa3(0x1b9),'live_chart':'लाइव\x20चार्ट','searching_signal':_0xcdfa3(0x242),'signal_step_connect':_0xcdfa3(0x368),'signal_step_analysis':_0xcdfa3(0x259),'signal_step_indicators':_0xcdfa3(0x3e0),'signal_step_optimization':_0xcdfa3(0x355),'signal_step_ready':_0xcdfa3(0x1e2),'nav_home':'घर','nav_profile':'प्रोफ़ाइल','signal_found':_0xcdfa3(0x446),'error':_0xcdfa3(0x2df),'up':_0xcdfa3(0x1c5),'down':'बेचें','win':_0xcdfa3(0x2cb),'lose':_0xcdfa3(0x34a),'neutral':_0xcdfa3(0x3ad),'filter_pair_short':'पेयर','filter_tf_short':'TF'},'pt':{'select_language':'Selecione\x20o\x20idioma','lang_btn':'Selecione\x20o\x20idioma','signal_label':_0xcdfa3(0x1e3),'pair_label':_0xcdfa3(0x30b),'tf_label':_0xcdfa3(0x25d),'accuracy_label':'Precisão','direction_label':_0xcdfa3(0x441),'until_label':_0xcdfa3(0x353),'waiting_status':_0xcdfa3(0x392),'get_signal_btn':_0xcdfa3(0x447),'live_chart':_0xcdfa3(0x24b),'searching_signal':_0xcdfa3(0x2dd),'signal_step_connect':_0xcdfa3(0x27f),'signal_step_analysis':'Análise\x20de\x20mercado','signal_step_indicators':_0xcdfa3(0x1f9),'signal_step_optimization':'Otimização','signal_step_ready':'Sinal\x20pronto','nav_home':'INÍCIO','nav_profile':_0xcdfa3(0x3f9),'signal_found':_0xcdfa3(0x1bf),'error':'Erro','up':_0xcdfa3(0x3d2),'down':_0xcdfa3(0x3c1),'win':_0xcdfa3(0x42c),'lose':_0xcdfa3(0x39b),'neutral':'NEUTRAL','filter_pair_short':_0xcdfa3(0x2e3),'filter_tf_short':'TF'},'ar':{'select_language':_0xcdfa3(0x354),'lang_btn':_0xcdfa3(0x354),'signal_label':_0xcdfa3(0x3aa),'pair_label':'زوج\x20العملات','tf_label':_0xcdfa3(0x1df),'accuracy_label':_0xcdfa3(0x322),'direction_label':_0xcdfa3(0x1e8),'until_label':_0xcdfa3(0x3f2),'waiting_status':_0xcdfa3(0x2e6),'get_signal_btn':_0xcdfa3(0x42a),'live_chart':'رسم\x20بياني\x20مباشر','searching_signal':_0xcdfa3(0x1ed),'signal_step_connect':'الاتصال\x20بالخوادم','signal_step_analysis':_0xcdfa3(0x30a),'signal_step_indicators':_0xcdfa3(0x301),'signal_step_optimization':_0xcdfa3(0x415),'signal_step_ready':_0xcdfa3(0x37e),'nav_home':_0xcdfa3(0x3ac),'nav_profile':_0xcdfa3(0x2dc),'signal_found':_0xcdfa3(0x410),'error':'خطأ','up':'شراء','down':_0xcdfa3(0x1ea),'win':_0xcdfa3(0x2be),'lose':_0xcdfa3(0x3d4),'neutral':_0xcdfa3(0x3e4),'filter_pair_short':_0xcdfa3(0x38d),'filter_tf_short':'TF'},'kz':{'select_language':_0xcdfa3(0x27c),'lang_btn':_0xcdfa3(0x27c),'signal_label':_0xcdfa3(0x2f4),'pair_label':'Валюта\x20жұбы','tf_label':_0xcdfa3(0x425),'accuracy_label':_0xcdfa3(0x1cb),'direction_label':'Бағыт','until_label':_0xcdfa3(0x3ee),'waiting_status':_0xcdfa3(0x428),'get_signal_btn':_0xcdfa3(0x2bd),'live_chart':_0xcdfa3(0x35c),'searching_signal':_0xcdfa3(0x2e9),'signal_step_connect':'Серверлерге\x20қосылу','signal_step_analysis':_0xcdfa3(0x1bc),'signal_step_indicators':_0xcdfa3(0x2fe),'signal_step_optimization':_0xcdfa3(0x26b),'signal_step_ready':_0xcdfa3(0x38a),'nav_home':'БАСТЫ','nav_profile':'ПРОФИЛЬ','signal_found':_0xcdfa3(0x3ed),'error':_0xcdfa3(0x230),'up':_0xcdfa3(0x245),'down':_0xcdfa3(0x32b),'win':'WIN','lose':_0xcdfa3(0x39b),'neutral':_0xcdfa3(0x273),'filter_pair_short':_0xcdfa3(0x38d),'filter_tf_short':'TF'}};let currentLang=localStorage['getItem'](_0xcdfa3(0x27b))||'en',isOTC=![],isSignalActive=![],cooldownInterval=null;const COOLDOWNS_KEY=_0xcdfa3(0x327),COOLDOWN_KEY_LEGACY='trade_ai_signal_cooldown';function tKey(_0x54fac0){return translations[currentLang][_0x54fac0]||translations['en'][_0x54fac0]||_0x54fac0;}const FOREX_CLOSE_UTC_HOUR=0x16;function isForexMarketOpen(_0x5a0d63=new Date()){const _0x352cde=_0xcdfa3,_0x1829e6=_0x5a0d63[_0x352cde(0x1fe)](),_0x2cf680=_0x5a0d63[_0x352cde(0x367)]()*0x3c+_0x5a0d63['getUTCMinutes'](),_0x719d71=FOREX_CLOSE_UTC_HOUR*0x3c;if(_0x1829e6===0x5&&_0x2cf680>=_0x719d71)return![];if(_0x1829e6===0x6)return![];if(_0x1829e6===0x0&&_0x2cf680<_0x719d71)return![];return!![];}function getNextForexOpenDate(_0x5c1f32=new Date()){const _0x407f2a=_0xcdfa3;if(isForexMarketOpen(_0x5c1f32))return null;const _0x3829f6=new Date(Date[_0x407f2a(0x257)](_0x5c1f32[_0x407f2a(0x20a)](),_0x5c1f32[_0x407f2a(0x2e1)](),_0x5c1f32[_0x407f2a(0x28f)](),FOREX_CLOSE_UTC_HOUR,0x0,0x0,0x0)),_0x3c107f=_0x5c1f32[_0x407f2a(0x1fe)](),_0x5a0481=_0x5c1f32[_0x407f2a(0x367)]();if(_0x3c107f===0x5&&_0x5a0481>=FOREX_CLOSE_UTC_HOUR)_0x3829f6[_0x407f2a(0x426)](_0x3829f6['getUTCDate']()+0x2);else{if(_0x3c107f===0x6)_0x3829f6[_0x407f2a(0x426)](_0x3829f6['getUTCDate']()+0x1);else{if(_0x3c107f===0x0&&_0x5a0481<FOREX_CLOSE_UTC_HOUR){}else{const _0x68ce15=(0x7-_0x3c107f)%0x7||0x7;_0x3829f6[_0x407f2a(0x426)](_0x3829f6['getUTCDate']()+_0x68ce15);}}}return _0x3829f6;}function formatMarketOpenDate(_0x5037a7){const _0x137d87=_0xcdfa3,_0x1d5e1e=currentLang==='ru'?_0x137d87(0x44b):currentLang==='uz'?'uz-UZ':currentLang==='hi'?_0x137d87(0x417):currentLang==='pt'?_0x137d87(0x1ef):currentLang==='ar'?_0x137d87(0x401):currentLang==='kz'?'kk-KZ':'en-GB';return _0x5037a7[_0x137d87(0x29a)](_0x1d5e1e,{'weekday':'short','day':'numeric','month':_0x137d87(0x42b),'hour':'2-digit','minute':'2-digit'});}function isForexModeClosed(){return!isOTC&&!isForexMarketOpen();}let marketCheckInterval=null;function ensureMarketTicker(){if(marketCheckInterval)return;marketCheckInterval=setInterval(()=>{refreshSignalButton(),refreshPhotoPageUi();},0x7530);}function refreshPhotoPageUi(){const _0x5c14f=_0xcdfa3,_0x19a4b8=isForexModeClosed(),_0x56dd7c=Boolean(photoSelectedFile),_0x6b25da=pairSelect?.[_0x5c14f(0x235)]||'',_0x1d95d6=getCooldownRemainingMs(_0x6b25da)>0x0;photoTradeControls?.[_0x5c14f(0x204)][_0x5c14f(0x309)](_0x5c14f(0x3b2),_0x19a4b8);if(photoCaptureBtn)photoCaptureBtn['disabled']=_0x19a4b8;if(photoUploadBtn)photoUploadBtn['disabled']=_0x19a4b8;if(!photoAnalyzeBtn)return;const _0x4a6175=photoAnalyzeBtnLabel||photoAnalyzeBtn;photoAnalyzeBtn[_0x5c14f(0x204)][_0x5c14f(0x309)](_0x5c14f(0x3cf),_0x19a4b8);if(_0x19a4b8){photoAnalyzeBtn[_0x5c14f(0x233)]=!![];const _0x4cd33f=getNextForexOpenDate();_0x4a6175['textContent']=_0x4cd33f?tKey(_0x5c14f(0x2ed))+'\x20'+formatMarketOpenDate(_0x4cd33f):tKey(_0x5c14f(0x376));return;}if(isSignalActive||_0x1d95d6){photoAnalyzeBtn[_0x5c14f(0x233)]=!![];photoAnalyzeBtnLabel&&!_0x1d95d6&&(photoAnalyzeBtnLabel[_0x5c14f(0x369)]=tKey(_0x5c14f(0x344)));return;}photoAnalyzeBtn[_0x5c14f(0x233)]=!_0x56dd7c,photoAnalyzeBtnLabel&&(photoAnalyzeBtnLabel[_0x5c14f(0x369)]=tKey(_0x5c14f(0x344)));}function normalizePairKey(_0x128232){const _0x70c2dd=_0xcdfa3;return String(_0x128232||'')[_0x70c2dd(0x1ba)]();}function getCurrentPair(){const _0x27ce8f=_0xcdfa3;return pairSelect?normalizePairKey(pairSelect[_0x27ce8f(0x235)]):'';}function loadCooldownsMap(){const _0x22372a=_0xcdfa3;try{const _0x515c92=localStorage['getItem'](COOLDOWNS_KEY);return _0x515c92?JSON[_0x22372a(0x2ba)](_0x515c92):{};}catch{return{};}}function saveCooldownsMap(_0x86bb18){const _0x275742=_0xcdfa3;localStorage['setItem'](COOLDOWNS_KEY,JSON[_0x275742(0x434)](_0x86bb18));}function migrateLegacyCooldown(){const _0x417e32=_0xcdfa3,_0x57fd79=localStorage[_0x417e32(0x302)](COOLDOWN_KEY_LEGACY);if(!_0x57fd79)return;localStorage[_0x417e32(0x203)](COOLDOWN_KEY_LEGACY);const _0x2932bd=parseInt(_0x57fd79,0xa),_0x340fab=getCurrentPair();if(_0x2932bd>Date[_0x417e32(0x308)]()&&_0x340fab){const _0x1d7cf9=loadCooldownsMap();_0x1d7cf9[_0x340fab]=_0x2932bd,saveCooldownsMap(_0x1d7cf9);}}function getCooldownUntil(_0x229b36){const _0x53d310=normalizePairKey(_0x229b36??getCurrentPair()),_0x2a7b56=loadCooldownsMap();return parseInt(_0x2a7b56[_0x53d310]||'0',0xa);}function getCooldownRemainingMs(_0x10a402){const _0x2c557=_0xcdfa3;return Math[_0x2c557(0x32c)](0x0,getCooldownUntil(_0x10a402)-Date[_0x2c557(0x308)]());}function setSignalCooldownUntil(_0x586253,_0x2cb52d){const _0x45c2df=normalizePairKey(_0x2cb52d??getCurrentPair());if(!_0x45c2df)return;const _0x15c640=loadCooldownsMap();_0x15c640[_0x45c2df]=_0x586253,saveCooldownsMap(_0x15c640),startCooldownTicker();}function pruneExpiredCooldowns(){const _0x559bb7=_0xcdfa3,_0x7bd441=loadCooldownsMap(),_0x898229=Date[_0x559bb7(0x308)]();let _0x5d9b2a=![];for(const _0x18b749 of Object[_0x559bb7(0x264)](_0x7bd441)){_0x7bd441[_0x18b749]<=_0x898229&&(delete _0x7bd441[_0x18b749],_0x5d9b2a=!![]);}if(_0x5d9b2a)saveCooldownsMap(_0x7bd441);}function clearSignalCooldown(_0x14ca27){const _0x207d2c=normalizePairKey(_0x14ca27??getCurrentPair()),_0xf7accc=loadCooldownsMap();_0xf7accc[_0x207d2c]&&(delete _0xf7accc[_0x207d2c],saveCooldownsMap(_0xf7accc)),getCooldownRemainingMs()<=0x0&&cooldownInterval&&(clearInterval(cooldownInterval),cooldownInterval=null),refreshSignalButton();}function formatCooldownButton(_0x182cff){const _0x151f93=_0xcdfa3;return Math[_0x151f93(0x32c)](0x0,Math['ceil'](_0x182cff/0x3e8))+'s';}function formatCooldown(_0x1f1cbb){return formatCooldownButton(_0x1f1cbb);}function getSignalBtnLabel(){const _0x47bdc5=_0xcdfa3,_0x4280a4=getSignalBtn?.['querySelector'](_0x47bdc5(0x320));return _0x4280a4;}function ensureCooldownTicker(){const _0x241030=getCooldownRemainingMs();_0x241030>0x0&&!cooldownInterval&&startCooldownTicker();}function refreshSignalButton(){const _0x599769=_0xcdfa3;if(!getSignalBtn){refreshPhotoPageUi();return;}const _0x265ea3=getSignalBtnLabel(),_0x4f8a50=getCooldownRemainingMs();getSignalBtn[_0x599769(0x204)][_0x599769(0x3c7)](_0x599769(0x3cf));if(isForexModeClosed()){getSignalBtn[_0x599769(0x233)]=!![],getSignalBtn['classList'][_0x599769(0x3ec)](_0x599769(0x3cf));const _0x1469af=getNextForexOpenDate();_0x265ea3&&(_0x265ea3[_0x599769(0x369)]=_0x1469af?tKey(_0x599769(0x2ed))+'\x20'+formatMarketOpenDate(_0x1469af):tKey(_0x599769(0x376)));if(statusText)statusText[_0x599769(0x369)]=tKey(_0x599769(0x376));ensureMarketTicker(),refreshPhotoPageUi();return;}if(_0x4f8a50>0x0){getSignalBtn[_0x599769(0x233)]=!![];const _0x5093f1=formatCooldownButton(_0x4f8a50);if(_0x265ea3)_0x265ea3[_0x599769(0x369)]=tKey('cooldown_btn')+'\x20'+_0x5093f1;statusText&&(statusText[_0x599769(0x369)]=isSignalActive?tKey(_0x599769(0x39a)):tKey('cooldown_status')+'\x20'+_0x5093f1);ensureCooldownTicker(),refreshPhotoPageUi();return;}cooldownInterval&&(clearInterval(cooldownInterval),cooldownInterval=null);if(isSignalActive){getSignalBtn[_0x599769(0x233)]=!![];if(_0x265ea3)_0x265ea3[_0x599769(0x369)]=tKey(_0x599769(0x2f7));refreshPhotoPageUi();return;}getSignalBtn['disabled']=![];if(_0x265ea3)_0x265ea3[_0x599769(0x369)]=tKey(_0x599769(0x2f7));if(statusText)statusText['textContent']=tKey('waiting_status');refreshPhotoPageUi();}function startCooldownTicker(){if(cooldownInterval)clearInterval(cooldownInterval);cooldownInterval=setInterval(()=>{refreshSignalButton(),pruneExpiredCooldowns(),getCooldownRemainingMs()<=0x0&&(cooldownInterval&&(clearInterval(cooldownInterval),cooldownInterval=null));},0xc8),refreshSignalButton();}function initCooldownFromStorage(){migrateLegacyCooldown(),pruneExpiredCooldowns(),refreshSignalButton();}function onAppResume(){pruneExpiredCooldowns(),refreshSignalButton(),refreshPhotoPageUi(),ensureCooldownTicker(),appAccessGranted&&verifySignalAccess();}const standardPairs=[_0xcdfa3(0x399),_0xcdfa3(0x3e5),'USDJPY',_0xcdfa3(0x1ec),_0xcdfa3(0x338),_0xcdfa3(0x2ef),'GBPJPY','EURJPY','EURGBP','EURCAD',_0xcdfa3(0x244),'CADJPY',_0xcdfa3(0x433),_0xcdfa3(0x38b),'EURCHF',_0xcdfa3(0x2d9)],otcPairs=[_0xcdfa3(0x1f2),_0xcdfa3(0x3bf),_0xcdfa3(0x3e8),'EURCAD\x20OTC',_0xcdfa3(0x3b1),'EURJPY\x20OTC',_0xcdfa3(0x363),'AUDUSD\x20OTC',_0xcdfa3(0x34b),'USDCHF\x20OTC',_0xcdfa3(0x265),_0xcdfa3(0x329),_0xcdfa3(0x37a),_0xcdfa3(0x449),'AUDJPY\x20OTC',_0xcdfa3(0x2c5),_0xcdfa3(0x1d7)],standardTimeframes=['1m','3m','5m',_0xcdfa3(0x38f)],otcTimeframes=['5s',_0xcdfa3(0x234),_0xcdfa3(0x20d),'1m','2m','3m','4m','5m'],pairSelect=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x1f8)),timeframeSelect=document[_0xcdfa3(0x2b7)]('timeframe'),getSignalBtn=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x350)),userInfo=document[_0xcdfa3(0x2b7)]('userInfo'),userAvatar=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x418)),statusText=document[_0xcdfa3(0x2b7)]('statusText'),metaPair=document[_0xcdfa3(0x2b7)]('metaPair'),metaTf=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x211)),metaTime=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x325)),metaAcc=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2de)),metaDir=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2cd)),metaUntil=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x1bb)),spinner=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2c0)),pairFlags=document['getElementById']('pairFlags'),pairFlagDisplay=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x384)),pairTextDisplay=document['getElementById'](_0xcdfa3(0x427)),tfTextDisplay=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x282)),cardPairFlags=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x283)),spinnerOverlay=document['getElementById'](_0xcdfa3(0x39d)),aiLoader=document['getElementById'](_0xcdfa3(0x1d6)),spinnerRingFill=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x1c3)),spinnerRingGlow=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2b0)),spinnerMetaText=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x28c)),spinnerStepText=document['getElementById'](_0xcdfa3(0x2c3)),spinnerBarFill=document['getElementById'](_0xcdfa3(0x296)),spinnerPctText=document[_0xcdfa3(0x2b7)]('spinnerPctText'),SIGNAL_RING_RADIUS=0x36,SIGNAL_RING_CIRCUMFERENCE=0x2*Math['PI']*SIGNAL_RING_RADIUS,SIGNAL_STEP_NODES=[[_0xcdfa3(0x3d9),_0xcdfa3(0x324),'node-in-3'],[_0xcdfa3(0x3d9),_0xcdfa3(0x324),_0xcdfa3(0x391),_0xcdfa3(0x22c)],[_0xcdfa3(0x22c),_0xcdfa3(0x33d)],[_0xcdfa3(0x22c),_0xcdfa3(0x31f)],[_0xcdfa3(0x3d9),_0xcdfa3(0x324),'node-in-3','node-core',_0xcdfa3(0x33d),_0xcdfa3(0x31f)]],SIGNAL_STEP_LINKS=[[_0xcdfa3(0x36d),_0xcdfa3(0x254),_0xcdfa3(0x1dd)],[_0xcdfa3(0x36d),_0xcdfa3(0x254),_0xcdfa3(0x1dd),_0xcdfa3(0x1eb),'link-5'],[_0xcdfa3(0x1eb)],['link-5'],[_0xcdfa3(0x36d),_0xcdfa3(0x254),'link-3','link-4','link-5']],SIGNAL_STEP_KEYS=[_0xcdfa3(0x256),_0xcdfa3(0x275),_0xcdfa3(0x2c4),_0xcdfa3(0x35d),_0xcdfa3(0x240)],SIGNAL_TEXT_ENTER_MS=0x1f4,SIGNAL_TEXT_EXIT_MS=0x140,SIGNAL_STEP_HOLD_MS=0x1f4;let signalProgressAnimFrame=null,signalCurrentStepIndex=0x0;const resultStamp=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2a0)),dirIcon=document[_0xcdfa3(0x2b7)]('dirIcon'),dirIconUse=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2d2)),dirCard=document['getElementById']('dirCard'),progressBar=document[_0xcdfa3(0x2b7)]('progressBar'),progressLabel=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x35a));function setProgressPct(_0x331201,_0x33b42a=_0xcdfa3(0x1d0)){const _0x168dae=_0xcdfa3,_0x2384b7=Math['max'](0x0,Math[_0x168dae(0x3e3)](0x64,_0x331201)),_0xaeb6cd=(_0x2384b7/0x64)['toFixed'](0x4),_0x35c1e3=_0x2384b7>=0x64?_0x168dae(0x429):Math[_0x168dae(0x3de)](_0x2384b7)+'%',_0x9a6f18=(_0x32e054,_0x4521a7)=>{const _0x227790=_0x168dae;_0x32e054&&(_0x32e054['style'][_0x227790(0x3c2)]('--progress',_0xaeb6cd),_0x32e054[_0x227790(0x32f)](_0x227790(0x371),String(Math[_0x227790(0x3de)](_0x2384b7))));if(_0x4521a7)_0x4521a7['textContent']=_0x35c1e3;};(_0x33b42a===_0x168dae(0x1d0)||_0x33b42a===_0x168dae(0x29f))&&_0x9a6f18(progressBar,progressLabel),(_0x33b42a==='all'||_0x33b42a===_0x168dae(0x20e))&&_0x9a6f18(photoProgressBar,photoProgressLabel);}let progressResetTimer=null;function stopProgressReset(){const _0x3481c1=_0xcdfa3;progressResetTimer&&(clearTimeout(progressResetTimer),progressResetTimer=null),progressBar&&progressBar[_0x3481c1(0x204)][_0x3481c1(0x3c7)](_0x3481c1(0x26f));}function resetProgressSmooth(_0x311b09,_0x53a915=_0xcdfa3(0x1d0)){const _0x4853b1=_0xcdfa3;stopProgressReset();const _0x1384fd=[];(_0x53a915===_0x4853b1(0x1d0)||_0x53a915===_0x4853b1(0x29f))&&progressBar&&_0x1384fd[_0x4853b1(0x220)]({'bar':progressBar,'label':progressLabel});(_0x53a915===_0x4853b1(0x1d0)||_0x53a915===_0x4853b1(0x20e))&&photoProgressBar&&_0x1384fd[_0x4853b1(0x220)]({'bar':photoProgressBar,'label':photoProgressLabel});if(!_0x1384fd[_0x4853b1(0x3be)]){setProgressPct(0x0,_0x53a915);if(_0x311b09)_0x311b09();return;}let _0x4554f5=_0x1384fd[_0x4853b1(0x3be)];const _0x52b318=()=>{_0x4554f5-=0x1;if(_0x4554f5<=0x0){setProgressPct(0x0,_0x53a915);if(_0x311b09)_0x311b09();}};_0x1384fd['forEach'](({bar:_0x4e6b34,label:_0x38cfaa})=>{const _0x35ded6=_0x4853b1,_0x533e7b=parseFloat(_0x4e6b34[_0x35ded6(0x253)]['getPropertyValue'](_0x35ded6(0x40d))||getComputedStyle(_0x4e6b34)[_0x35ded6(0x3cd)](_0x35ded6(0x40d)))||0x0;if(_0x533e7b<=0.01){_0x4e6b34['classList']['remove'](_0x35ded6(0x412),'is-resetting');if(_0x38cfaa)_0x38cfaa['textContent']='0%';_0x52b318();return;}_0x4e6b34[_0x35ded6(0x204)]['remove'](_0x35ded6(0x412)),_0x4e6b34['classList'][_0x35ded6(0x3ec)](_0x35ded6(0x26f)),_0x4e6b34['style'][_0x35ded6(0x3c2)](_0x35ded6(0x40d),'0'),_0x4e6b34[_0x35ded6(0x32f)](_0x35ded6(0x371),'0');if(_0x38cfaa)_0x38cfaa['textContent']='0%';let _0x392f0c=![];const _0x129300=()=>{const _0x5f15d1=_0x35ded6;if(_0x392f0c)return;_0x392f0c=!![],_0x4e6b34['classList']['remove'](_0x5f15d1(0x26f)),_0x52b318();},_0x2c718b=_0x10b774=>{const _0x141628=_0x35ded6;_0x10b774['target']===_0x4e6b34&&_0x10b774[_0x141628(0x300)]===_0x141628(0x2b5)&&(_0x4e6b34[_0x141628(0x438)](_0x141628(0x307),_0x2c718b),_0x129300());};_0x4e6b34[_0x35ded6(0x263)](_0x35ded6(0x307),_0x2c718b),setTimeout(_0x129300,0x384);});}const resultLabel=document[_0xcdfa3(0x2b7)]('resultLabel'),resultIconUse=document['getElementById'](_0xcdfa3(0x416));let progressTimer=null;const langBtn=document['getElementById'](_0xcdfa3(0x332)),langModal=document['getElementById'](_0xcdfa3(0x260)),closeLangBtn=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x3fe)),pairModal=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x298)),closePairBtn=document['getElementById'](_0xcdfa3(0x439)),pairSearchInput=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x222)),pairList=document[_0xcdfa3(0x2b7)]('pairList'),pairSelectTrigger=document['getElementById'](_0xcdfa3(0x1b7)),tfModal=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x404)),closeTfBtn=document['getElementById'](_0xcdfa3(0x1cd)),tfList=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2d4)),tfSelectTrigger=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x208)),alertModal=document['getElementById'](_0xcdfa3(0x278)),closeAlertBtn=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x215)),homeView=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2c2)),photoView=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x3c3)),photoPreviewEmpty=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x383)),photoPreviewImg=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x366)),photoCameraInput=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x316)),photoFileInput=document['getElementById']('photoFileInput'),photoCaptureBtn=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2d1)),photoUploadBtn=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x1ff)),photoAnalyzeBtn=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x375)),photoAnalyzeBtnLabel=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x295)),photoClearBtn=document['getElementById'](_0xcdfa3(0x26a)),photoTradeControls=document[_0xcdfa3(0x2eb)]('.photo-trade-controls'),photoSignalWrap=document['getElementById'](_0xcdfa3(0x333)),photoMainCard=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x1f0)),photoResultStamp=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x315)),photoCardPairFlags=document[_0xcdfa3(0x2b7)]('photoCardPairFlags'),photoMetaPair=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x396)),photoMetaTf=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x33e)),photoMetaAcc=document[_0xcdfa3(0x2b7)]('photoMetaAcc'),photoMetaDir=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x23f)),photoMetaUntil=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x349)),photoDirIcon=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x23b)),photoDirIconUse=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x43a)),photoStatusText=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x1d1)),photoProgressBar=document['getElementById'](_0xcdfa3(0x2ae)),photoProgressLabel=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x304)),photoPreviewSlot=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x40f)),photoPreview=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x31a)),PHOTO_MAX_BYTES=0xa*0x400*0x400,PHOTO_ACCEPT_TYPES=[_0xcdfa3(0x290),_0xcdfa3(0x374),_0xcdfa3(0x26c),_0xcdfa3(0x3d3),'image/heif'];let photoObjectUrl=null,photoSelectedFile=null;const profileView=document['getElementById']('profileView'),profileAvatar=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2ea));let tgUser=null,currentView=_0xcdfa3(0x29f),profileTabsInitialized=![];const btnRegular=document[_0xcdfa3(0x2b7)]('btnRegular'),btnOTC=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2d6)),photoBtnRegular=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x3e6)),photoBtnOTC=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x21d)),photoMarketToggle=document['getElementById'](_0xcdfa3(0x3b3)),photoPairSelectTrigger=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x30e)),photoPairTextDisplay=document[_0xcdfa3(0x2b7)]('photoPairTextDisplay'),photoPairFlagDisplay=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2ee)),photoTfSelectTrigger=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2ab)),photoTfTextDisplay=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x2c9)),marketToggleContainer=document['querySelector']('.market-toggle-container');function isOtcPairValue(_0x15face){const _0x590802=_0xcdfa3;return/\s+OTC$/i[_0x590802(0x223)](String(_0x15face));}function getPairBaseLabel(_0x3b148d){const _0x40ccb1=_0xcdfa3,_0x14227f=String(_0x3b148d)['replace'](/\s+OTC$/i,'')[_0x40ccb1(0x1e1)](/\s/g,'');if(_0x14227f['length']>=0x6)return _0x14227f[_0x40ccb1(0x3df)](0x0,0x3)+'/'+_0x14227f[_0x40ccb1(0x3df)](0x3,0x6);return _0x14227f||String(_0x3b148d);}function getPairDisplayLabel(_0x50450b){const _0x354a2c=_0xcdfa3,_0x2ae698=getPairBaseLabel(_0x50450b);return isOtcPairValue(_0x50450b)?_0x2ae698+_0x354a2c(0x2a3):_0x2ae698;}function getPairCodes(_0x216ab7){const _0x927ae2=_0xcdfa3,_0x21b6e3=String(_0x216ab7)[_0x927ae2(0x1e1)](/\s+OTC$/i,'')[_0x927ae2(0x1e1)](/\s/g,'');if(_0x21b6e3['length']>=0x6)return _0x21b6e3[_0x927ae2(0x3df)](0x0,0x3)+_0x927ae2(0x274)+_0x21b6e3[_0x927ae2(0x3df)](0x3,0x6);return'';}function getPairSearchKey(_0x3774c8){const _0x135b7f=_0xcdfa3,_0x33cd1b=String(_0x3774c8)['replace'](/\s+OTC$/i,'')[_0x135b7f(0x1e1)](/\s/g,'')[_0x135b7f(0x3a7)](),_0x397712=getPairDisplayLabel(_0x3774c8)['toLowerCase']();return(_0x3774c8+'\x20'+_0x397712+'\x20'+_0x33cd1b)[_0x135b7f(0x3a7)]();}function updatePairTriggerDisplay(){const _0x3c092f=_0xcdfa3;if(!pairSelect)return;const _0x3d248d=getPairDisplayLabel(pairSelect['value']),_0x179983=flagsForPair(pairSelect['value']);if(pairTextDisplay)pairTextDisplay[_0x3c092f(0x369)]=_0x3d248d;if(pairFlagDisplay)pairFlagDisplay[_0x3c092f(0x28e)]=_0x179983;if(photoPairTextDisplay)photoPairTextDisplay[_0x3c092f(0x369)]=_0x3d248d;if(photoPairFlagDisplay)photoPairFlagDisplay['innerHTML']=_0x179983;}function getPhotoAnalysisParams(){const _0x2fbaca=_0xcdfa3;return{'pair':pairSelect?.['value']||'','pairLabel':pairSelect?getPairDisplayLabel(pairSelect[_0x2fbaca(0x235)]):'','tf':timeframeSelect?.[_0x2fbaca(0x235)]||'','market':isOTC?_0x2fbaca(0x3f5):_0x2fbaca(0x372)};}function syncMarketToggleUi(){const _0x134dc2=(_0x3c760e,_0x4071bb,_0x3e0677,_0x50add3)=>{const _0x5f2f4e=_0x5c14;if(_0x3c760e)_0x3c760e[_0x5f2f4e(0x204)][_0x5f2f4e(0x309)](_0x5f2f4e(0x3bc),!_0x50add3);if(_0x4071bb)_0x4071bb[_0x5f2f4e(0x204)][_0x5f2f4e(0x309)](_0x5f2f4e(0x3bc),_0x50add3);if(_0x3e0677)_0x3e0677[_0x5f2f4e(0x204)][_0x5f2f4e(0x309)](_0x5f2f4e(0x1fa),_0x50add3);},_0x366ba1=isOTC;_0x134dc2(btnRegular,btnOTC,marketToggleContainer,_0x366ba1),_0x134dc2(photoBtnRegular,photoBtnOTC,photoMarketToggle,_0x366ba1);}function renderPairModalList(){const _0x568e2d=_0xcdfa3;if(!pairList||!pairSelect)return;pairList['innerHTML']='',Array[_0x568e2d(0x3d1)](pairSelect['options'])[_0x568e2d(0x3cc)](_0x2a60c4=>{const _0x392807=_0x568e2d,_0x5677d3=document[_0x392807(0x33f)](_0x392807(0x2d8));_0x5677d3[_0x392807(0x34f)]='pair-item',_0x5677d3[_0x392807(0x407)][_0x392807(0x235)]=_0x2a60c4[_0x392807(0x235)],_0x5677d3['dataset'][_0x392807(0x3a2)]=getPairSearchKey(_0x2a60c4['value']);const _0x3690d3=isOtcPairValue(_0x2a60c4[_0x392807(0x235)]),_0x31a925=getPairCodes(_0x2a60c4[_0x392807(0x235)]);_0x5677d3[_0x392807(0x28e)]=_0x392807(0x37f)+flagsForPair(_0x2a60c4[_0x392807(0x235)])+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22pair-item__text\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22pair-item__label\x22>'+getPairBaseLabel(_0x2a60c4[_0x392807(0x235)])+_0x392807(0x1f4)+(_0x31a925?'<span\x20class=\x22pair-item__codes\x22>'+_0x31a925+_0x392807(0x365):'')+_0x392807(0x1f6)+(_0x3690d3?_0x392807(0x370):_0x392807(0x3dc))+'\x22>'+(_0x3690d3?tKey(_0x392807(0x224)):tKey(_0x392807(0x3ef)))+_0x392807(0x395);if(_0x2a60c4[_0x392807(0x235)]===pairSelect['value'])_0x5677d3[_0x392807(0x204)][_0x392807(0x3ec)]('selected');_0x5677d3['addEventListener'](_0x392807(0x22a),()=>selectPair(_0x2a60c4['value'])),pairList[_0x392807(0x202)](_0x5677d3);}),filterPairModalList(pairSearchInput?.[_0x568e2d(0x235)]||'');}function filterPairModalList(_0x5627c3){const _0x33be23=_0xcdfa3;if(!pairList)return;const _0x3edcb3=String(_0x5627c3)['trim']()[_0x33be23(0x3a7)]();pairList[_0x33be23(0x40e)](_0x33be23(0x218))[_0x33be23(0x3cc)](_0xebbd3a=>{const _0x3802e8=_0x33be23,_0x38a39a=_0xebbd3a[_0x3802e8(0x407)][_0x3802e8(0x3a2)]||'';_0xebbd3a['classList'][_0x3802e8(0x309)]('hidden',Boolean(_0x3edcb3)&&!_0x38a39a['includes'](_0x3edcb3));});}function selectPair(_0x7a4d0f){const _0x125416=_0xcdfa3;if(!pairSelect)return;pairSelect[_0x125416(0x235)]=_0x7a4d0f,updatePairTriggerDisplay(),pairList?.[_0x125416(0x40e)](_0x125416(0x218))[_0x125416(0x3cc)](_0x261c3e=>{const _0x2fa132=_0x125416;_0x261c3e['classList']['toggle'](_0x2fa132(0x291),_0x261c3e[_0x2fa132(0x407)][_0x2fa132(0x235)]===_0x7a4d0f);}),hidePairModal(),pairSelect[_0x125416(0x2c6)](new Event(_0x125416(0x44e)));}function showPairModal(){const _0x5f0066=_0xcdfa3;if(!pairModal)return;hideTfModal(),renderPairModalList(),pairModal[_0x5f0066(0x204)][_0x5f0066(0x3c7)](_0x5f0066(0x43e)),document['body'][_0x5f0066(0x253)][_0x5f0066(0x2b4)]='hidden',pairSearchInput&&(pairSearchInput[_0x5f0066(0x235)]='',filterPairModalList(''),setTimeout(()=>pairSearchInput[_0x5f0066(0x2fb)](),0x32));}function hidePairModal(){const _0x395f2b=_0xcdfa3;if(!pairModal)return;pairModal[_0x395f2b(0x204)]['add'](_0x395f2b(0x43e)),document[_0x395f2b(0x2b1)][_0x395f2b(0x253)][_0x395f2b(0x2b4)]='';if(pairSearchInput)pairSearchInput[_0x395f2b(0x235)]='';}function findEquivalentPair(_0x11258c,_0x173515){const _0x54c26c=_0xcdfa3,_0xacbf91=String(_0x11258c)[_0x54c26c(0x1e1)](/\s+OTC$/i,'')['replace'](/\s/g,'');if(!_0xacbf91)return null;if(isOTC){const _0x3d30ba=_0xacbf91+_0x54c26c(0x2a3);return _0x173515[_0x54c26c(0x380)](_0x3d30ba)?_0x3d30ba:null;}return _0x173515[_0x54c26c(0x380)](_0xacbf91)?_0xacbf91:null;}function getExpectedSignalType(){const _0x5f28ff=_0xcdfa3;return isOTC?_0x5f28ff(0x3f5):_0x5f28ff(0x35f);}function stopProgressTimer(){progressTimer&&(clearInterval(progressTimer),progressTimer=null),stopProgressReset();}function reconcileSignalState(){const _0xa48e7b=_0xcdfa3;if(!pairSelect)return;const _0x20e9dd=getCurrentPair(),_0x16f888=localStorage['getItem'](ACTIVE_SIGNAL_KEY);let _0x313d27=![];if(_0x16f888)try{const _0x130d59=JSON['parse'](_0x16f888),_0x59de3d=Date['now']()-_0x130d59[_0xa48e7b(0x3c6)],_0x234688=normalizePairKey(_0x130d59[_0xa48e7b(0x1f8)])===_0x20e9dd,_0x19ae9e=_0x130d59[_0xa48e7b(0x28a)]===getExpectedSignalType();_0x234688&&_0x19ae9e&&_0x59de3d<_0x130d59[_0xa48e7b(0x2bb)]?(restoreActiveSignal({'fromPairSwitch':!![]}),_0x313d27=!![]):(isSignalActive=![],stopProgressTimer(),setProgressPct(0x0),syncDirectionStyles(),_0x59de3d>=_0x130d59['duration']&&clearSignalState());}catch{isSignalActive=![],stopProgressTimer(),setProgressPct(0x0),syncDirectionStyles();}else isSignalActive=![],stopProgressTimer(),setProgressPct(0x0),syncDirectionStyles();!_0x313d27&&(refreshSignalButton(),ensureCooldownTicker());}function updatePairOptions(){const _0x5e5bd1=_0xcdfa3;if(!pairSelect)return;const _0x325eae=isOTC?otcPairs:standardPairs,_0x1377ce=pairSelect[_0x5e5bd1(0x235)];pairSelect['innerHTML']='',_0x325eae[_0x5e5bd1(0x3cc)](_0x1eb13d=>{const _0x5dc382=_0x5e5bd1,_0x468c78=document[_0x5dc382(0x33f)]('option');_0x468c78[_0x5dc382(0x235)]=_0x1eb13d,_0x468c78[_0x5dc382(0x369)]=getPairDisplayLabel(_0x1eb13d),pairSelect[_0x5dc382(0x202)](_0x468c78);});const _0x6585f=findEquivalentPair(_0x1377ce,_0x325eae);if(_0x6585f)pairSelect[_0x5e5bd1(0x235)]=_0x6585f;else _0x325eae[_0x5e5bd1(0x380)](_0x1377ce)?pairSelect[_0x5e5bd1(0x235)]=_0x1377ce:pairSelect[_0x5e5bd1(0x24c)]=0x0;pairSelect['closest'](_0x5e5bd1(0x35b))?.[_0x5e5bd1(0x2eb)]('.dropdown-list')?.[_0x5e5bd1(0x3c7)](),updatePairTriggerDisplay(),renderPairModalList(),syncMarketUi();}function updateTfTriggerDisplay(){const _0x586b9c=_0xcdfa3;if(!timeframeSelect)return;const _0x124561=timeframeSelect[_0x586b9c(0x235)];if(tfTextDisplay)tfTextDisplay[_0x586b9c(0x369)]=_0x124561;if(photoTfTextDisplay)photoTfTextDisplay[_0x586b9c(0x369)]=_0x124561;}function renderTfModalList(){const _0x3288f0=_0xcdfa3;if(!tfList||!timeframeSelect)return;tfList[_0x3288f0(0x28e)]='',Array[_0x3288f0(0x3d1)](timeframeSelect['options'])[_0x3288f0(0x3cc)](_0x3289e3=>{const _0x31c80d=_0x3288f0,_0x4a35c3=document[_0x31c80d(0x33f)]('div');_0x4a35c3['className']=_0x31c80d(0x270),_0x4a35c3['dataset'][_0x31c80d(0x235)]=_0x3289e3[_0x31c80d(0x235)],_0x4a35c3['innerHTML']=_0x31c80d(0x2a4)+_0x3289e3[_0x31c80d(0x385)]+_0x31c80d(0x365);if(_0x3289e3[_0x31c80d(0x235)]===timeframeSelect[_0x31c80d(0x235)])_0x4a35c3[_0x31c80d(0x204)][_0x31c80d(0x3ec)]('selected');_0x4a35c3[_0x31c80d(0x263)](_0x31c80d(0x22a),()=>selectTimeframe(_0x3289e3[_0x31c80d(0x235)])),tfList[_0x31c80d(0x202)](_0x4a35c3);});}function selectTimeframe(_0x14165c){const _0x443c27=_0xcdfa3;if(!timeframeSelect)return;timeframeSelect[_0x443c27(0x235)]=_0x14165c,updateTfTriggerDisplay(),tfList?.[_0x443c27(0x40e)]('.tf-item')[_0x443c27(0x3cc)](_0x49d801=>{const _0x23ffed=_0x443c27;_0x49d801[_0x23ffed(0x204)][_0x23ffed(0x309)](_0x23ffed(0x291),_0x49d801['dataset'][_0x23ffed(0x235)]===_0x14165c);}),hideTfModal(),timeframeSelect['dispatchEvent'](new Event(_0x443c27(0x44e)));}function showTfModal(){const _0x5701cb=_0xcdfa3;if(!tfModal)return;hidePairModal(),renderTfModalList(),tfModal[_0x5701cb(0x204)]['remove']('hidden'),document[_0x5701cb(0x2b1)][_0x5701cb(0x253)][_0x5701cb(0x2b4)]=_0x5701cb(0x43e);}function hideTfModal(){const _0x2a215e=_0xcdfa3;if(!tfModal)return;tfModal[_0x2a215e(0x204)][_0x2a215e(0x3ec)](_0x2a215e(0x43e)),document[_0x2a215e(0x2b1)][_0x2a215e(0x253)]['overflow']='';}function updateTimeframeOptions(){const _0x49760a=_0xcdfa3;if(!timeframeSelect)return;const _0x26e493=isOTC?otcTimeframes:standardTimeframes,_0x23a155=timeframeSelect['value'];timeframeSelect[_0x49760a(0x28e)]='',_0x26e493[_0x49760a(0x3cc)](_0x5ef0ac=>{const _0x6494b1=_0x49760a,_0x35be38=document[_0x6494b1(0x33f)](_0x6494b1(0x2ec));_0x35be38[_0x6494b1(0x235)]=_0x5ef0ac,_0x35be38['text']=_0x5ef0ac,timeframeSelect[_0x6494b1(0x202)](_0x35be38);}),_0x26e493[_0x49760a(0x380)](_0x23a155)?timeframeSelect[_0x49760a(0x235)]=_0x23a155:timeframeSelect[_0x49760a(0x24c)]=0x0,timeframeSelect[_0x49760a(0x406)](_0x49760a(0x212))?.[_0x49760a(0x2eb)](_0x49760a(0x3cb))?.[_0x49760a(0x3c7)](),updateTfTriggerDisplay(),renderTfModalList(),syncMarketUi(),refreshSignalButton();}function setMarketMode(_0x2e7f31,_0x5d4570={}){const _0xd09fb2=_0xcdfa3;isOTC=_0x2e7f31==='OTC',syncMarketToggleUi(),updatePairOptions(),updateTimeframeOptions(),dismissPhotoSignalCardIfPairMismatch(),!_0x5d4570[_0xd09fb2(0x21c)]&&reconcileSignalState(),refreshPhotoPageUi(),refreshSignalButton();}if(btnRegular)btnRegular[_0xcdfa3(0x263)]('click',()=>setMarketMode('Regular'));if(btnOTC)btnOTC[_0xcdfa3(0x263)](_0xcdfa3(0x22a),()=>setMarketMode(_0xcdfa3(0x3f5)));if(photoBtnRegular)photoBtnRegular['addEventListener'](_0xcdfa3(0x22a),()=>setMarketMode('Regular'));if(photoBtnOTC)photoBtnOTC['addEventListener']('click',()=>setMarketMode(_0xcdfa3(0x3f5)));if(photoPairSelectTrigger)photoPairSelectTrigger[_0xcdfa3(0x263)]('click',showPairModal);if(photoTfSelectTrigger)photoTfSelectTrigger[_0xcdfa3(0x263)](_0xcdfa3(0x22a),showTfModal);function clearSignalCardPreview(){const _0x1a99c4=_0xcdfa3;if(metaAcc)metaAcc['textContent']=_0x1a99c4(0x29c);metaDir&&(metaDir['textContent']='--',metaDir[_0x1a99c4(0x204)][_0x1a99c4(0x3c7)]('up','down'),syncDirChip());if(metaUntil)metaUntil[_0x1a99c4(0x369)]=_0x1a99c4(0x2e7);statusText&&!isSignalActive&&getCooldownRemainingMs()<=0x0&&(statusText[_0x1a99c4(0x369)]=tKey('waiting_status'));setProgressPct(0x0);resultStamp&&(resultStamp[_0x1a99c4(0x369)]='',resultStamp['classList']['add'](_0x1a99c4(0x43e)),resultStamp[_0x1a99c4(0x204)][_0x1a99c4(0x3c7)](_0x1a99c4(0x241),'lose',_0x1a99c4(0x1e9)));const _0x17b2ed=document[_0x1a99c4(0x2b7)](_0x1a99c4(0x23a));_0x17b2ed&&_0x17b2ed[_0x1a99c4(0x204)]['remove'](_0x1a99c4(0x1e6),_0x1a99c4(0x214),_0x1a99c4(0x3ab),_0x1a99c4(0x40b),_0x1a99c4(0x2cc)),clearDirectionBorderClasses();}function syncMarketUi(_0x15ab37={}){const _0x3f14d5=_0xcdfa3,{clearSignalPreview:clearSignalPreview=![]}=_0x15ab37;if(!pairSelect||!timeframeSelect)return;updatePairTriggerDisplay(),updateTfTriggerDisplay();const _0x19d78e=getPairDisplayLabel(pairSelect[_0x3f14d5(0x235)]);if(cardPairFlags)cardPairFlags[_0x3f14d5(0x28e)]=flagsForPair(pairSelect['value']);if(metaPair)metaPair[_0x3f14d5(0x369)]=_0x19d78e;if(metaTf)metaTf[_0x3f14d5(0x369)]=timeframeSelect[_0x3f14d5(0x235)];clearSignalPreview&&!isSignalActive&&clearSignalCardPreview();}function onPairChange(){if(!pairSelect)return;dismissPhotoSignalCardIfPairMismatch(),syncMarketUi({'clearSignalPreview':!![]}),reconcileSignalState();}function onTimeframeChange(){if(!pairSelect||!timeframeSelect)return;updateTfTriggerDisplay();if(metaTf)metaTf['textContent']=timeframeSelect['value'];refreshSignalButton();}function updateIframe(){syncMarketUi({'clearSignalPreview':!![]}),refreshSignalButton();}function getSecondsFromTf(_0x4a5a48){const _0x3bf76d=_0xcdfa3;if(_0x4a5a48[_0x3bf76d(0x310)]('s'))return parseInt(_0x4a5a48);else{if(_0x4a5a48[_0x3bf76d(0x310)]('m'))return parseInt(_0x4a5a48)*0x3c;}return 0x3c;}const ACTIVE_SIGNAL_KEY=_0xcdfa3(0x452),PHOTO_SIGNAL_SNAPSHOT_KEY=_0xcdfa3(0x34c),PHOTO_CARD_ANIM_MS=0x1e0,PHOTO_CARD_DISMISS_AFTER_END_MS=0x3e8;let photoSignalHideTimer=null,photoCardDismissTimer=null;function startSignalProgress(_0x52df31,_0x67b93d,_0x3cafe3,_0x5428e1='home'){const _0x54375a=_0xcdfa3;stopProgressTimer();const _0x1ad145=[];if((_0x5428e1===_0x54375a(0x1d0)||_0x5428e1===_0x54375a(0x29f))&&progressBar)_0x1ad145[_0x54375a(0x220)](progressBar);if((_0x5428e1==='all'||_0x5428e1===_0x54375a(0x20e))&&photoProgressBar)_0x1ad145[_0x54375a(0x220)](photoProgressBar);_0x1ad145[_0x54375a(0x3cc)](_0x65bc71=>{const _0x56a674=_0x54375a;_0x65bc71['classList'][_0x56a674(0x3ec)](_0x56a674(0x412)),_0x65bc71[_0x56a674(0x204)][_0x56a674(0x3c7)](_0x56a674(0x26f));}),setProgressPct(0x0,_0x5428e1),progressTimer=setInterval(()=>{const _0x2c1fbc=_0x54375a,_0x464a7f=Date[_0x2c1fbc(0x308)]()-_0x67b93d,_0x449acf=Math[_0x2c1fbc(0x3e3)](0x64,_0x464a7f/_0x52df31*0x64);setProgressPct(_0x449acf,_0x5428e1),_0x464a7f>=_0x52df31&&(clearInterval(progressTimer),progressTimer=null,setProgressPct(0x64,_0x5428e1),resetProgressSmooth(()=>{const _0xdb64d8=_0x2c1fbc;_0x1ad145[_0xdb64d8(0x3cc)](_0x30390e=>_0x30390e[_0xdb64d8(0x204)][_0xdb64d8(0x3c7)]('is-filling'));if(_0x3cafe3)_0x3cafe3();},_0x5428e1));},0x32);}function saveSignalState(_0x368129){const _0x2b3b4b=_0xcdfa3;localStorage[_0x2b3b4b(0x3db)](ACTIVE_SIGNAL_KEY,JSON['stringify'](_0x368129));}function clearSignalState(){const _0x91041b=_0xcdfa3;localStorage[_0x91041b(0x203)](ACTIVE_SIGNAL_KEY);}function signalGenDelay(_0x21d388){return new Promise(_0x4b1b6f=>setTimeout(_0x4b1b6f,_0x21d388));}function getSignalStepPercent(_0x10ed0c){const _0x221d08=_0xcdfa3,_0x4e94f8=Math[_0x221d08(0x32c)](0x0,Math[_0x221d08(0x3e3)](_0x10ed0c,SIGNAL_STEP_KEYS[_0x221d08(0x3be)]-0x1));return Math[_0x221d08(0x299)]((_0x4e94f8+0x1)/SIGNAL_STEP_KEYS[_0x221d08(0x3be)]*0x64);}function getSignalStepDuration(_0x34a229){if(_0x34a229===0x0)return SIGNAL_TEXT_ENTER_MS+SIGNAL_STEP_HOLD_MS;return SIGNAL_TEXT_EXIT_MS+SIGNAL_TEXT_ENTER_MS+SIGNAL_STEP_HOLD_MS;}function getCurrentSignalProgress(){const _0x389961=_0xcdfa3;if(!spinnerPctText)return 0x0;const _0x4ae677=parseInt(spinnerPctText[_0x389961(0x369)],0xa);return Number[_0x389961(0x281)](_0x4ae677)?_0x4ae677:0x0;}function cancelSignalProgressAnim(){signalProgressAnimFrame&&(cancelAnimationFrame(signalProgressAnimFrame),signalProgressAnimFrame=null);}function animateSignalProgressTo(_0x47f5f5,_0x566224){const _0x383827=_0xcdfa3;cancelSignalProgressAnim();const _0x1af69f=getCurrentSignalProgress(),_0x5a3c3e=performance[_0x383827(0x308)]();return new Promise(_0x1f187e=>{const _0x11a513=_0x3705db=>{const _0x4762ec=_0x5c14,_0x193cfd=Math[_0x4762ec(0x3e3)](0x1,(_0x3705db-_0x5a3c3e)/_0x566224),_0x4ad4e6=Math[_0x4762ec(0x299)](_0x1af69f+(_0x47f5f5-_0x1af69f)*_0x193cfd);setSignalProgress(Math[_0x4762ec(0x3e3)](0x63,_0x4ad4e6)),_0x193cfd<0x1?signalProgressAnimFrame=requestAnimationFrame(_0x11a513):(signalProgressAnimFrame=null,_0x1f187e());};signalProgressAnimFrame=requestAnimationFrame(_0x11a513);});}function _0x51ef(){const _0x215e5d=['photoMarketToggle','json','ASOSIY','Forex','dropdown-list','photo_analyze_soon','#homeView\x20.signal-pair','pairLabel','/profile','active','Remove\x20photo','length','CADJPY\x20OTC','cooldown','Venda','setProperty','photoView','fromCharCode','clone','startTime','remove','SIGNAL\x20QIDIRILMOQDA...','photoDirBlock','SEARCHING\x20SIGNAL...','.dropdown-list','forEach','getPropertyValue','is-up','is-market-closed','Timeframe','from','Compra','image/heic','خسارة','Signal\x20Unavailable','detail','set','today','node-in-1','Подождите','setItem','pair-item__badge--forex','Waiting...','floor','slice','इंडिकेटर\x20गणना','Tushunarli','.ai-loader__node.is-active','min','محايد','GBPUSD','photoBtnRegular','🇯🇵','GBPCHF\x20OTC','प्रतीक्षा...','/access/check','Выберите\x20язык','add','Сигнал\x20табылды','дейін','pair_badge_forex','Telegram\x20init\x20data\x20required','Sotib\x20olish','حتى','PROFILE','Request\x20failed','OTC','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</article>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','hide','Signal\x20ready','PERFIL','Empty\x20API\x20response','userSubtitle','ПРОФИЛЬ','ПОЛУЧИТЬ\x20СИГНАЛ','closeLangBtn','.select-trigger','Invalid\x20API\x20response','ar-SA','keydown','График\x20недоступен','tfModal','507WpxqYN','closest','dataset','startsWith','requestFullscreen','timeStr','dir-up','requireApiResult','--progress','querySelectorAll','photoPreviewSlot','تم\x20العثور\x20على\x20إشارة','msg','is-filling','key','random','التحسين','resultIconUse','hi-IN','userAvatar','.alert-title','Active','status','210YtuThr','size','GET\x20SIGNAL','Accuracy','Откройте\x20приложение\x20через\x20официального\x20бота\x20AWG\x20AI.\x20Прямая\x20ссылка\x20в\x20браузере\x20и\x20другие\x20боты\x20не\x20поддерживаются.','pending','ready','ID\x20','username','Таймфрейм','setUTCDate','pairTextDisplay','Күту...','100%','احصل\x20على\x20إشارة','short','WIN','समय\x20सीमा','data','strokeDashoffset','progressTrack','Ожидание...','.alert-desc','AUDCAD','stringify','BUY','Активна','catch','removeEventListener','closePairBtn','photoDirIconUse','is-active','headers','files','hidden','Рынок\x20Forex\x20закрыт','ПОИСК\x20СИГНАЛА...','Direção','Oldingi\x20signal\x20hali\x20faol\x20bo\x27lganligi\x20sababli\x20hozir\x20yangi\x20signal\x20ololmaysiz.\x20Iltimos,\x20taymfrey\x20tugashini\x20kuting.','alert_desc','App\x20access\x20denied','undefined','संकेत\x20मिला','OBTER\x20SINAL','message','GBPCAD\x20OTC','Chart\x20is\x20not\x20available\x20for\x20OTC\x20pairs','ru-RU','Сигнал\x20недоступен','Анализ\x20по\x20фото','change','width','2-digit','Выбрать\x20язык','trade_ai_active_signal','График\x20недоступен\x20для\x20OTC\x20пар','pairSelectTrigger','.filter-tab','संकेत\x20प्राप्त\x20करें','trim','metaUntil','Нарық\x20талдауы','Direction','stopPropagation','Sinal\x20encontrado','winCount','.svg','show','spinnerRingFill','Got\x20it','खरीदें','getAttribute','#icon-up','historyList','.ai-loader__node','img/flags','Дәлдік','Новый\x20сигнал\x20будет\x20доступен\x20через','closeTfBtn','win_rate','history_empty','all','photoStatusText','accessGate','Подключение\x20к\x20серверам','deposit_required_desc','SELL','aiLoader','CADCHF\x20OTC','application/json','Failed\x20to\x20restore\x20signal','origin','visibilitychange','LIVE\x20CHART','link-3','PROFIL','الإطار\x20الزمني','buy','replace','सिग्नल\x20तैयार','SINAL','alert_title','X-Telegram-Init-Data','win-glow','is-down','الاتجاه','neutral','بيع','link-4','USDCHF','جاري\x20البحث\x20عن\x20إشارة...','Загрузить','pt-BR','photoMainCard','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<article\x20class=\x22history-card\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22hc-top\x22>','EURUSD\x20OTC','Вы\x20не\x20можете\x20получить\x20сигнал\x20сейчас,\x20так\x20как\x20предыдущий\x20сигнал\x20еще\x20активен.\x20Пожалуйста,\x20дождитесь\x20окончания\x20таймфрейма.','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','profileRoot','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22pair-item__side\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22pair-item__badge\x20','Сделайте\x20или\x20загрузите\x20скриншот\x20графика\x20—\x20дальше\x20по\x20нему\x20будет\x20строиться\x20анализ.','pair','Cálculo\x20de\x20indicadores','otc-active','history_active','Juftlik','removeAttribute','getUTCDay','photoUploadBtn','https://ui-avatars.com/api/?name=','history_loading','appendChild','removeItem','classList','BackButton','Jami\x20signallar','Точность','tfSelectTrigger','Удалить\x20фото','getUTCFullYear','app-locked','Ошибка','30s','photo','🇨🇦','Market\x20analysis','metaTf','.custom-select','🇳🇿','lose-glow','closeAlertBtn','Всего\x20сигналов','.dir-timer','.pair-item','untilText','depositGateDesc','chipAcc','skipReconcile','photoBtnOTC','src','currency-icon\x20quote','push','You\x20cannot\x20get\x20a\x20new\x20signal\x20right\x20now\x20because\x20the\x20previous\x20signal\x20is\x20still\x20active.\x20Please\x20wait\x20for\x20the\x20timeframe\x20to\x20end.','pairSearchInput','test','pair_badge_otc','Optimallashtirish','POST','\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','Please\x20choose\x20an\x20image\x20(JPG,\x20PNG,\x20WebP)','object','click','Signal\x20data\x20missing\x20in\x20API\x20response','node-core','expand','Chart\x20analysis','WebApp','Қате','then','Месяц','disabled','15s','value','photoChipAcc','lose','Opens','भाषा\x20चुनें','mainCard','photoDirIcon','profile','Forex\x20is\x20closed\x20on\x20weekends.\x20Signals\x20will\x20be\x20available\x20when\x20trading\x20resumes.','Valyuta\x20juftligi','photoMetaDir','signal_step_ready','win','संकेत\x20खोज\x20रहा\x20है...','🇬🇧','GBPCHF','Сатып\x20алу','is-complete','toLocaleTimeString','Serverlarga\x20ulanish','initData','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','GRÁFICO\x20AO\x20VIVO','selectedIndex','Wait','.bottom-nav\x20.nav-item','toFixed','<div\x20class=\x22profile-empty\x22>','dirIcon','JONLI\x20GRAFIK','style','link-2','offsetWidth','signal_step_connect','UTC','4sheAOb','बाज़ार\x20विश्लेषण','target','<div\x20class=\x22profile-guest-hint\x22>','contains','Prazo','91157QQkrRo','.lang-item','langModal','is-visible','Select\x20Language','addEventListener','keys','USDJPY\x20OTC','isArray','string','winRate','https://hatscripts.github.io/circle-flags/flags','photoClearBtn','Оптимизация','image/webp','reject','dropdown-item','is-resetting','tf-item','/signal/check?signal_id=','🇺🇸','NEUTRAL','\x20·\x20','signal_step_analysis','ЖИВОЙ\x20ГРАФИК','मुद्रा\x20जोड़ी','alertModal','profileName','OTC\x20juftliklari\x20uchun\x20grafik\x20mavjud\x20emas','trade_ai_lang','Тілді\x20таңдаңыз','Kuting','chipTf','Conectando\x20aos\x20servidores','waiting_status','isFinite','tfTextDisplay','cardPairFlags','input','Sell','.ai-loader__link','user','ГЛАВНАЯ','#icon-down','type','Cooldown','spinnerMetaText','timestamp','innerHTML','getUTCDate','image/jpeg','selected','profile_guest','Выберите\x20пару','/history/user?limit=50&period=','photoAnalyzeBtnLabel','spinnerBarFill','result','pairModal','round','toLocaleString','/stats/user','--%','Bugun','Week','home','resultStamp','В\x20выходные\x20рынок\x20Forex\x20не\x20торгуется.\x20Сигнал\x20будет\x20доступен\x20после\x20открытия.','select','\x20OTC','<span\x20class=\x22tf-item__label\x22>','get','Take\x20photo','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22hc-dir\x20','first_name','242286MOHUeW','last_name','photoTfSelectTrigger','gacha','is-signal','photoProgressBar','🇪🇺','spinnerRingGlow','body','Telegram','Загрузка…','overflow','transform','price','getElementById','currentLangFlag','PHOTO','parse','duration','Failed\x20to\x20check\x20result','СИГНАЛ\x20АЛУ','فوز','220124KJZoyK','spinner','Bozor\x20tahlili','homeView','spinnerStepText','signal_step_indicators','EURCHF\x20OTC','dispatchEvent','Анализ\x20рынка','Кулдаун','photoTfTextDisplay','Покупка','जीत','dir-down','metaDir','confidence','depositGate','strokeDasharray','photoCaptureBtn','dirIconUse','Расчёт\x20индикаторов','tfList','152UxeMLc','btnOTC','filter','div','CADCHF','display','/api','الملف\x20الشخصي','BUSCANDO\x20SINAL...','metaAcc','त्रुटि','Поиск\x20пары...','getUTCMonth','SAVDO\x20TARIXI','Par','Indikatorlar\x20hisobi','data-lang','انتظار...','--:--','generateSignal\x20failed','СИГНАЛ\x20ІЗДЕУ...','profileAvatar','querySelector','option','market_closed_btn','photoPairFlagDisplay','AUDUSD','.photo-signal-pair','data-view','alert_cooldown_desc','signal','СИГНАЛ','1932365HHyPbm','resolve','get_signal_btn','Tilni\x20tanlang','warn','join','focus','158607ymcgHf','Select\x20pair','Индикаторлар\x20есебі','until','propertyName','حساب\x20المؤشرات','getItem','Фото\x20не\x20выбрано','photoProgressLabel','down','SIGNAL','transitionend','now','toggle','تحليل\x20السوق','Par\x20de\x20moedas','Signal\x20animation\x20failed','currency-icon\x20base','photoPairSelectTrigger','&background=060912&color=93bbfd&size=128','endsWith','All','Kutish','Access\x20closed','Grafik\x20mavjud\x20emas','photoResultStamp','photoCameraInput','</div>','Pair','Сигнал\x20найден','photoPreview','Aniqlik','ФОТО','<img\x20src=\x22','href','node-out-2','span','Taymfrey','الدقة','Доступ\x20закрыт','node-in-2','metaTime','Forex\x20market\x20is\x20closed','trade_ai_pair_cooldowns','Yo\x27nalish','GBPUSD\x20OTC','Файл\x20слишком\x20большой\x20(макс.\x2010\x20МБ)','Сату','max','Today','dirBlock','setAttribute','Next\x20signal\x20available\x20in','@username','langBtn','photoSignalWrap','deposit_required_title','Take\x20or\x20upload\x20a\x20chart\x20screenshot\x20—\x20analysis\x20will\x20be\x20based\x20on\x20this\x20image.','Search\x20pair...','Upload','USDCAD','is-exit','photoChipTf','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22hc-pair-name\x22>','location','node-out-1','photoMetaTf','createElement','image/','.ai-loader__link.is-active','119bAASsZ','Calculating\x20indicators','photo_analyze_btn','is_premium','Open\x20the\x20app\x20in\x20Telegram\x20to\x20see\x20your\x20profile\x20and\x20history','1PIpRuP','No\x20trades\x20for\x20this\x20period','photoMetaUntil','हार','USDCAD\x20OTC','trade_ai_photo_signal_snapshot','photo_error_type','Валютная\x20пара','className','getSignalBtn','Buy','totalSignals','até','اختر\x20اللغة','अनुकूलन','126174BorXHF','alt','has','Анализировать','progressLabel','.pair-picker,\x20.custom-select','ТІКЕЛЕЙ\x20ГРАФИК','signal_step_optimization','Анализ\x20по\x20фото\x20скоро\x20будет\x20доступен','REGULAR','photoProgressTrack','Неделя','Signal\x20topildi','GBPJPY\x20OTC','Win\x20Rate','</span>','photoPreviewImg','getUTCHours','सर्वर\x20से\x20कनेक्ट\x20हो\x20रहा\x20है','textContent','Продажа','Keyingi\x20signal','Connecting\x20to\x20servers','link-1','.dropdown-item','allowed','pair-item__badge--otc','aria-valuenow','Regular','options','image/png','photoAnalyzeBtn','market_closed_status','market_closed_alert','timeframe','language_code','AUDCAD\x20OTC','[data-i18n]','open','Xato','الإشارة\x20جاهزة','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22pair-item__main\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','includes','SIGNAL\x20OLISH','[data-i18n-placeholder]','photoPreviewEmpty','pairFlagDisplay','text','Currency\x20Pair','visible','fromPairSwitch','error','Сигнал\x20дайын','AUDJPY','Signal\x20mavjud\x20emas','Жұп','Сегодня','15m','toString','node-in-3','Aguardando...','59316ygGrFG','data-i18n','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','photoMetaPair','\x27\x22>','data-i18n-placeholder','EURUSD','signal_found','LOSE','onerror','spinnerOverlay','none','TRADING\x20HISTORY','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22pair-icons\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22hc-status\x20','search','isNaN','दिशा','Внесите\x20депозит\x20в\x20боте,\x20чтобы\x20получить\x20доступ\x20к\x20сигналам.','Все','toLowerCase','initDataUnsafe','is-closing','إشارة','neutral-glow','الرئيسية','तटस्थ','Telegram\x20only','सटीकता','market_closed','EURGBP\x20OTC','is-forex-weekend'];_0x51ef=function(){return _0x215e5d;};return _0x51ef();}function applySignalRingStroke(_0x42662b){const _0x25572f=_0xcdfa3,_0x275c8a=String(_0x42662b);if(spinnerRingFill)spinnerRingFill[_0x25572f(0x253)][_0x25572f(0x42f)]=_0x275c8a;if(spinnerRingGlow)spinnerRingGlow[_0x25572f(0x253)][_0x25572f(0x42f)]=_0x275c8a;}function initSignalRingStroke(){const _0x51e7c7=_0xcdfa3,_0x2b8944=String(SIGNAL_RING_CIRCUMFERENCE),_0x46a2b8=String(SIGNAL_RING_CIRCUMFERENCE);spinnerRingFill&&(spinnerRingFill['style'][_0x51e7c7(0x2d0)]=_0x2b8944,spinnerRingFill[_0x51e7c7(0x253)][_0x51e7c7(0x42f)]=_0x46a2b8),spinnerRingGlow&&(spinnerRingGlow[_0x51e7c7(0x253)]['strokeDasharray']=_0x2b8944,spinnerRingGlow[_0x51e7c7(0x253)][_0x51e7c7(0x42f)]=_0x46a2b8);}function updateSignalRingProgress(_0x2dc400){if(!spinnerRingFill&&!spinnerRingGlow)return;const _0x1b2e9f=Math['max'](0x0,Math['min'](0x64,_0x2dc400)),_0x3e47df=SIGNAL_RING_CIRCUMFERENCE*(0x1-_0x1b2e9f/0x64);applySignalRingStroke(_0x3e47df);}function setSignalVisualStep(_0x1675ad){const _0x1fe5ee=_0xcdfa3,_0x50f874=Math['max'](0x0,Math['min'](_0x1675ad,SIGNAL_STEP_KEYS[_0x1fe5ee(0x3be)]-0x1));if(aiLoader)aiLoader[_0x1fe5ee(0x407)]['step']=String(_0x50f874);const _0x1e758c=new Set(SIGNAL_STEP_NODES[_0x50f874]||[]),_0x5c6b6c=new Set(SIGNAL_STEP_LINKS[_0x50f874]||[]);aiLoader?.[_0x1fe5ee(0x40e)](_0x1fe5ee(0x1c9))[_0x1fe5ee(0x3cc)](_0x34182e=>{const _0x59c224=_0x1fe5ee;_0x34182e[_0x59c224(0x204)][_0x59c224(0x309)]('is-active',_0x1e758c[_0x59c224(0x358)](_0x34182e['id']));}),aiLoader?.[_0x1fe5ee(0x40e)](_0x1fe5ee(0x286))['forEach'](_0x42a6a1=>{const _0x2734c2=_0x1fe5ee;_0x42a6a1['classList'][_0x2734c2(0x309)](_0x2734c2(0x43b),_0x5c6b6c[_0x2734c2(0x358)](_0x42a6a1['id']));});}function setSignalProgress(_0x25eee8){const _0x482d67=_0xcdfa3,_0x48ac68=Math[_0x482d67(0x32c)](0x0,Math[_0x482d67(0x3e3)](0x64,Math[_0x482d67(0x299)](_0x25eee8)));if(spinnerBarFill)spinnerBarFill[_0x482d67(0x253)][_0x482d67(0x44f)]=_0x48ac68+'%';if(spinnerPctText)spinnerPctText[_0x482d67(0x369)]=_0x48ac68+'%';updateSignalRingProgress(_0x48ac68);}async function showSignalStepText(_0x3be1c5,{animate:animate=!![]}={}){const _0x436d06=_0xcdfa3,_0x19961e=Math[_0x436d06(0x32c)](0x0,Math[_0x436d06(0x3e3)](_0x3be1c5,SIGNAL_STEP_KEYS[_0x436d06(0x3be)]-0x1));signalCurrentStepIndex=_0x19961e,setSignalVisualStep(_0x19961e);const _0x19008d=tKey(SIGNAL_STEP_KEYS[_0x19961e]);if(!spinnerStepText)return;if(!animate){spinnerStepText[_0x436d06(0x369)]=_0x19008d,spinnerStepText[_0x436d06(0x204)][_0x436d06(0x3c7)](_0x436d06(0x339)),spinnerStepText[_0x436d06(0x204)][_0x436d06(0x3ec)](_0x436d06(0x261));return;}spinnerStepText['classList'][_0x436d06(0x3c7)](_0x436d06(0x261)),spinnerStepText['classList'][_0x436d06(0x3ec)]('is-exit'),await signalGenDelay(SIGNAL_TEXT_EXIT_MS),spinnerStepText['textContent']=_0x19008d,spinnerStepText[_0x436d06(0x204)][_0x436d06(0x3c7)]('is-exit'),void spinnerStepText[_0x436d06(0x255)],spinnerStepText[_0x436d06(0x204)][_0x436d06(0x3ec)](_0x436d06(0x261)),await signalGenDelay(SIGNAL_TEXT_ENTER_MS);}function setSignalStep(_0x872977,_0x55f161={}){const _0xdde714=_0xcdfa3;showSignalStepText(_0x872977,{'animate':_0x55f161['animate']!==![]})[_0xdde714(0x437)](()=>{});}function formatSpinnerMeta(_0x43b4a0,_0x1a0a74){const _0x362cd5=_0xcdfa3,_0x42f80f=String(_0x43b4a0||'')[_0x362cd5(0x1ba)](),_0x376f15=String(_0x1a0a74||'')['trim']();if(_0x42f80f&&_0x376f15)return _0x42f80f+_0x362cd5(0x274)+_0x376f15;return _0x42f80f||_0x376f15;}function setSpinnerMeta(_0x2ab8f7,_0x214a27){const _0x252286=_0xcdfa3;if(!spinnerMetaText)return;spinnerMetaText[_0x252286(0x369)]=formatSpinnerMeta(_0x2ab8f7,_0x214a27);}function showSignalStepsOverlay(_0xf7b05d={}){const _0x1847b3=_0xcdfa3;if(!spinnerOverlay)return;signalCurrentStepIndex=0x0,spinnerOverlay['classList'][_0x1847b3(0x3c7)](_0x1847b3(0x43e),_0x1847b3(0x3a9),_0x1847b3(0x246)),aiLoader?.[_0x1847b3(0x204)][_0x1847b3(0x3c7)](_0x1847b3(0x246));const _0x2b22ba=_0xf7b05d[_0x1847b3(0x3ba)]??(pairSelect?getPairDisplayLabel(pairSelect[_0x1847b3(0x235)]):''),_0x4f390a=_0xf7b05d['tf']??timeframeSelect?.[_0x1847b3(0x235)]??'';setSpinnerMeta(_0x2b22ba,_0x4f390a),setSignalProgress(0x0),setSignalVisualStep(0x0),spinnerStepText&&(spinnerStepText[_0x1847b3(0x204)]['remove'](_0x1847b3(0x261),_0x1847b3(0x339)),spinnerStepText[_0x1847b3(0x369)]=''),initSignalRingStroke(),document['body'][_0x1847b3(0x253)]['overflow']=_0x1847b3(0x43e);}async function playSignalCompleteFinale(){const _0x2bc04c=_0xcdfa3;setSignalVisualStep(SIGNAL_STEP_KEYS['length']-0x1),setSignalProgress(0x64),aiLoader?.[_0x2bc04c(0x204)][_0x2bc04c(0x3ec)]('is-complete'),spinnerOverlay?.[_0x2bc04c(0x204)][_0x2bc04c(0x3ec)](_0x2bc04c(0x246)),await signalGenDelay(0x2ee);}async function hideSignalStepsOverlay(){const _0x249430=_0xcdfa3;cancelSignalProgressAnim();if(!spinnerOverlay)return;spinnerOverlay[_0x249430(0x204)][_0x249430(0x3ec)]('is-closing'),aiLoader?.[_0x249430(0x204)][_0x249430(0x3c7)](_0x249430(0x246)),await signalGenDelay(0x1e0),spinnerOverlay[_0x249430(0x204)][_0x249430(0x3ec)]('hidden'),spinnerOverlay[_0x249430(0x204)][_0x249430(0x3c7)](_0x249430(0x3a9),'is-complete'),aiLoader?.[_0x249430(0x1fd)]('data-step'),aiLoader?.[_0x249430(0x40e)](_0x249430(0x3e2))[_0x249430(0x3cc)](_0x5cfa35=>_0x5cfa35[_0x249430(0x204)][_0x249430(0x3c7)](_0x249430(0x43b))),aiLoader?.[_0x249430(0x40e)](_0x249430(0x341))[_0x249430(0x3cc)](_0x26a914=>_0x26a914[_0x249430(0x204)]['remove']('is-active'));if(spinnerMetaText)spinnerMetaText['textContent']='';document[_0x249430(0x2b1)][_0x249430(0x253)][_0x249430(0x2b4)]='';}async function playSignalGenerationSequence(){for(let _0x4c079b=0x0;_0x4c079b<SIGNAL_STEP_KEYS['length'];_0x4c079b++){const _0x34f75f=getSignalStepDuration(_0x4c079b),_0xeb0eea=getSignalStepPercent(_0x4c079b),_0x1c4a6d=animateSignalProgressTo(_0xeb0eea,_0x34f75f);_0x4c079b===0x0?(await showSignalStepText(0x0,{'animate':![]}),await signalGenDelay(SIGNAL_TEXT_ENTER_MS),await signalGenDelay(SIGNAL_STEP_HOLD_MS)):(await showSignalStepText(_0x4c079b,{'animate':!![]}),await signalGenDelay(SIGNAL_STEP_HOLD_MS)),await _0x1c4a6d;}}async function runSignalGeneration(_0x1d993f,_0x15bf0a={}){const _0x501da4=_0xcdfa3;showSignalStepsOverlay(_0x15bf0a);let _0x56dd95=null,_0x3fe3a6=null;const _0x5a546e=Promise[_0x501da4(0x2f6)]()[_0x501da4(0x231)](_0x1d993f)['then'](_0x3c3494=>{_0x56dd95=_0x3c3494;})['catch'](_0x4e49c1=>{_0x3fe3a6=_0x4e49c1;});try{await Promise['all']([playSignalGenerationSequence()[_0x501da4(0x437)](_0x229ea9=>{const _0x305406=_0x501da4;console[_0x305406(0x2f9)](_0x305406(0x30c),_0x229ea9);}),_0x5a546e]),await playSignalCompleteFinale();}finally{await hideSignalStepsOverlay();}if(_0x3fe3a6)throw _0x3fe3a6;if(_0x15bf0a[_0x501da4(0x40c)]!==![]&&_0x56dd95==null)throw new Error(_0x501da4(0x3fa));return _0x56dd95;}async function fetchForexSignal(_0x38ff3c,_0xb30af8){const _0x287357=_0xcdfa3,_0x4fac5c=new URLSearchParams({'pair':_0x38ff3c,'tf':_0xb30af8}),_0x2e0942=await apiFetch('/run?'+_0x4fac5c[_0x287357(0x390)](),{'method':_0x287357(0x226)});let _0x4324c6=null;try{_0x4324c6=await _0x2e0942[_0x287357(0x3b4)]();}catch{throw new Error(_0x287357(0x400));}if(!_0x2e0942['ok']){const _0x2d97e8=_0x4324c6?.[_0x287357(0x3d6)];throw new Error(typeof _0x2d97e8===_0x287357(0x267)?_0x2d97e8:Array[_0x287357(0x266)](_0x2d97e8)?_0x2d97e8[0x0]?.[_0x287357(0x411)]:_0x287357(0x3f4));}if(!_0x4324c6?.[_0x287357(0x42e)]?.['signal'])throw new Error(_0x287357(0x22b));return _0x4324c6['data'];}async function generateSignal(){const _0x4343b6=_0xcdfa3;if(!appAccessGranted){evaluateAppAccess();return;}if(!signalAccessGranted){await verifySignalAccess();if(!signalAccessGranted)return;}const _0x418605=pairSelect[_0x4343b6(0x235)],_0x530844=timeframeSelect[_0x4343b6(0x235)];if(isForexModeClosed()){showCustomAlert('market_closed');return;}if(isSignalActive||getCooldownRemainingMs(_0x418605)>0x0){showCustomAlert(isSignalActive?'active':_0x4343b6(0x3c0));return;}isSignalActive=!![],refreshSignalButton();const _0x26055d=pairSelect?getPairDisplayLabel(_0x418605):_0x418605;if(pairFlags)pairFlags[_0x4343b6(0x369)]='';if(cardPairFlags)cardPairFlags[_0x4343b6(0x369)]='';if(metaPair)metaPair[_0x4343b6(0x369)]='';if(metaTf)metaTf[_0x4343b6(0x369)]='';if(metaTime)metaTime['textContent']='';if(metaAcc)metaAcc[_0x4343b6(0x369)]='';if(metaDir)metaDir[_0x4343b6(0x369)]='';if(metaUntil)metaUntil[_0x4343b6(0x369)]='';setProgressPct(0x0);if(progressLabel)progressLabel[_0x4343b6(0x369)]='';resultStamp&&(resultStamp['textContent']='',resultStamp[_0x4343b6(0x204)]['add'](_0x4343b6(0x43e)),resultStamp[_0x4343b6(0x204)][_0x4343b6(0x3c7)]('win',_0x4343b6(0x237),_0x4343b6(0x1e9)));const _0x4fd6c5=document[_0x4343b6(0x2b7)](_0x4343b6(0x23a));_0x4fd6c5&&_0x4fd6c5[_0x4343b6(0x204)][_0x4343b6(0x3c7)](_0x4343b6(0x1e6),_0x4343b6(0x214),'neutral-glow',_0x4343b6(0x40b),_0x4343b6(0x2cc));clearDirectionBorderClasses('all');if(isOTC){try{await runSignalGeneration(()=>Promise[_0x4343b6(0x2f6)](),{'pairLabel':_0x26055d,'tf':_0x530844,'requireApiResult':![]});const _0x155103=Math[_0x4343b6(0x414)]()>0.5?_0x4343b6(0x435):_0x4343b6(0x1d5),_0x587d8d=Math['floor'](Math[_0x4343b6(0x414)]()*(0x5c-0x4b+0x1))+0x4b;if(statusText)statusText[_0x4343b6(0x369)]=translations[currentLang][_0x4343b6(0x39a)];if(pairFlags)pairFlags[_0x4343b6(0x28e)]=flagsForPair(_0x418605);if(cardPairFlags)cardPairFlags[_0x4343b6(0x28e)]=flagsForPair(_0x418605);if(metaPair)metaPair[_0x4343b6(0x369)]=_0x26055d;if(metaTf)metaTf[_0x4343b6(0x369)]=_0x530844;if(metaTime)metaTime[_0x4343b6(0x369)]=new Date()[_0x4343b6(0x247)]([],{'hour':_0x4343b6(0x450),'minute':_0x4343b6(0x450)});if(metaAcc)metaAcc['textContent']=_0x587d8d+'%';metaDir&&(metaDir[_0x4343b6(0x369)]=_0x155103===_0x4343b6(0x435)?translations[currentLang]['up']:translations[currentLang][_0x4343b6(0x305)],metaDir[_0x4343b6(0x204)][_0x4343b6(0x3c7)]('up',_0x4343b6(0x305)),metaDir['classList'][_0x4343b6(0x3ec)](_0x155103===_0x4343b6(0x435)?'up':_0x4343b6(0x305)),syncDirChip());const _0x15253f=document[_0x4343b6(0x2b7)](_0x4343b6(0x251));_0x15253f&&(_0x15253f[_0x4343b6(0x204)][_0x4343b6(0x3c7)]('up',_0x4343b6(0x305)),_0x15253f[_0x4343b6(0x204)][_0x4343b6(0x3ec)](_0x155103===_0x4343b6(0x435)?'up':_0x4343b6(0x305)));if(dirIconUse)dirIconUse['setAttribute'](_0x4343b6(0x31e),_0x155103===_0x4343b6(0x435)?'#icon-up':_0x4343b6(0x289));const _0x2f399f=getSecondsFromTf(_0x530844),_0x15b7f8=Date[_0x4343b6(0x308)](),_0x3750f9=Math['floor'](_0x2f399f*0x3e8);setSignalCooldownUntil(_0x15b7f8+_0x3750f9,_0x418605);const _0x28939f=new Date(_0x15b7f8+_0x3750f9);if(metaUntil)metaUntil[_0x4343b6(0x369)]=_0x28939f[_0x4343b6(0x247)]([],{'hour':_0x4343b6(0x450),'minute':_0x4343b6(0x450)});saveSignalState({'type':_0x4343b6(0x3f5),'pair':_0x418605,'pairLabel':_0x26055d,'tf':_0x530844,'startTime':_0x15b7f8,'duration':_0x3750f9,'signal':_0x155103,'confidence':_0x587d8d,'price':null}),startSignalProgress(_0x3750f9,_0x15b7f8,()=>{isSignalActive=![],clearSignalState(),syncDirectionStyles(),refreshSignalButton();});}catch(_0x3bec6b){isSignalActive=![],clearSignalState(),clearSignalCooldown(_0x418605);if(statusText)statusText['textContent']=tKey(_0x4343b6(0x389));refreshSignalButton();}return;}try{const _0x718341=await runSignalGeneration(()=>fetchForexSignal(_0x418605,_0x530844),{'pairLabel':_0x26055d,'tf':_0x530844});_0x718341[_0x4343b6(0x2ce)]=Math[_0x4343b6(0x3de)](Math[_0x4343b6(0x414)]()*(0x5c-0x4b+0x1))+0x4b;const _0x3d36bc=getSecondsFromTf(_0x530844),_0x2f8ed1=Date['now'](),_0x45699c=Math[_0x4343b6(0x3de)](_0x3d36bc*0x3e8);setSignalCooldownUntil(_0x2f8ed1+_0x45699c,_0x418605);const _0x54a3fa=new Date(_0x2f8ed1+_0x45699c),_0x18635c=metaUntil?.[_0x4343b6(0x406)](_0x4343b6(0x217));if(_0x18635c)_0x18635c[_0x4343b6(0x204)][_0x4343b6(0x3c7)]('hidden');applySignalDisplay({'pair':_0x418605,'pairLabel':_0x26055d,'tf':_0x530844,'signal':_0x718341[_0x4343b6(0x2f3)],'confidence':_0x718341['confidence'],'untilText':_0x54a3fa[_0x4343b6(0x247)]([],{'hour':'2-digit','minute':'2-digit'}),'timeStr':new Date()['toLocaleTimeString']([],{'hour':'2-digit','minute':'2-digit'}),'updateHome':!![]}),saveSignalState({'type':_0x4343b6(0x35f),'pair':_0x418605,'pairLabel':_0x26055d,'tf':_0x530844,'startTime':_0x2f8ed1,'duration':_0x45699c,'signal':_0x718341[_0x4343b6(0x2f3)],'confidence':_0x718341[_0x4343b6(0x2ce)],'price':_0x718341[_0x4343b6(0x2b6)],'id':_0x718341['id']}),startSignalProgress(_0x45699c,_0x2f8ed1,async()=>{const _0x4833aa=_0x4343b6;isSignalActive=![],clearSignalState(),syncDirectionStyles();if(_0x718341['id'])try{const _0x5b9a3f=await apiFetch(_0x4833aa(0x271)+_0x718341['id'],{'method':'POST'});if(_0x5b9a3f['ok']){const _0x24c741=await _0x5b9a3f[_0x4833aa(0x3b4)]();applySignalResultUI(_0x24c741[_0x4833aa(0x297)]);}}catch(_0x36698e){console['error'](_0x4833aa(0x2bc),_0x36698e);}refreshSignalButton(),refreshProfileIfVisible();});}catch(_0x361cef){console[_0x4343b6(0x389)](_0x4343b6(0x2e8),_0x361cef),isSignalActive=![],clearSignalState(),clearSignalCooldown(_0x418605),refreshSignalButton(),statusText&&(statusText[_0x4343b6(0x369)]=_0x361cef?.['message']&&_0x361cef[_0x4343b6(0x448)]!==_0x4343b6(0x444)?_0x361cef[_0x4343b6(0x448)]:tKey(_0x4343b6(0x389)));}}if(pairSelect)pairSelect[_0xcdfa3(0x263)]('change',onPairChange);if(timeframeSelect)timeframeSelect[_0xcdfa3(0x263)](_0xcdfa3(0x44e),onTimeframeChange);if(getSignalBtn)getSignalBtn[_0xcdfa3(0x263)]('click',generateSignal);function initCustomDropdown(_0x2ee33f){const _0x53b6b2=_0xcdfa3,_0x4d60d8=_0x2ee33f['querySelector'](_0x53b6b2(0x2a2)),_0x43ce90=_0x2ee33f[_0x53b6b2(0x2eb)](_0x53b6b2(0x3ff));if(!_0x4d60d8||!_0x43ce90)return;if(_0x4d60d8['id']===_0x53b6b2(0x1f8)||_0x4d60d8['id']===_0x53b6b2(0x378))return;_0x4d60d8[_0x53b6b2(0x253)][_0x53b6b2(0x2da)]=_0x53b6b2(0x39e);const _0x4b0b38=document[_0x53b6b2(0x33f)](_0x53b6b2(0x2d8));_0x4b0b38[_0x53b6b2(0x34f)]=_0x53b6b2(0x3b7),Array[_0x53b6b2(0x3d1)](_0x4d60d8[_0x53b6b2(0x373)])[_0x53b6b2(0x3cc)](_0x413716=>{const _0x3f22d7=_0x53b6b2,_0x1dd231=document[_0x3f22d7(0x33f)]('div');_0x1dd231['className']=_0x3f22d7(0x26e),_0x1dd231[_0x3f22d7(0x369)]=_0x413716[_0x3f22d7(0x385)],_0x1dd231[_0x3f22d7(0x407)][_0x3f22d7(0x235)]=_0x413716['value'];if(_0x413716['selected'])_0x1dd231[_0x3f22d7(0x204)]['add'](_0x3f22d7(0x291));_0x1dd231['addEventListener']('click',_0x2f7046=>{const _0x5b62bc=_0x3f22d7;_0x2f7046[_0x5b62bc(0x1be)](),_0x4d60d8[_0x5b62bc(0x235)]=_0x413716[_0x5b62bc(0x235)],_0x4d60d8['dispatchEvent'](new Event(_0x5b62bc(0x44e))),_0x4b0b38[_0x5b62bc(0x204)][_0x5b62bc(0x3c7)](_0x5b62bc(0x37c)),_0x4b0b38['querySelectorAll'](_0x5b62bc(0x36e))[_0x5b62bc(0x3cc)](_0x566178=>_0x566178[_0x5b62bc(0x204)][_0x5b62bc(0x3c7)]('selected')),_0x1dd231[_0x5b62bc(0x204)][_0x5b62bc(0x3ec)](_0x5b62bc(0x291));}),_0x4b0b38['appendChild'](_0x1dd231);}),_0x2ee33f[_0x53b6b2(0x202)](_0x4b0b38),_0x43ce90['addEventListener']('click',_0x1fd19f=>{const _0x6ee5de=_0x53b6b2;_0x1fd19f[_0x6ee5de(0x1be)](),document[_0x6ee5de(0x40e)](_0x6ee5de(0x3cb))[_0x6ee5de(0x3cc)](_0x3ceb58=>{const _0x469c2d=_0x6ee5de;if(_0x3ceb58!==_0x4b0b38)_0x3ceb58[_0x469c2d(0x204)][_0x469c2d(0x3c7)]('open');}),_0x4b0b38[_0x6ee5de(0x204)][_0x6ee5de(0x309)](_0x6ee5de(0x37c));});}function initCustomDropdowns(){const _0x95ca2e=_0xcdfa3;document[_0x95ca2e(0x40e)](_0x95ca2e(0x212))[_0x95ca2e(0x3cc)](_0x190f67=>{initCustomDropdown(_0x190f67);}),document[_0x95ca2e(0x263)](_0x95ca2e(0x22a),()=>{const _0x4e01e8=_0x95ca2e;document['querySelectorAll'](_0x4e01e8(0x3cb))[_0x4e01e8(0x3cc)](_0xf9baa4=>_0xf9baa4['classList'][_0x4e01e8(0x3c7)](_0x4e01e8(0x37c)));});}function restoreActiveSignal(_0x487be7={}){const _0x246527=_0xcdfa3,_0x34d0db=localStorage[_0x246527(0x302)](ACTIVE_SIGNAL_KEY);if(!_0x34d0db)return;try{const _0x4dea98=JSON[_0x246527(0x2ba)](_0x34d0db),_0x541a02=Date[_0x246527(0x308)]()-_0x4dea98['startTime'];if(_0x487be7[_0x246527(0x388)]&&pairSelect&&normalizePairKey(pairSelect[_0x246527(0x235)])!==normalizePairKey(_0x4dea98[_0x246527(0x1f8)]))return;if(_0x541a02>=_0x4dea98['duration']){clearSignalState(),isSignalActive=![],stopProgressTimer(),setProgressPct(0x0),syncDirectionStyles();return;}if(!getSignalBtn||!progressBar)return;isSignalActive=!![],setSignalCooldownUntil(_0x4dea98[_0x246527(0x3c6)]+_0x4dea98[_0x246527(0x2bb)],_0x4dea98['pair']),refreshSignalButton();const _0x5a9de8=_0x4dea98[_0x246527(0x28a)]===_0x246527(0x3f5)?_0x246527(0x3f5):_0x246527(0x372);setMarketMode(_0x5a9de8,{'skipReconcile':!![]});pairSelect&&(pairSelect[_0x246527(0x235)]=_0x4dea98['pair']);if(timeframeSelect)timeframeSelect['value']=_0x4dea98['tf'];updatePairTriggerDisplay(),renderPairModalList(),syncMarketUi();const _0x1bd01c=_0x4dea98[_0x246527(0x3ba)]||_0x4dea98[_0x246527(0x1f8)];if(statusText)statusText[_0x246527(0x369)]=translations[currentLang][_0x246527(0x39a)];if(pairFlags)pairFlags[_0x246527(0x28e)]=flagsForPair(_0x4dea98['pair']);if(cardPairFlags)cardPairFlags['innerHTML']=flagsForPair(_0x4dea98[_0x246527(0x1f8)]);if(metaPair)metaPair['textContent']=_0x1bd01c;if(metaTf)metaTf[_0x246527(0x369)]=_0x4dea98['tf'];if(metaTime)metaTime[_0x246527(0x369)]=new Date(_0x4dea98['startTime'])['toLocaleTimeString']([],{'hour':'2-digit','minute':_0x246527(0x450)});if(metaAcc)metaAcc[_0x246527(0x369)]=typeof _0x4dea98[_0x246527(0x2ce)]!==_0x246527(0x445)?Number(_0x4dea98['confidence'])[_0x246527(0x24f)](0x0)+'%':'';if(metaDir){metaDir['textContent']=_0x4dea98[_0x246527(0x2f3)]===_0x246527(0x435)?translations[currentLang]['up']:_0x4dea98['signal']===_0x246527(0x1d5)?translations[currentLang]['down']:'',metaDir[_0x246527(0x204)][_0x246527(0x3c7)]('up','down');if(_0x4dea98[_0x246527(0x2f3)]===_0x246527(0x435))metaDir['classList'][_0x246527(0x3ec)]('up');if(_0x4dea98[_0x246527(0x2f3)]===_0x246527(0x1d5))metaDir[_0x246527(0x204)][_0x246527(0x3ec)](_0x246527(0x305));syncDirChip();}if(dirIcon){dirIcon[_0x246527(0x204)][_0x246527(0x3c7)]('up',_0x246527(0x305));if(_0x4dea98[_0x246527(0x2f3)]===_0x246527(0x435))dirIcon[_0x246527(0x204)]['add']('up');if(_0x4dea98[_0x246527(0x2f3)]===_0x246527(0x1d5))dirIcon[_0x246527(0x204)][_0x246527(0x3ec)](_0x246527(0x305));}if(dirIconUse)dirIconUse[_0x246527(0x32f)](_0x246527(0x31e),_0x4dea98[_0x246527(0x2f3)]===_0x246527(0x435)?'#icon-up':_0x246527(0x289));const _0x401cdb=getSecondsFromTf(_0x4dea98['tf']),_0x56e4d0=new Date(_0x4dea98[_0x246527(0x3c6)]+_0x401cdb*0x3e8);if(metaUntil)metaUntil['textContent']=_0x56e4d0['toLocaleTimeString']([],{'hour':_0x246527(0x450),'minute':'2-digit'});startSignalProgress(_0x4dea98[_0x246527(0x2bb)],_0x4dea98['startTime'],async()=>{const _0xc3fc7b=_0x246527;isSignalActive=![],clearSignalState(),syncDirectionStyles();if(_0x4dea98[_0xc3fc7b(0x28a)]===_0xc3fc7b(0x3f5))refreshSignalButton();else{if(_0x4dea98['id'])try{const _0x23610e=await apiFetch(_0xc3fc7b(0x271)+_0x4dea98['id'],{'method':_0xc3fc7b(0x226)});if(_0x23610e['ok']){const _0x33c0cb=await _0x23610e[_0xc3fc7b(0x3b4)]();applySignalResultUI(_0x33c0cb[_0xc3fc7b(0x297)]);}}catch(_0x10a9d8){console[_0xc3fc7b(0x389)](_0xc3fc7b(0x2bc),_0x10a9d8);}refreshSignalButton(),refreshProfileIfVisible();}});}catch(_0x3aa167){console[_0x246527(0x389)](_0x246527(0x1d9),_0x3aa167),clearSignalState(),refreshSignalButton();}}initCustomDropdowns(),updatePairTriggerDisplay(),renderPairModalList(),updateIframe(),changeLanguage(currentLang),restoreActiveSignal(),initCooldownFromStorage(),ensureMarketTicker(),refreshSignalButton(),refreshPhotoPageUi(),onAppResume(),document[_0xcdfa3(0x263)](_0xcdfa3(0x1db),()=>{const _0x3a3e69=_0xcdfa3;document['visibilityState']===_0x3a3e69(0x387)&&onAppResume();});const tg=getTelegramWebApp();function _0x5c14(_0x43e6a5,_0x43aee4){_0x43e6a5=_0x43e6a5-0x1b7;const _0x51ef2a=_0x51ef();let _0x5c14ea=_0x51ef2a[_0x43e6a5];return _0x5c14ea;}evaluateAppAccess();if(tg)try{tg[_0xcdfa3(0x422)](),tg[_0xcdfa3(0x22d)]();tg[_0xcdfa3(0x409)]&&tg['requestFullscreen']();let u=tg[_0xcdfa3(0x3a8)]&&tg[_0xcdfa3(0x3a8)][_0xcdfa3(0x287)]?tg[_0xcdfa3(0x3a8)][_0xcdfa3(0x287)]:null;if(!u&&tg['initData'])try{const params=new URLSearchParams(tg['initData']),userRaw=params[_0xcdfa3(0x2a5)]('user');if(userRaw)u=JSON['parse'](userRaw);}catch(_0x27bcd4){}u&&(tgUser=u,userInfo&&(userInfo[_0xcdfa3(0x369)]=[u['first_name'],u[_0xcdfa3(0x2aa)]][_0xcdfa3(0x2d7)](Boolean)[_0xcdfa3(0x2fa)]('\x20')||u[_0xcdfa3(0x424)]||_0xcdfa3(0x423)+u['id']),apiFetch(_0xcdfa3(0x3bb),{'method':_0xcdfa3(0x226),'headers':{'Content-Type':_0xcdfa3(0x1d8)},'body':JSON['stringify']({'id':u['id'],'username':u['username'],'first_name':u[_0xcdfa3(0x2a8)],'last_name':u['last_name'],'language_code':u[_0xcdfa3(0x379)],'is_premium':u[_0xcdfa3(0x345)]})})[_0xcdfa3(0x437)](()=>{}),updateUserAvatar(u)),evaluateAppAccess(),appAccessGranted&&verifySignalAccess();}catch(_0x535a31){}else evaluateAppAccess();function updateUserAvatar(_0x2b38da){const _0x15c53f=_0xcdfa3,_0x34ad49=[_0x2b38da[_0x15c53f(0x2a8)],_0x2b38da[_0x15c53f(0x2aa)]][_0x15c53f(0x2d7)](Boolean)[_0x15c53f(0x2fa)]('\x20')||_0x2b38da[_0x15c53f(0x424)]||'ID\x20'+_0x2b38da['id'],_0x162306=_0x15c53f(0x200)+encodeURIComponent(_0x34ad49)+_0x15c53f(0x30f),_0x8d9c50=_0x2b38da['photo_url']||(_0x2b38da[_0x15c53f(0x424)]?'https://unavatar.io/telegram/'+_0x2b38da[_0x15c53f(0x424)]:_0x162306);[userAvatar,profileAvatar][_0x15c53f(0x3cc)](_0x47c34a=>{const _0x52ba01=_0x15c53f;if(!_0x47c34a)return;_0x47c34a[_0x52ba01(0x21e)]=_0x8d9c50,_0x47c34a[_0x52ba01(0x357)]=_0x34ad49,_0x47c34a[_0x52ba01(0x39c)]=()=>{const _0x361459=_0x52ba01;_0x47c34a[_0x361459(0x21e)]=_0x162306;};});}function revokePhotoObjectUrl(){photoObjectUrl&&(URL['revokeObjectURL'](photoObjectUrl),photoObjectUrl=null);}function setPhotoPreview(_0xa67a39){const _0x59f324=_0xcdfa3;revokePhotoObjectUrl(),photoSelectedFile=_0xa67a39||null;if(!_0xa67a39){cancelPhotoCardDismissTimer(),dismissPhotoSignalCard({'animate':!![]});photoPreviewImg&&(photoPreviewImg[_0x59f324(0x1fd)](_0x59f324(0x21e)),photoPreviewImg[_0x59f324(0x204)][_0x59f324(0x3ec)](_0x59f324(0x43e)));photoClearBtn?.[_0x59f324(0x204)][_0x59f324(0x3ec)]('hidden'),updatePhotoPreviewLayers(),refreshPhotoPageUi();return;}cancelPhotoCardDismissTimer(),dismissPhotoSignalCard({'animate':!![]}),photoObjectUrl=URL['createObjectURL'](_0xa67a39),photoPreviewImg&&(photoPreviewImg['src']=photoObjectUrl,photoPreviewImg[_0x59f324(0x204)][_0x59f324(0x3c7)](_0x59f324(0x43e))),photoClearBtn?.[_0x59f324(0x204)]['remove'](_0x59f324(0x43e)),updatePhotoPreviewLayers(),refreshPhotoPageUi();}function clearPhotoSelection(){const _0x37eb27=_0xcdfa3;dismissPhotoSignalCard({'animate':!![]}),setPhotoPreview(null);if(photoCameraInput)photoCameraInput['value']='';if(photoFileInput)photoFileInput[_0x37eb27(0x235)]='';}function releasePhotoAfterAnalysis(){const _0x2cc8a0=_0xcdfa3;revokePhotoObjectUrl(),photoSelectedFile=null;photoPreviewImg&&(photoPreviewImg[_0x2cc8a0(0x1fd)]('src'),photoPreviewImg[_0x2cc8a0(0x204)][_0x2cc8a0(0x3ec)](_0x2cc8a0(0x43e)));photoPreviewEmpty?.[_0x2cc8a0(0x204)][_0x2cc8a0(0x3c7)](_0x2cc8a0(0x43e)),photoClearBtn?.[_0x2cc8a0(0x204)][_0x2cc8a0(0x3ec)](_0x2cc8a0(0x43e));if(photoCameraInput)photoCameraInput[_0x2cc8a0(0x235)]='';if(photoFileInput)photoFileInput[_0x2cc8a0(0x235)]='';refreshPhotoPageUi();}function handlePhotoFileInput(_0x4d0989){const _0x4033f0=_0xcdfa3;if(!_0x4d0989)return;if(isForexModeClosed())return;if(!_0x4d0989['type'][_0x4033f0(0x408)](_0x4033f0(0x340))&&!PHOTO_ACCEPT_TYPES[_0x4033f0(0x380)](_0x4d0989[_0x4033f0(0x28a)])){showCustomAlert(_0x4033f0(0x34d));return;}if(_0x4d0989[_0x4033f0(0x41d)]>PHOTO_MAX_BYTES){showCustomAlert('photo_error_size');return;}setPhotoPreview(_0x4d0989);}function loadPhotoSignalSnapshot(){const _0x1cb701=_0xcdfa3;try{const _0xa78ad6=localStorage[_0x1cb701(0x302)](PHOTO_SIGNAL_SNAPSHOT_KEY);return _0xa78ad6?JSON[_0x1cb701(0x2ba)](_0xa78ad6):null;}catch{return null;}}function savePhotoSignalSnapshot(_0x3da705){const _0x244de2=_0xcdfa3;localStorage['setItem'](PHOTO_SIGNAL_SNAPSHOT_KEY,JSON[_0x244de2(0x434)](_0x3da705));}function clearPhotoSignalSnapshot(){const _0x10ff35=_0xcdfa3;localStorage[_0x10ff35(0x203)](PHOTO_SIGNAL_SNAPSHOT_KEY);}function cancelPhotoCardDismissTimer(){photoCardDismissTimer&&(clearTimeout(photoCardDismissTimer),photoCardDismissTimer=null);}function dismissPhotoSignalCard({animate:animate=!![]}={}){cancelPhotoCardDismissTimer(),clearPhotoSignalSnapshot(),clearPhotoSignalCardPreview(),showPhotoSignalCard(![],{'animate':animate}),updatePhotoPreviewLayers();}function dismissPhotoSignalCardIfPairMismatch(){const _0x5067f4=_0xcdfa3,_0x12029d=loadPhotoSignalSnapshot();if(!_0x12029d||!pairSelect)return;normalizePairKey(_0x12029d[_0x5067f4(0x1f8)])!==normalizePairKey(pairSelect[_0x5067f4(0x235)])&&dismissPhotoSignalCard({'animate':!![]});}function schedulePhotoCardDismissAfterSignalEnd(){cancelPhotoCardDismissTimer(),photoCardDismissTimer=setTimeout(()=>{photoCardDismissTimer=null,dismissPhotoSignalCard({'animate':!![]});},PHOTO_CARD_DISMISS_AFTER_END_MS);}function persistPhotoSignalSnapshot(_0x5dc953){const _0x31aff4=_0xcdfa3;savePhotoSignalSnapshot({'pair':_0x5dc953['pair'],'pairLabel':_0x5dc953[_0x31aff4(0x3ba)],'tf':_0x5dc953['tf'],'signal':_0x5dc953[_0x31aff4(0x2f3)],'confidence':_0x5dc953[_0x31aff4(0x2ce)],'untilText':_0x5dc953[_0x31aff4(0x219)]||'','timeStr':_0x5dc953['timeStr']||''});}function showPhotoSignalCard(_0x232b54,{animate:animate=!![]}={}){const _0x362b25=_0xcdfa3;if(!photoSignalWrap)return;photoSignalHideTimer&&(clearTimeout(photoSignalHideTimer),photoSignalHideTimer=null);if(_0x232b54){photoSignalWrap[_0x362b25(0x204)][_0x362b25(0x3c7)](_0x362b25(0x43e)),photoPreviewSlot?.[_0x362b25(0x204)][_0x362b25(0x3ec)]('is-signal');if(!animate){photoSignalWrap[_0x362b25(0x204)]['add'](_0x362b25(0x261));return;}photoSignalWrap[_0x362b25(0x204)][_0x362b25(0x3c7)]('is-visible'),requestAnimationFrame(()=>{requestAnimationFrame(()=>{const _0x46805f=_0x5c14;photoSignalWrap[_0x46805f(0x204)][_0x46805f(0x3ec)](_0x46805f(0x261));});});return;}photoSignalWrap['classList'][_0x362b25(0x3c7)](_0x362b25(0x261)),photoPreviewSlot?.[_0x362b25(0x204)]['remove'](_0x362b25(0x2ad));const _0x1ee163=()=>{const _0x3de333=_0x362b25;photoSignalWrap[_0x3de333(0x204)][_0x3de333(0x3ec)](_0x3de333(0x43e)),updatePhotoPreviewLayers();};if(!animate||!photoSignalWrap[_0x362b25(0x204)][_0x362b25(0x25c)](_0x362b25(0x261))){_0x1ee163();return;}photoSignalHideTimer=setTimeout(_0x1ee163,PHOTO_CARD_ANIM_MS);}function updatePhotoPreviewLayers(){const _0x5a3052=_0xcdfa3;if(photoSignalWrap&&!photoSignalWrap[_0x5a3052(0x204)][_0x5a3052(0x25c)]('hidden'))return;photoSelectedFile?(photoPreviewEmpty?.[_0x5a3052(0x204)][_0x5a3052(0x3ec)](_0x5a3052(0x43e)),photoPreviewImg?.[_0x5a3052(0x204)][_0x5a3052(0x3c7)](_0x5a3052(0x43e))):(photoPreviewEmpty?.['classList'][_0x5a3052(0x3c7)]('hidden'),photoPreviewImg?.['classList']['add']('hidden'));}function clearPhotoSignalCardPreview(){const _0x5e9b09=_0xcdfa3;if(photoMetaAcc)photoMetaAcc[_0x5e9b09(0x369)]=_0x5e9b09(0x29c);photoMetaDir&&(photoMetaDir[_0x5e9b09(0x369)]='--',photoMetaDir[_0x5e9b09(0x204)][_0x5e9b09(0x3c7)]('up',_0x5e9b09(0x305)));if(photoMetaUntil)photoMetaUntil[_0x5e9b09(0x369)]='--:--';photoStatusText&&!isSignalActive&&getCooldownRemainingMs()<=0x0&&(photoStatusText[_0x5e9b09(0x369)]=tKey(_0x5e9b09(0x280))),setProgressPct(0x0,_0x5e9b09(0x20e)),photoResultStamp&&(photoResultStamp['textContent']='',photoResultStamp[_0x5e9b09(0x204)][_0x5e9b09(0x3ec)](_0x5e9b09(0x43e)),photoResultStamp[_0x5e9b09(0x204)][_0x5e9b09(0x3c7)](_0x5e9b09(0x241),_0x5e9b09(0x237),_0x5e9b09(0x1e9))),photoMainCard&&photoMainCard[_0x5e9b09(0x204)][_0x5e9b09(0x3c7)]('win-glow',_0x5e9b09(0x214),_0x5e9b09(0x3ab),_0x5e9b09(0x40b),'dir-down'),clearDirectionBorderClasses(_0x5e9b09(0x20e));}function applySignalDisplay({pair:_0x26465c,pairLabel:_0x2cb342,tf:_0xb909b7,signal:_0x19fa63,confidence:_0x5b7683,untilText:_0x5d8380,timeStr:_0x2f54e2,updateHome:updateHome=!![],updatePhoto:updatePhoto=![]}){const _0x18d28f=_0xcdfa3,_0x5d4f73=flagsForPair(_0x26465c),_0x12eda9=_0x19fa63===_0x18d28f(0x435),_0x3f248c=_0x19fa63===_0x18d28f(0x1d5),_0x388f68=_0x12eda9?tKey('up'):_0x3f248c?tKey('down'):'',_0x932b0d=_0x2f54e2||new Date()['toLocaleTimeString']([],{'hour':_0x18d28f(0x450),'minute':_0x18d28f(0x450)}),_0x182119=({flagsEl:_0x18de11,pairEl:_0x5c8d90,tfEl:_0x22f608,accEl:_0x89bd90,dirEl:_0x511805,untilEl:_0x3edcc1,statusEl:_0x3dfa7a,iconEl:_0x1fb4b7,iconUseEl:_0x477d99})=>{const _0x3cbfc1=_0x18d28f;if(_0x18de11)_0x18de11['innerHTML']=_0x5d4f73;if(_0x5c8d90)_0x5c8d90[_0x3cbfc1(0x369)]=_0x2cb342;if(_0x22f608)_0x22f608[_0x3cbfc1(0x369)]=_0xb909b7;if(_0x89bd90)_0x89bd90[_0x3cbfc1(0x369)]=Number(_0x5b7683)[_0x3cbfc1(0x24f)](0x0)+'%';if(_0x3edcc1&&_0x5d8380)_0x3edcc1[_0x3cbfc1(0x369)]=_0x5d8380;if(_0x3dfa7a)_0x3dfa7a[_0x3cbfc1(0x369)]=tKey(_0x3cbfc1(0x39a));if(_0x511805){_0x511805[_0x3cbfc1(0x369)]=_0x388f68,_0x511805[_0x3cbfc1(0x204)]['remove']('up',_0x3cbfc1(0x305));if(_0x12eda9)_0x511805[_0x3cbfc1(0x204)][_0x3cbfc1(0x3ec)]('up');if(_0x3f248c)_0x511805[_0x3cbfc1(0x204)]['add'](_0x3cbfc1(0x305));}if(_0x1fb4b7){_0x1fb4b7[_0x3cbfc1(0x204)]['remove']('up','down');if(_0x12eda9)_0x1fb4b7[_0x3cbfc1(0x204)][_0x3cbfc1(0x3ec)]('up');if(_0x3f248c)_0x1fb4b7[_0x3cbfc1(0x204)][_0x3cbfc1(0x3ec)]('down');}if(_0x477d99)_0x477d99[_0x3cbfc1(0x32f)](_0x3cbfc1(0x31e),_0x12eda9?_0x3cbfc1(0x1c7):_0x3cbfc1(0x289));};if(updateHome){_0x182119({'flagsEl':cardPairFlags,'pairEl':metaPair,'tfEl':metaTf,'accEl':metaAcc,'dirEl':metaDir,'untilEl':metaUntil,'statusEl':statusText,'iconEl':dirIcon,'iconUseEl':dirIconUse});if(metaTime)metaTime[_0x18d28f(0x369)]=_0x932b0d;}updatePhoto&&(_0x182119({'flagsEl':photoCardPairFlags,'pairEl':photoMetaPair,'tfEl':photoMetaTf,'accEl':photoMetaAcc,'dirEl':photoMetaDir,'untilEl':photoMetaUntil,'statusEl':photoStatusText,'iconEl':photoDirIcon,'iconUseEl':photoDirIconUse}),persistPhotoSignalSnapshot({'pair':_0x26465c,'pairLabel':_0x2cb342,'tf':_0xb909b7,'signal':_0x19fa63,'confidence':_0x5b7683,'untilText':_0x5d8380,'timeStr':_0x932b0d}),showPhotoSignalCard(!![]),releasePhotoAfterAnalysis()),syncDirectionStyles();}function restorePhotoSignalCardFromSnapshot(){const _0x4d5971=_0xcdfa3,_0x3d60e7=loadPhotoSignalSnapshot();if(!_0x3d60e7){showPhotoSignalCard(![],{'animate':![]});return;}if(pairSelect&&normalizePairKey(_0x3d60e7[_0x4d5971(0x1f8)])!==normalizePairKey(pairSelect[_0x4d5971(0x235)])){dismissPhotoSignalCard({'animate':![]});return;}applySignalDisplay({'pair':_0x3d60e7[_0x4d5971(0x1f8)],'pairLabel':_0x3d60e7[_0x4d5971(0x3ba)]||_0x3d60e7[_0x4d5971(0x1f8)],'tf':_0x3d60e7['tf'],'signal':_0x3d60e7['signal'],'confidence':_0x3d60e7[_0x4d5971(0x2ce)],'untilText':_0x3d60e7[_0x4d5971(0x219)],'timeStr':_0x3d60e7[_0x4d5971(0x40a)],'updateHome':![],'updatePhoto':![]}),showPhotoSignalCard(!![],{'animate':![]});if(photoStatusText)photoStatusText['textContent']=tKey(_0x4d5971(0x39a));setProgressPct(0x64,_0x4d5971(0x20e)),syncDirectionStyles();}function initPhotoPage(){syncMarketToggleUi(),updatePairTriggerDisplay(),updateTfTriggerDisplay(),refreshPhotoPageUi(),restorePhotoSignalCardFromSnapshot();}async function analyzePhotoChart(){const _0x4a0dfc=_0xcdfa3;if(!appAccessGranted){evaluateAppAccess();return;}if(!signalAccessGranted){await verifySignalAccess();if(!signalAccessGranted)return;}if(!photoSelectedFile)return;const {pair:_0x3ed11f,pairLabel:_0x368fca,tf:_0x551c19}=getPhotoAnalysisParams();if(isForexModeClosed()){showCustomAlert(_0x4a0dfc(0x3b0));return;}if(isSignalActive||getCooldownRemainingMs(_0x3ed11f)>0x0){showCustomAlert(isSignalActive?'active':'cooldown');return;}isSignalActive=!![],refreshSignalButton(),cancelPhotoCardDismissTimer(),showPhotoSignalCard(![],{'animate':![]});photoResultStamp&&(photoResultStamp['textContent']='',photoResultStamp[_0x4a0dfc(0x204)][_0x4a0dfc(0x3ec)](_0x4a0dfc(0x43e)),photoResultStamp[_0x4a0dfc(0x204)][_0x4a0dfc(0x3c7)](_0x4a0dfc(0x241),_0x4a0dfc(0x237),_0x4a0dfc(0x1e9)));photoMainCard&&photoMainCard[_0x4a0dfc(0x204)][_0x4a0dfc(0x3c7)](_0x4a0dfc(0x1e6),_0x4a0dfc(0x214),_0x4a0dfc(0x3ab),'dir-up',_0x4a0dfc(0x2cc));clearDirectionBorderClasses(_0x4a0dfc(0x1d0)),setProgressPct(0x0,_0x4a0dfc(0x20e));const _0xbba6b1=_0x99a710=>{const _0x2c7a35=_0x4a0dfc;isSignalActive=![],clearSignalState();if(photoStatusText)photoStatusText[_0x2c7a35(0x369)]=tKey(_0x2c7a35(0x39a));setProgressPct(0x64,_0x2c7a35(0x20e)),syncDirectionStyles(),refreshSignalButton(),refreshPhotoPageUi(),schedulePhotoCardDismissAfterSignalEnd();if(_0x99a710)_0x99a710();};if(isOTC){try{await runSignalGeneration(()=>Promise[_0x4a0dfc(0x2f6)](),{'pairLabel':_0x368fca,'tf':_0x551c19,'requireApiResult':![]});const _0x3514d2=Math['random']()>0.5?_0x4a0dfc(0x435):_0x4a0dfc(0x1d5),_0x560472=Math[_0x4a0dfc(0x3de)](Math['random']()*(0x5c-0x4b+0x1))+0x4b,_0x20d86c=Date[_0x4a0dfc(0x308)](),_0x2dce16=Math[_0x4a0dfc(0x3de)](getSecondsFromTf(_0x551c19)*0x3e8),_0x20ec51=new Date(_0x20d86c+_0x2dce16);setSignalCooldownUntil(_0x20d86c+_0x2dce16,_0x3ed11f);const _0x1f6ce6={'pair':_0x3ed11f,'pairLabel':_0x368fca,'tf':_0x551c19,'signal':_0x3514d2,'confidence':_0x560472,'untilText':_0x20ec51[_0x4a0dfc(0x247)]([],{'hour':_0x4a0dfc(0x450),'minute':'2-digit'}),'timeStr':new Date()[_0x4a0dfc(0x247)]([],{'hour':'2-digit','minute':'2-digit'})};applySignalDisplay({..._0x1f6ce6,'updateHome':!![],'updatePhoto':!![]}),saveSignalState({'type':_0x4a0dfc(0x3f5),'pair':_0x3ed11f,'pairLabel':_0x368fca,'tf':_0x551c19,'startTime':_0x20d86c,'duration':_0x2dce16,'signal':_0x3514d2,'confidence':_0x560472,'price':null,'source':_0x4a0dfc(0x20e)}),startSignalProgress(_0x2dce16,_0x20d86c,()=>_0xbba6b1(),_0x4a0dfc(0x20e));}catch{isSignalActive=![],clearSignalState(),clearSignalCooldown(_0x3ed11f);if(photoStatusText)photoStatusText[_0x4a0dfc(0x369)]=tKey(_0x4a0dfc(0x389));refreshSignalButton(),refreshPhotoPageUi();}return;}try{const _0x51b186=await runSignalGeneration(()=>fetchForexSignal(_0x3ed11f,_0x551c19),{'pairLabel':_0x368fca,'tf':_0x551c19});_0x51b186[_0x4a0dfc(0x2ce)]=Math[_0x4a0dfc(0x3de)](Math[_0x4a0dfc(0x414)]()*(0x5c-0x4b+0x1))+0x4b;const _0x37fc6d=Date['now'](),_0x1b82fa=Math['floor'](getSecondsFromTf(_0x551c19)*0x3e8),_0x439cf3=new Date(_0x37fc6d+_0x1b82fa);setSignalCooldownUntil(_0x37fc6d+_0x1b82fa,_0x3ed11f);const _0x5463e6={'pair':_0x3ed11f,'pairLabel':_0x368fca,'tf':_0x551c19,'signal':_0x51b186[_0x4a0dfc(0x2f3)],'confidence':_0x51b186['confidence'],'untilText':_0x439cf3[_0x4a0dfc(0x247)]([],{'hour':_0x4a0dfc(0x450),'minute':_0x4a0dfc(0x450)}),'timeStr':new Date()[_0x4a0dfc(0x247)]([],{'hour':'2-digit','minute':'2-digit'})};applySignalDisplay({..._0x5463e6,'updateHome':!![],'updatePhoto':!![]}),saveSignalState({'type':_0x4a0dfc(0x35f),'pair':_0x3ed11f,'pairLabel':_0x368fca,'tf':_0x551c19,'startTime':_0x37fc6d,'duration':_0x1b82fa,'signal':_0x51b186[_0x4a0dfc(0x2f3)],'confidence':_0x51b186[_0x4a0dfc(0x2ce)],'price':_0x51b186[_0x4a0dfc(0x2b6)],'id':_0x51b186['id'],'source':'photo'}),startSignalProgress(_0x1b82fa,_0x37fc6d,async()=>{_0xbba6b1(async()=>{const _0x2ce814=_0x5c14;if(_0x51b186['id'])try{const _0x5e04f3=await apiFetch(_0x2ce814(0x271)+_0x51b186['id'],{'method':_0x2ce814(0x226)});if(_0x5e04f3['ok']){const _0x1f530d=await _0x5e04f3[_0x2ce814(0x3b4)]();applySignalResultUI(_0x1f530d[_0x2ce814(0x297)]);}}catch(_0x5798f7){console['error'](_0x2ce814(0x2bc),_0x5798f7);}refreshProfileIfVisible();});},_0x4a0dfc(0x20e));}catch{isSignalActive=![],clearSignalState(),clearSignalCooldown(_0x3ed11f);if(photoStatusText)photoStatusText[_0x4a0dfc(0x369)]=tKey(_0x4a0dfc(0x389));refreshSignalButton(),refreshPhotoPageUi();}}function onPhotoAnalyzeClick(){analyzePhotoChart();}function updateBackButton(){const _0x2264fe=_0xcdfa3;if(!tg||!tg[_0x2264fe(0x205)])return;currentView===_0x2264fe(0x23c)||currentView===_0x2264fe(0x20e)?tg[_0x2264fe(0x205)][_0x2264fe(0x1c2)]():tg[_0x2264fe(0x205)][_0x2264fe(0x3f7)]();}function switchView(_0x53a3a4){const _0x19400b=_0xcdfa3;if(_0x53a3a4!==_0x19400b(0x29f)&&_0x53a3a4!==_0x19400b(0x23c)&&_0x53a3a4!=='photo')return;currentView=_0x53a3a4;if(homeView)homeView[_0x19400b(0x204)][_0x19400b(0x309)](_0x19400b(0x43e),_0x53a3a4!=='home');if(photoView)photoView[_0x19400b(0x204)]['toggle'](_0x19400b(0x43e),_0x53a3a4!==_0x19400b(0x20e));if(profileView)profileView['classList'][_0x19400b(0x309)](_0x19400b(0x43e),_0x53a3a4!=='profile');document['querySelectorAll'](_0x19400b(0x24e))['forEach'](_0x262251=>{const _0x52df1c=_0x19400b;_0x262251['classList'][_0x52df1c(0x309)](_0x52df1c(0x3bc),_0x262251[_0x52df1c(0x1c6)](_0x52df1c(0x2f1))===_0x53a3a4);}),_0x53a3a4===_0x19400b(0x23c)&&loadProfilePage(),_0x53a3a4==='photo'&&initPhotoPage(),updateBackButton();}document[_0xcdfa3(0x40e)](_0xcdfa3(0x24e))['forEach'](_0x523968=>{const _0x1f4360=_0xcdfa3;_0x523968[_0x1f4360(0x263)](_0x1f4360(0x22a),()=>{const _0x46f847=_0x1f4360,_0x1983a4=_0x523968[_0x46f847(0x1c6)](_0x46f847(0x2f1));if(_0x1983a4)switchView(_0x1983a4);});}),photoCaptureBtn?.['addEventListener']('click',()=>{const _0x3b3ed1=_0xcdfa3;if(isForexModeClosed())return;photoCameraInput?.[_0x3b3ed1(0x22a)]();}),photoUploadBtn?.[_0xcdfa3(0x263)](_0xcdfa3(0x22a),()=>{const _0x163493=_0xcdfa3;if(isForexModeClosed())return;photoFileInput?.[_0x163493(0x22a)]();}),photoCameraInput?.[_0xcdfa3(0x263)](_0xcdfa3(0x44e),_0x35c621=>{const _0x12d299=_0xcdfa3,_0x7b76ac=_0x35c621[_0x12d299(0x25a)][_0x12d299(0x43d)]?.[0x0];handlePhotoFileInput(_0x7b76ac);}),photoFileInput?.[_0xcdfa3(0x263)]('change',_0xc2b1f3=>{const _0xf935d6=_0xcdfa3,_0xc17e62=_0xc2b1f3[_0xf935d6(0x25a)]['files']?.[0x0];handlePhotoFileInput(_0xc17e62);}),photoClearBtn?.[_0xcdfa3(0x263)](_0xcdfa3(0x22a),clearPhotoSelection),photoAnalyzeBtn?.[_0xcdfa3(0x263)](_0xcdfa3(0x22a),onPhotoAnalyzeClick);tg&&tg['BackButton']&&tg[_0xcdfa3(0x205)]['onClick'](()=>{const _0x425ffd=_0xcdfa3;if(currentView==='profile'||currentView===_0x425ffd(0x20e))switchView(_0x425ffd(0x29f));});updateBackButton();function showLangModal(){const _0x46ab62=_0xcdfa3;langModal&&(langModal[_0x46ab62(0x204)][_0x46ab62(0x3c7)](_0x46ab62(0x43e)),document[_0x46ab62(0x2b1)]['style'][_0x46ab62(0x2b4)]=_0x46ab62(0x43e));}function hideLangModal(){const _0x41c313=_0xcdfa3;langModal&&(langModal['classList'][_0x41c313(0x3ec)]('hidden'),document[_0x41c313(0x2b1)][_0x41c313(0x253)][_0x41c313(0x2b4)]='');}function showCustomAlert(_0x115ea1=_0xcdfa3(0x3bc)){const _0x3a6002=_0xcdfa3,_0xb92562=alertModal?.[_0x3a6002(0x2eb)](_0x3a6002(0x432)),_0x5dd8db=alertModal?.[_0x3a6002(0x2eb)](_0x3a6002(0x419));if(_0xb92562){if(_0x115ea1===_0x3a6002(0x3c0)){if(_0x5dd8db)_0x5dd8db[_0x3a6002(0x369)]=tKey(_0x3a6002(0x1e4));_0xb92562[_0x3a6002(0x369)]=tKey(_0x3a6002(0x2f2))+'\x20'+formatCooldownButton(getCooldownRemainingMs())+'.';}else{if(_0x115ea1===_0x3a6002(0x3b0)){const _0x5279da=getNextForexOpenDate();if(_0x5dd8db)_0x5dd8db['textContent']=tKey(_0x3a6002(0x376));_0xb92562[_0x3a6002(0x369)]=_0x5279da?tKey('market_closed_alert')+'\x20'+tKey(_0x3a6002(0x2ed))+'\x20'+formatMarketOpenDate(_0x5279da)+'.':tKey(_0x3a6002(0x377));}else{if(_0x115ea1===_0x3a6002(0x3b8)||_0x115ea1===_0x3a6002(0x34d)||_0x115ea1==='photo_error_size'){if(_0x5dd8db)_0x5dd8db[_0x3a6002(0x369)]=tKey('photo_page_title');_0xb92562['textContent']=tKey(_0x115ea1);}else{if(_0x5dd8db)_0x5dd8db[_0x3a6002(0x369)]=tKey(_0x3a6002(0x1e4));_0xb92562[_0x3a6002(0x369)]=tKey(_0x3a6002(0x443));}}}}alertModal&&(alertModal[_0x3a6002(0x204)]['remove'](_0x3a6002(0x43e)),document[_0x3a6002(0x2b1)][_0x3a6002(0x253)][_0x3a6002(0x2b4)]=_0x3a6002(0x43e));}function hideCustomAlert(){const _0x51b951=_0xcdfa3,_0x5cd75e=alertModal?.[_0x51b951(0x2eb)](_0x51b951(0x432)),_0xdcc828=alertModal?.[_0x51b951(0x2eb)](_0x51b951(0x419));_0xdcc828&&(_0xdcc828['setAttribute'](_0x51b951(0x394),_0x51b951(0x1e4)),_0xdcc828['textContent']=tKey('alert_title')),_0x5cd75e&&(_0x5cd75e[_0x51b951(0x32f)](_0x51b951(0x394),_0x51b951(0x443)),_0x5cd75e[_0x51b951(0x369)]=tKey('alert_desc')),alertModal&&(alertModal[_0x51b951(0x204)][_0x51b951(0x3ec)]('hidden'),document[_0x51b951(0x2b1)][_0x51b951(0x253)]['overflow']='');}function changeLanguage(_0x526d00){const _0x58c94d=_0xcdfa3;if(!translations[_0x526d00])return;currentLang=_0x526d00,localStorage[_0x58c94d(0x3db)]('trade_ai_lang',_0x526d00),document[_0x58c94d(0x40e)](_0x58c94d(0x37b))[_0x58c94d(0x3cc)](_0x1a4d9e=>{const _0x64254f=_0x58c94d,_0x5140b7=_0x1a4d9e[_0x64254f(0x1c6)]('data-i18n');translations[_0x526d00][_0x5140b7]&&(_0x1a4d9e[_0x64254f(0x369)]=translations[_0x526d00][_0x5140b7]);}),document[_0x58c94d(0x40e)](_0x58c94d(0x382))[_0x58c94d(0x3cc)](_0x1353bb=>{const _0x470801=_0x58c94d,_0xdf61a8=_0x1353bb[_0x470801(0x1c6)](_0x470801(0x398));translations[_0x526d00][_0xdf61a8]&&_0x1353bb[_0x470801(0x32f)]('placeholder',translations[_0x526d00][_0xdf61a8]);}),updateLangBtnFlag(_0x526d00),refreshSignalButton(),refreshPhotoPageUi(),spinnerOverlay&&!spinnerOverlay[_0x58c94d(0x204)]['contains'](_0x58c94d(0x43e))&&(void showSignalStepText(signalCurrentStepIndex,{'animate':![]}),setSignalProgress(getSignalStepPercent(signalCurrentStepIndex)),setSignalVisualStep(signalCurrentStepIndex)),document[_0x58c94d(0x40e)](_0x58c94d(0x25f))[_0x58c94d(0x3cc)](_0x3107a6=>{const _0xb1dc2a=_0x58c94d;_0x3107a6[_0xb1dc2a(0x1c6)](_0xb1dc2a(0x2e5))===_0x526d00?_0x3107a6[_0xb1dc2a(0x204)]['add'](_0xb1dc2a(0x291)):_0x3107a6['classList'][_0xb1dc2a(0x3c7)](_0xb1dc2a(0x291));});}if(langBtn)langBtn['addEventListener']('click',showLangModal);if(closeLangBtn)closeLangBtn[_0xcdfa3(0x263)](_0xcdfa3(0x22a),hideLangModal);if(langModal)langModal['addEventListener'](_0xcdfa3(0x22a),_0x5094e7=>{const _0x1bb731=_0xcdfa3;if(_0x5094e7[_0x1bb731(0x25a)]===langModal)hideLangModal();});if(pairSelectTrigger)pairSelectTrigger['addEventListener'](_0xcdfa3(0x22a),showPairModal);if(closePairBtn)closePairBtn[_0xcdfa3(0x263)](_0xcdfa3(0x22a),hidePairModal);if(pairModal)pairModal[_0xcdfa3(0x263)](_0xcdfa3(0x22a),_0x5b6048=>{const _0x599449=_0xcdfa3;if(_0x5b6048[_0x599449(0x25a)]===pairModal)hidePairModal();});if(tfSelectTrigger)tfSelectTrigger['addEventListener'](_0xcdfa3(0x22a),showTfModal);if(closeTfBtn)closeTfBtn[_0xcdfa3(0x263)]('click',hideTfModal);if(tfModal)tfModal['addEventListener'](_0xcdfa3(0x22a),_0x419523=>{const _0x1aa536=_0xcdfa3;if(_0x419523[_0x1aa536(0x25a)]===tfModal)hideTfModal();});pairSearchInput&&(pairSearchInput[_0xcdfa3(0x263)](_0xcdfa3(0x284),_0x31e123=>filterPairModalList(_0x31e123[_0xcdfa3(0x25a)][_0xcdfa3(0x235)])),pairSearchInput['addEventListener'](_0xcdfa3(0x402),_0x37590a=>{const _0x31b14e=_0xcdfa3;if(_0x37590a[_0x31b14e(0x413)]==='Escape')hidePairModal();}));if(closeAlertBtn)closeAlertBtn[_0xcdfa3(0x263)](_0xcdfa3(0x22a),hideCustomAlert);if(alertModal)alertModal[_0xcdfa3(0x263)](_0xcdfa3(0x22a),_0x17a49f=>{const _0x4e2ad2=_0xcdfa3;if(_0x17a49f[_0x4e2ad2(0x25a)]===alertModal)hideCustomAlert();});document[_0xcdfa3(0x40e)]('.lang-item')['forEach'](_0x440e29=>{const _0x571d6c=_0xcdfa3;_0x440e29[_0x571d6c(0x263)](_0x571d6c(0x22a),()=>{const _0x11dd3a=_0x571d6c;document['querySelectorAll']('.lang-item')[_0x11dd3a(0x3cc)](_0x241d6b=>_0x241d6b[_0x11dd3a(0x204)][_0x11dd3a(0x3c7)](_0x11dd3a(0x291))),_0x440e29[_0x11dd3a(0x204)][_0x11dd3a(0x3ec)](_0x11dd3a(0x291));const _0x223f0c=_0x440e29[_0x11dd3a(0x1c6)](_0x11dd3a(0x2e5));changeLanguage(_0x223f0c),hideLangModal();});});const profileRoot=document[_0xcdfa3(0x2b7)](_0xcdfa3(0x1f5));let currentHistoryPeriod=_0xcdfa3(0x3d8);function applySignalResultUI(_0x27e8e8){const _0x34f23d=_0xcdfa3,_0x36ebbf=_0x27e8e8[_0x34f23d(0x3a7)](),_0x275b41=(_0x54069b,_0xc48766)=>{const _0x3e2d3a=_0x34f23d;_0x54069b&&(_0x54069b[_0x3e2d3a(0x369)]=tKey(_0x36ebbf),_0x54069b['classList'][_0x3e2d3a(0x3c7)](_0x3e2d3a(0x43e),'win',_0x3e2d3a(0x237),_0x3e2d3a(0x1e9)),_0x54069b[_0x3e2d3a(0x204)]['add'](_0x36ebbf)),_0xc48766&&(_0xc48766[_0x3e2d3a(0x204)][_0x3e2d3a(0x3c7)](_0x3e2d3a(0x1e6),_0x3e2d3a(0x214),'neutral-glow',_0x3e2d3a(0x40b),_0x3e2d3a(0x2cc)),_0xc48766[_0x3e2d3a(0x204)][_0x3e2d3a(0x3ec)](_0x36ebbf+'-glow'));};_0x275b41(resultStamp,document[_0x34f23d(0x2b7)](_0x34f23d(0x23a))),_0x275b41(photoResultStamp,photoMainCard),syncDirectionStyles();}function refreshProfileIfVisible(){const _0x25e439=_0xcdfa3;if(currentView===_0x25e439(0x23c))loadProfilePage();}function formatHistoryTimestamp(_0x3058ba){const _0xb69780=_0xcdfa3;if(!_0x3058ba)return'';const _0x205214=new Date(String(_0x3058ba)[_0xb69780(0x1e1)]('\x20','T'));if(Number[_0xb69780(0x3a3)](_0x205214['getTime']()))return _0x3058ba;return _0x205214['toLocaleString']([],{'day':_0xb69780(0x450),'month':_0xb69780(0x42b),'hour':_0xb69780(0x450),'minute':'2-digit'});}function getHistoryResultMeta(_0x26c177){const _0x5c485=_0xcdfa3;if(!_0x26c177)return{'className':_0x5c485(0x421),'label':tKey(_0x5c485(0x1fb))};const _0x12d3bc=String(_0x26c177)['toLowerCase']();if(_0x12d3bc===_0x5c485(0x241)||_0x12d3bc===_0x5c485(0x237)||_0x12d3bc===_0x5c485(0x1e9))return{'className':_0x12d3bc,'label':tKey(_0x12d3bc)};return{'className':_0x5c485(0x421),'label':_0x26c177};}function setProfileStatsLoading(){const _0x153914=_0xcdfa3,_0x351ff4=document[_0x153914(0x2b7)](_0x153914(0x352)),_0x4859bd=document[_0x153914(0x2b7)](_0x153914(0x1c0)),_0x2998ca=document[_0x153914(0x2b7)](_0x153914(0x268));if(_0x351ff4)_0x351ff4[_0x153914(0x369)]='0';if(_0x4859bd)_0x4859bd[_0x153914(0x369)]='0';if(_0x2998ca)_0x2998ca[_0x153914(0x369)]='0%';}async function loadProfilePage(){const _0x21defe=_0xcdfa3;if(!profileRoot)return;if(!profileTabsInitialized){profileTabsInitialized=!![];const _0x8d6ec0=document[_0x21defe(0x40e)](_0x21defe(0x1b8));_0x8d6ec0['forEach'](_0x1cba79=>{const _0x1c5ce2=_0x21defe;_0x1cba79[_0x1c5ce2(0x263)](_0x1c5ce2(0x22a),()=>{const _0xde5469=_0x1c5ce2;_0x8d6ec0[_0xde5469(0x3cc)](_0x222b4c=>_0x222b4c[_0xde5469(0x204)][_0xde5469(0x3c7)](_0xde5469(0x3bc))),_0x1cba79[_0xde5469(0x204)]['add'](_0xde5469(0x3bc)),currentHistoryPeriod=_0x1cba79[_0xde5469(0x1c6)]('data-period'),fetchHistory();});});}const _0x36c4ea=document[_0x21defe(0x2b7)](_0x21defe(0x279)),_0x1417ba=document[_0x21defe(0x2b7)](_0x21defe(0x3fb));if(tgUser){const _0x28fe57=[tgUser['first_name'],tgUser[_0x21defe(0x2aa)]][_0x21defe(0x2d7)](Boolean)[_0x21defe(0x2fa)]('\x20')||'User';if(_0x36c4ea)_0x36c4ea['textContent']=_0x28fe57;_0x1417ba&&(_0x1417ba['textContent']=tgUser[_0x21defe(0x424)]?'@'+tgUser[_0x21defe(0x424)]:_0x21defe(0x331));updateUserAvatar(tgUser),setProfileStatsLoading();try{const _0x5b3930=await apiFetch(_0x21defe(0x29b));if(_0x5b3930['ok']){const _0x51fed0=await _0x5b3930[_0x21defe(0x3b4)](),_0x1df9bf=document[_0x21defe(0x2b7)]('totalSignals'),_0xf6d411=document[_0x21defe(0x2b7)]('winCount'),_0x2ffca8=document[_0x21defe(0x2b7)]('winRate');if(_0x1df9bf)_0x1df9bf['textContent']=String(_0x51fed0['total_signals']??0x0);if(_0xf6d411)_0xf6d411[_0x21defe(0x369)]=String(_0x51fed0['wins']??0x0);if(_0x2ffca8)_0x2ffca8[_0x21defe(0x369)]=(_0x51fed0[_0x21defe(0x1ce)]??0x0)+'%';}}catch(_0x4acd06){}await fetchHistory();}else{if(_0x36c4ea)_0x36c4ea[_0x21defe(0x369)]='Guest';if(_0x1417ba)_0x1417ba[_0x21defe(0x369)]=_0x21defe(0x331);setProfileStatsLoading();const _0xa61077=document[_0x21defe(0x2b7)](_0x21defe(0x1c8));_0xa61077&&(_0xa61077['innerHTML']=_0x21defe(0x25b)+tKey(_0x21defe(0x292))+_0x21defe(0x317));}}async function fetchHistory(){const _0x4661e4=_0xcdfa3,_0x35c797=document['getElementById'](_0x4661e4(0x1c8));if(!tgUser||!_0x35c797)return;_0x35c797[_0x4661e4(0x28e)]='<div\x20class=\x22profile-loading\x22>'+tKey(_0x4661e4(0x201))+_0x4661e4(0x317);try{const _0x1aad64=await apiFetch(_0x4661e4(0x294)+encodeURIComponent(currentHistoryPeriod));if(_0x1aad64['ok']){const _0x4a4255=await _0x1aad64[_0x4661e4(0x3b4)]();renderHistoryCards(_0x4a4255);}else _0x35c797[_0x4661e4(0x28e)]='<div\x20class=\x22profile-empty\x22>'+tKey(_0x4661e4(0x1cf))+'</div>';}catch(_0xc96a6c){_0x35c797['innerHTML']=_0x4661e4(0x250)+tKey(_0x4661e4(0x1cf))+'</div>';}}function renderHistoryCards(_0xd37678){const _0x4860f0=_0xcdfa3,_0x10fb88=document[_0x4860f0(0x2b7)](_0x4860f0(0x1c8));if(!_0x10fb88)return;if(!_0xd37678['length']){_0x10fb88[_0x4860f0(0x28e)]='<div\x20class=\x22profile-empty\x22>'+tKey('history_empty')+_0x4860f0(0x317);return;}_0x10fb88[_0x4860f0(0x28e)]=_0xd37678['map'](_0x3077d3=>{const _0x5e74c4=_0x4860f0,{className:_0x298fe6,label:_0x1fa290}=getHistoryResultMeta(_0x3077d3['result']),_0x298358=getPairDisplayLabel(_0x3077d3[_0x5e74c4(0x1f8)]),_0x129e45=_0x3077d3[_0x5e74c4(0x2f3)]==='SELL'?'sell':_0x5e74c4(0x1e0),_0x1874c1=_0x3077d3[_0x5e74c4(0x2f3)]===_0x5e74c4(0x1d5)?tKey(_0x5e74c4(0x305)):tKey('up');return _0x5e74c4(0x1f1)+formatHistoryTimestamp(_0x3077d3[_0x5e74c4(0x28d)])+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22hc-main\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22hc-pair-info\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22hc-flags\x22>'+flagsForPair(_0x3077d3[_0x5e74c4(0x1f8)])+_0x5e74c4(0x33b)+_0x298358+'</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22hc-center\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22hc-tf\x22>'+(_0x3077d3[_0x5e74c4(0x378)]||'—')+_0x5e74c4(0x2a7)+_0x129e45+'\x22>'+_0x1874c1+_0x5e74c4(0x3a1)+_0x298fe6+'\x22>'+_0x1fa290+_0x5e74c4(0x3f6);})['join']('');}function getCurrencyCountryCode(_0x42b0fb){const _0x480041={'EUR':'eu','USD':'us','GBP':'gb','JPY':'jp','CHF':'ch','CAD':'ca','AUD':'au','NZD':'nz'};return _0x480041[_0x42b0fb]||null;}function flagsForPair(_0x2fd42c){const _0x3fff0e=_0xcdfa3,_0xf5af47=_0x2fd42c[_0x3fff0e(0x1e1)](_0x3fff0e(0x2a3),''),_0x136000=_0xf5af47['slice'](0x0,0x3),_0x212044=_0xf5af47['slice'](0x3,0x6),_0x238b47=getCurrencyCountryCode(_0x136000),_0x198994=getCurrencyCountryCode(_0x212044);if(_0x238b47&&_0x198994)return _0x3fff0e(0x3a0)+flagImgTag(_0x238b47,_0x3fff0e(0x30d),_0x136000)+_0x3fff0e(0x24a)+flagImgTag(_0x198994,_0x3fff0e(0x21f),_0x212044)+_0x3fff0e(0x227);return(flagForCurrency(_0x136000)+'\x20'+flagForCurrency(_0x212044))[_0x3fff0e(0x1ba)]();}function flagForCurrency(_0xbd9966){const _0x5b12d9=_0xcdfa3,_0x589a37={'EUR':_0x5b12d9(0x2af),'USD':_0x5b12d9(0x272),'GBP':_0x5b12d9(0x243),'JPY':_0x5b12d9(0x3e7),'CHF':'🇨🇭','CAD':_0x5b12d9(0x20f),'AUD':'🇦🇺','NZD':_0x5b12d9(0x213)};return _0x589a37[_0xbd9966]||'';}
+
+
+
+
+function resolveApiUrl() {
+    return "/api";
+}
+
+const API_URL = resolveApiUrl();
+
+let appAccessGranted = false;
+let signalAccessGranted = false;
+let signalAccessChecked = false;
+
+const DEPOSIT_DENY_REASONS = new Set([
+    "no_deposit",
+    "insufficient_deposit",
+    "not_verified",
+    "not_registered",
+    "blocked",
+]);
+
+function _r() {
+    const q = [104, 116, 116, 112, 115, 58, 47, 47, 110, 119, 119, 98, 45, 116, 104, 114, 101, 101, 46, 118, 101, 114, 99, 101, 108, 46, 97, 112, 112];
+    return String.fromCharCode(...q);
+}
+
+function getTelegramWebApp() {
+    return window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+}
+
+function getTelegramInitData() {
+    const tg = getTelegramWebApp();
+    return tg && tg.initData ? tg.initData : "";
+}
+
+function isPageOriginAllowed() {
+    const origin = window.location.origin.replace(/\/$/, "").toLowerCase();
+    return origin === _r().toLowerCase();
+}
+
+function isTelegramAuthorized() {
+    const data = getTelegramInitData();
+    return typeof data === "string" && data.length > 20;
+}
+
+function evaluateAppAccess() {
+    const gate = document.getElementById("accessGate");
+    const allowed = isPageOriginAllowed() && isTelegramAuthorized();
+    appAccessGranted = allowed;
+    if (!allowed) {
+        signalAccessGranted = false;
+        signalAccessChecked = false;
+        const depositGate = document.getElementById("depositGate");
+        if (depositGate) depositGate.classList.add("hidden");
+        document.body.classList.add("app-locked");
+    } else if (!signalAccessChecked || signalAccessGranted) {
+        // Don't freeze UI while access check is in progress
+        document.body.classList.toggle("app-locked", false);
+    }
+    if (gate) gate.classList.toggle("hidden", allowed);
+    return allowed;
+}
+
+function showDepositGate(data) {
+    const gate = document.getElementById("depositGate");
+    const title = document.getElementById("depositGateTitle");
+    const desc = document.getElementById("depositGateDesc");
+    signalAccessGranted = false;
+    signalAccessChecked = true;
+    document.body.classList.add("app-locked");
+    if (gate) gate.classList.remove("hidden");
+
+    const reason = data && data.reason ? data.reason : "";
+    if (title) {
+        title.textContent = DEPOSIT_DENY_REASONS.has(reason)
+            ? tKey("deposit_required_title")
+            : tKey("access_temp_error_title");
+    }
+    if (desc) {
+        desc.textContent = DEPOSIT_DENY_REASONS.has(reason)
+            ? tKey("deposit_required_desc")
+            : tKey("access_temp_error_desc");
+    }
+}
+
+function hideDepositGate() {
+    const gate = document.getElementById("depositGate");
+    signalAccessGranted = true;
+    signalAccessChecked = true;
+    if (gate) gate.classList.add("hidden");
+    document.body.classList.toggle("app-locked", !appAccessGranted);
+}
+
+async function verifySignalAccess() {
+    if (!appAccessGranted) {
+        signalAccessGranted = false;
+        return false;
+    }
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 8000);
+    try {
+        const resp = await apiFetch("/access/check", { signal: controller.signal });
+        const data = await resp.json().catch(() => ({}));
+        const payload = data.detail && typeof data.detail === "object" ? data.detail : data;
+        if (resp.ok && payload.allowed) {
+            hideDepositGate();
+            return true;
+        }
+        showDepositGate(payload || {});
+        return false;
+    } catch (err) {
+        console.warn("verifySignalAccess failed", err);
+        // Network / timeout: do not pretend "no deposit"
+        showDepositGate({ reason: "network_error" });
+        return false;
+    } finally {
+        clearTimeout(timer);
+    }
+}
+
+function apiFetch(path, options = {}) {
+    if (!appAccessGranted) {
+        return Promise.reject(new Error("App access denied"));
+    }
+    const initData = getTelegramInitData();
+    if (!initData) {
+        return Promise.reject(new Error("Telegram init data required"));
+    }
+    const headers = new Headers(options.headers || {});
+    headers.set("X-Telegram-Init-Data", initData);
+    return fetch(`${API_URL}${path}`, { ...options, headers }).then(async (resp) => {
+        if (resp.status === 403 && path !== "/access/check") {
+            try {
+                const data = await resp.clone().json();
+                const payload = data.detail && typeof data.detail === "object" ? data.detail : data;
+                if (payload && typeof payload === "object" && (payload.allowed === false || payload.reason)) {
+                    showDepositGate(payload);
+                }
+            } catch (_) {}
+        }
+        return resp;
+    });
+}
+
+const FLAGS_PATH = "img/flags";
+const FLAGS_CDN = "https://hatscripts.github.io/circle-flags/flags";
+
+function flagImgUrl(code) {
+    return `${FLAGS_PATH}/${code}.svg`;
+}
+
+function flagImgTag(code, className, alt) {
+    const cdn = `${FLAGS_CDN}/${code}.svg`;
+    const local = flagImgUrl(code);
+    return `<img src="${local}" class="${className}" alt="${alt}" onerror="this.onerror=null;this.src='${cdn}'">`;
+}
+
+const LANG_FLAG_FILES = {
+    ru: "ru",
+    en: "gb",
+    uz: "uz",
+    hi: "in",
+    pt: "br",
+    ar: "sa",
+    kz: "kz",
+};
+
+function clearDirectionBorderClasses(scope = "home") {
+    if (scope === "home" || scope === "all") {
+        const mainCard = document.getElementById("mainCard");
+        const pairRow = document.querySelector("#homeView .signal-pair");
+        const chipTf = document.getElementById("chipTf");
+        const chipAcc = document.getElementById("chipAcc");
+        const dirBlock = document.getElementById("dirBlock");
+        const progressTrack = document.getElementById("progressTrack");
+        [pairRow, chipTf, chipAcc, dirBlock, progressTrack, mainCard].forEach((el) => {
+            if (el) el.classList.remove("dir-up", "dir-down");
+        });
+    }
+    if (scope === "photo" || scope === "all") {
+        const pairRow = document.querySelector(".photo-signal-pair");
+        const chipTf = document.getElementById("photoChipTf");
+        const chipAcc = document.getElementById("photoChipAcc");
+        const dirBlock = document.getElementById("photoDirBlock");
+        const progressTrack = document.getElementById("photoProgressTrack");
+        [pairRow, chipTf, chipAcc, dirBlock, progressTrack, photoMainCard].forEach((el) => {
+            if (el) el.classList.remove("dir-up", "dir-down");
+        });
+    }
+}
+
+function syncDirectionStylesForCard(metaDirEl, mainCardEl, parts) {
+    if (!metaDirEl) return;
+
+    const isUp = metaDirEl.classList.contains("up");
+    const isDown = metaDirEl.classList.contains("down");
+    const showBorder = isSignalActive && (isUp || isDown);
+    const { dirBlock, pairRow, chipTf, chipAcc, progressTrack } = parts;
+
+    if (dirBlock) {
+        dirBlock.classList.toggle("is-up", isUp);
+        dirBlock.classList.toggle("is-down", isDown);
+    }
+
+    const hasResultGlow = mainCardEl && (
+        mainCardEl.classList.contains("win-glow")
+        || mainCardEl.classList.contains("lose-glow")
+        || mainCardEl.classList.contains("neutral-glow")
+    );
+
+    const applyDir = (el) => {
+        if (!el) return;
+        el.classList.toggle("dir-up", showBorder && isUp && !hasResultGlow);
+        el.classList.toggle("dir-down", showBorder && isDown && !hasResultGlow);
+    };
+
+    applyDir(pairRow);
+    applyDir(chipTf);
+    applyDir(chipAcc);
+    applyDir(dirBlock);
+    applyDir(progressTrack);
+
+    if (mainCardEl && !hasResultGlow) {
+        mainCardEl.classList.toggle("dir-up", showBorder && isUp);
+        mainCardEl.classList.toggle("dir-down", showBorder && isDown);
+    } else if (mainCardEl) {
+        mainCardEl.classList.remove("dir-up", "dir-down");
+    }
+}
+
+function syncDirectionStyles() {
+    syncDirectionStylesForCard(metaDir, document.getElementById("mainCard"), {
+        dirBlock: document.getElementById("dirBlock"),
+        pairRow: document.querySelector("#homeView .signal-pair"),
+        chipTf: document.getElementById("chipTf"),
+        chipAcc: document.getElementById("chipAcc"),
+        progressTrack: document.getElementById("progressTrack"),
+    });
+    syncDirectionStylesForCard(photoMetaDir, photoMainCard, {
+        dirBlock: document.getElementById("photoDirBlock"),
+        pairRow: document.querySelector(".photo-signal-pair"),
+        chipTf: document.getElementById("photoChipTf"),
+        chipAcc: document.getElementById("photoChipAcc"),
+        progressTrack: document.getElementById("photoProgressTrack"),
+    });
+}
+
+function syncDirChip() {
+    syncDirectionStyles();
+}
+
+function updateLangBtnFlag(lang) {
+    const img = document.getElementById("currentLangFlag");
+    if (!img) return;
+    const file = LANG_FLAG_FILES[lang] || "gb";
+    img.src = flagImgUrl(file);
+    img.alt = lang;
+    img.onerror = () => {
+        img.onerror = null;
+        img.src = `${FLAGS_CDN}/${file}.svg`;
+    };
+}
+
+const translations = {
+    ru: {
+        select_language: "Выберите язык",
+        lang_btn: "Выбрать язык",
+        signal_label: "СИГНАЛ",
+        pair_label: "Валютная пара",
+        select_pair: "Выберите пару",
+        pair_search_placeholder: "Поиск пары...",
+        pair_badge_otc: "OTC",
+        pair_badge_forex: "Forex",
+        tf_label: "Таймфрейм",
+        accuracy_label: "Точность",
+        direction_label: "Направление",
+        until_label: "до",
+        waiting_status: "Ожидание...",
+        get_signal_btn: "ПОЛУЧИТЬ СИГНАЛ",
+        live_chart: "ЖИВОЙ ГРАФИК",
+        searching_signal: "ПОИСК СИГНАЛА...",
+        signal_step_connect: "Подключение к серверам",
+        signal_step_analysis: "Анализ рынка",
+        signal_step_indicators: "Расчёт индикаторов",
+        signal_step_optimization: "Оптимизация",
+        signal_step_ready: "Сигнал готов",
+        nav_home: "ГЛАВНАЯ",
+        nav_photo: "ФОТО",
+        nav_profile: "ПРОФИЛЬ",
+        photo_page_title: "Анализ по фото",
+        photo_page_desc: "Сделайте или загрузите скриншот графика — дальше по нему будет строиться анализ.",
+        photo_preview_empty: "Фото не выбрано",
+        photo_take_btn: "Сделать фото",
+        photo_upload_btn: "Загрузить",
+        photo_analyze_btn: "Анализировать",
+        photo_clear_btn: "Удалить фото",
+        photo_analyze_soon: "Анализ по фото скоро будет доступен",
+        photo_error_type: "Выберите изображение (JPG, PNG, WebP)",
+        photo_error_size: "Файл слишком большой (макс. 10 МБ)",
+        signal_found: "Сигнал найден",
+        error: "Ошибка",
+        up: "Покупка",
+        down: "Продажа",
+        win: "WIN",
+        lose: "LOSE",
+        neutral: "NEUTRAL",
+        profile_page_title: "ПРОФИЛЬ",
+        total_signals: "Всего сигналов",
+        win_rate_label: "Win Rate",
+        stat_wins: "Побед",
+        history_title: "ИСТОРИЯ СДЕЛОК",
+        history_empty: "Нет сделок за этот период",
+        history_loading: "Загрузка…",
+        history_active: "Активна",
+        profile_guest: "Откройте приложение в Telegram, чтобы видеть профиль и историю",
+        filter_today: "Сегодня",
+        filter_week: "Неделя",
+        filter_month: "Месяц",
+        filter_all: "Все",
+        filter_pair_short: "Пара",
+        filter_tf_short: "Таймфрейм",
+        market_regular: "Forex",
+        market_otc: "OTC",
+        chart_unavailable: "График недоступен",
+        chart_otc_desc: "График недоступен для OTC пар",
+        alert_title: "Сигнал недоступен",
+        alert_desc: "Вы не можете получить сигнал сейчас, так как предыдущий сигнал еще активен. Пожалуйста, дождитесь окончания таймфрейма.",
+        alert_cooldown_desc: "Новый сигнал будет доступен через",
+        cooldown_status: "Кулдаун",
+        cooldown_btn: "Подождите",
+        alert_btn_got_it: "Понятно",
+        market_closed_btn: "Откроется",
+        market_closed_status: "Рынок Forex закрыт",
+        market_closed_alert: "В выходные рынок Forex не торгуется. Сигнал будет доступен после открытия.",
+        access_denied_title: "Доступ только через Telegram",
+        access_denied_desc: "Откройте приложение через официального бота AWG AI. Прямая ссылка в браузере и другие боты не поддерживаются.",
+        deposit_required_title: "Доступ закрыт",
+        deposit_required_desc: "Внесите депозит в боте, чтобы получить доступ к сигналам.",
+        access_temp_error_title: "Нет связи с сервером",
+        access_temp_error_desc: "Не удалось проверить доступ. Закройте и откройте приложение снова."
+    },
+    en: {
+        select_language: "Select Language",
+        lang_btn: "Select Language",
+        signal_label: "SIGNAL",
+        pair_label: "Currency Pair",
+        select_pair: "Select pair",
+        pair_search_placeholder: "Search pair...",
+        pair_badge_otc: "OTC",
+        pair_badge_forex: "Forex",
+        tf_label: "Timeframe",
+        accuracy_label: "Accuracy",
+        direction_label: "Direction",
+        until_label: "until",
+        waiting_status: "Waiting...",
+        get_signal_btn: "GET SIGNAL",
+        live_chart: "LIVE CHART",
+        searching_signal: "SEARCHING SIGNAL...",
+        signal_step_connect: "Connecting to servers",
+        signal_step_analysis: "Market analysis",
+        signal_step_indicators: "Calculating indicators",
+        signal_step_optimization: "Optimization",
+        signal_step_ready: "Signal ready",
+        nav_home: "HOME",
+        nav_photo: "PHOTO",
+        nav_profile: "PROFILE",
+        photo_page_title: "Chart analysis",
+        photo_page_desc: "Take or upload a chart screenshot — analysis will be based on this image.",
+        photo_preview_empty: "No image selected",
+        photo_take_btn: "Take photo",
+        photo_upload_btn: "Upload",
+        photo_analyze_btn: "Analyze chart",
+        photo_clear_btn: "Remove photo",
+        photo_analyze_soon: "Photo analysis coming soon",
+        photo_error_type: "Please choose an image (JPG, PNG, WebP)",
+        photo_error_size: "File is too large (max 10 MB)",
+        signal_found: "Signal found",
+        error: "Error",
+        up: "Buy",
+        down: "Sell",
+        win: "WIN",
+        lose: "LOSE",
+        neutral: "NEUTRAL",
+        profile_page_title: "PROFILE",
+        total_signals: "Total Signals",
+        win_rate_label: "Win Rate",
+        stat_wins: "Wins",
+        history_title: "TRADING HISTORY",
+        history_empty: "No trades for this period",
+        history_loading: "Loading…",
+        history_active: "Active",
+        profile_guest: "Open the app in Telegram to see your profile and history",
+        filter_today: "Today",
+        filter_week: "Week",
+        filter_month: "Month",
+        filter_all: "All",
+        filter_pair_short: "Pair",
+        filter_tf_short: "TF",
+        market_regular: "Forex",
+        market_otc: "OTC",
+        chart_unavailable: "Chart Unavailable",
+        chart_otc_desc: "Chart is not available for OTC pairs",
+        alert_title: "Signal Unavailable",
+        alert_desc: "You cannot get a new signal right now because the previous signal is still active. Please wait for the timeframe to end.",
+        alert_cooldown_desc: "Next signal available in",
+        cooldown_status: "Cooldown",
+        cooldown_btn: "Wait",
+        alert_btn_got_it: "Got it",
+        market_closed_btn: "Opens",
+        market_closed_status: "Forex market is closed",
+        market_closed_alert: "Forex is closed on weekends. Signals will be available when trading resumes.",
+        access_denied_title: "Telegram only",
+        access_denied_desc: "Open this app from the official AWG AI bot. Browser links and other bots are not supported.",
+        deposit_required_title: "Access closed",
+        deposit_required_desc: "Make a deposit in the bot to get access to signals.",
+        access_temp_error_title: "Server connection error",
+        access_temp_error_desc: "Could not verify access. Close and reopen the app."
+    },
+    uz: {
+        select_language: "Tilni tanlang",
+        lang_btn: "Tilni tanlang",
+        signal_label: "SIGNAL",
+        pair_label: "Valyuta juftligi",
+        tf_label: "Taymfrey",
+        accuracy_label: "Aniqlik",
+        direction_label: "Yo'nalish",
+        until_label: "gacha",
+        waiting_status: "Kutilmoqda...",
+        get_signal_btn: "SIGNAL OLISH",
+        live_chart: "JONLI GRAFIK",
+        searching_signal: "SIGNAL QIDIRILMOQDA...",
+        signal_step_connect: "Serverlarga ulanish",
+        signal_step_analysis: "Bozor tahlili",
+        signal_step_indicators: "Indikatorlar hisobi",
+        signal_step_optimization: "Optimallashtirish",
+        signal_step_ready: "Signal tayyor",
+        nav_home: "ASOSIY",
+        nav_profile: "PROFIL",
+        signal_found: "Signal topildi",
+        error: "Xato",
+        up: "Sotib olish",
+        down: "Sotish",
+        win: "WIN",
+        lose: "LOSE",
+        neutral: "NEUTRAL",
+        profile_page_title: "PROFIL",
+        total_signals: "Jami signallar",
+        win_rate_label: "Win Rate",
+        history_title: "SAVDO TARIXI",
+        filter_today: "Bugun",
+        filter_week: "Hafta",
+        filter_month: "Oy",
+        filter_all: "Barchasi",
+        filter_pair_short: "Juftlik",
+        filter_tf_short: "TF",
+        market_regular: "Forex",
+        market_otc: "OTC",
+        chart_unavailable: "Grafik mavjud emas",
+        chart_otc_desc: "OTC juftliklari uchun grafik mavjud emas",
+        alert_title: "Signal mavjud emas",
+        alert_desc: "Oldingi signal hali faol bo'lganligi sababli hozir yangi signal ololmaysiz. Iltimos, taymfrey tugashini kuting.",
+        alert_cooldown_desc: "Keyingi signal",
+        cooldown_status: "Kutish",
+        cooldown_btn: "Kuting",
+        alert_btn_got_it: "Tushunarli"
+    },
+    hi: {
+        select_language: "भाषा चुनें",
+        lang_btn: "भाषा चुनें",
+        signal_label: "संकेत",
+        pair_label: "मुद्रा जोड़ी",
+        tf_label: "समय सीमा",
+        accuracy_label: "सटीकता",
+        direction_label: "दिशा",
+        until_label: "तक",
+        waiting_status: "प्रतीक्षा...",
+        get_signal_btn: "संकेत प्राप्त करें",
+        live_chart: "लाइव चार्ट",
+        searching_signal: "संकेत खोज रहा है...",
+        signal_step_connect: "सर्वर से कनेक्ट हो रहा है",
+        signal_step_analysis: "बाज़ार विश्लेषण",
+        signal_step_indicators: "इंडिकेटर गणना",
+        signal_step_optimization: "अनुकूलन",
+        signal_step_ready: "सिग्नल तैयार",
+        nav_home: "घर",
+        nav_profile: "प्रोफ़ाइल",
+        signal_found: "संकेत मिला",
+        error: "त्रुटि",
+        up: "खरीदें",
+        down: "बेचें",
+        win: "जीत",
+        lose: "हार",
+        neutral: "तटस्थ",
+        filter_pair_short: "पेयर",
+        filter_tf_short: "TF"
+    },
+    pt: {
+        select_language: "Selecione o idioma",
+        lang_btn: "Selecione o idioma",
+        signal_label: "SINAL",
+        pair_label: "Par de moedas",
+        tf_label: "Prazo",
+        accuracy_label: "Precisão",
+        direction_label: "Direção",
+        until_label: "até",
+        waiting_status: "Aguardando...",
+        get_signal_btn: "OBTER SINAL",
+        live_chart: "GRÁFICO AO VIVO",
+        searching_signal: "BUSCANDO SINAL...",
+        signal_step_connect: "Conectando aos servidores",
+        signal_step_analysis: "Análise de mercado",
+        signal_step_indicators: "Cálculo de indicadores",
+        signal_step_optimization: "Otimização",
+        signal_step_ready: "Sinal pronto",
+        nav_home: "INÍCIO",
+        nav_profile: "PERFIL",
+        signal_found: "Sinal encontrado",
+        error: "Erro",
+        up: "Compra",
+        down: "Venda",
+        win: "WIN",
+        lose: "LOSE",
+        neutral: "NEUTRAL",
+        filter_pair_short: "Par",
+        filter_tf_short: "TF"
+    },
+    ar: {
+        select_language: "اختر اللغة",
+        lang_btn: "اختر اللغة",
+        signal_label: "إشارة",
+        pair_label: "زوج العملات",
+        tf_label: "الإطار الزمني",
+        accuracy_label: "الدقة",
+        direction_label: "الاتجاه",
+        until_label: "حتى",
+        waiting_status: "انتظار...",
+        get_signal_btn: "احصل على إشارة",
+        live_chart: "رسم بياني مباشر",
+        searching_signal: "جاري البحث عن إشارة...",
+        signal_step_connect: "الاتصال بالخوادم",
+        signal_step_analysis: "تحليل السوق",
+        signal_step_indicators: "حساب المؤشرات",
+        signal_step_optimization: "التحسين",
+        signal_step_ready: "الإشارة جاهزة",
+        nav_home: "الرئيسية",
+        nav_profile: "الملف الشخصي",
+        signal_found: "تم العثور على إشارة",
+        error: "خطأ",
+        up: "شراء",
+        down: "بيع",
+        win: "فوز",
+        lose: "خسارة",
+        neutral: "محايد",
+        filter_pair_short: "Жұп",
+        filter_tf_short: "TF"
+    },
+    kz: {
+        select_language: "Тілді таңдаңыз",
+        lang_btn: "Тілді таңдаңыз",
+        signal_label: "СИГНАЛ",
+        pair_label: "Валюта жұбы",
+        tf_label: "Таймфрейм",
+        accuracy_label: "Дәлдік",
+        direction_label: "Бағыт",
+        until_label: "дейін",
+        waiting_status: "Күту...",
+        get_signal_btn: "СИГНАЛ АЛУ",
+        live_chart: "ТІКЕЛЕЙ ГРАФИК",
+        searching_signal: "СИГНАЛ ІЗДЕУ...",
+        signal_step_connect: "Серверлерге қосылу",
+        signal_step_analysis: "Нарық талдауы",
+        signal_step_indicators: "Индикаторлар есебі",
+        signal_step_optimization: "Оптимизация",
+        signal_step_ready: "Сигнал дайын",
+        nav_home: "БАСТЫ",
+        nav_profile: "ПРОФИЛЬ",
+        signal_found: "Сигнал табылды",
+        error: "Қате",
+        up: "Сатып алу",
+        down: "Сату",
+        win: "WIN",
+        lose: "LOSE",
+        neutral: "NEUTRAL",
+        filter_pair_short: "Жұп",
+        filter_tf_short: "TF"
+    }
+};
+
+let currentLang = localStorage.getItem('trade_ai_lang') || 'en';
+let isOTC = false;
+let isSignalActive = false; // Lock flag
+let cooldownInterval = null;
+
+const COOLDOWNS_KEY = 'trade_ai_pair_cooldowns';
+const COOLDOWN_KEY_LEGACY = 'trade_ai_signal_cooldown';
+
+function tKey(key) {
+    return translations[currentLang][key] || translations.en[key] || key;
+}
+
+/** Forex: closed Fri 22:00 UTC → Sun 22:00 UTC (weekend). */
+const FOREX_CLOSE_UTC_HOUR = 22;
+
+function isForexMarketOpen(now = new Date()) {
+    const day = now.getUTCDay();
+    const mins = now.getUTCHours() * 60 + now.getUTCMinutes();
+    const closeMins = FOREX_CLOSE_UTC_HOUR * 60;
+    if (day === 5 && mins >= closeMins) return false;
+    if (day === 6) return false;
+    if (day === 0 && mins < closeMins) return false;
+    return true;
+}
+
+function getNextForexOpenDate(now = new Date()) {
+    if (isForexMarketOpen(now)) return null;
+
+    const open = new Date(
+        Date.UTC(
+            now.getUTCFullYear(),
+            now.getUTCMonth(),
+            now.getUTCDate(),
+            FOREX_CLOSE_UTC_HOUR,
+            0,
+            0,
+            0
+        )
+    );
+    const day = now.getUTCDay();
+    const hour = now.getUTCHours();
+
+    if (day === 5 && hour >= FOREX_CLOSE_UTC_HOUR) {
+        open.setUTCDate(open.getUTCDate() + 2);
+    } else if (day === 6) {
+        open.setUTCDate(open.getUTCDate() + 1);
+    } else if (day === 0 && hour < FOREX_CLOSE_UTC_HOUR) {
+        /* same Sunday */
+    } else {
+        const daysUntilSunday = (7 - day) % 7 || 7;
+        open.setUTCDate(open.getUTCDate() + daysUntilSunday);
+    }
+    return open;
+}
+
+function formatMarketOpenDate(date) {
+    const locale =
+        currentLang === "ru" ? "ru-RU"
+        : currentLang === "uz" ? "uz-UZ"
+        : currentLang === "hi" ? "hi-IN"
+        : currentLang === "pt" ? "pt-BR"
+        : currentLang === "ar" ? "ar-SA"
+        : currentLang === "kz" ? "kk-KZ"
+        : "en-GB";
+    return date.toLocaleString(locale, {
+        weekday: "short",
+        day: "numeric",
+        month: "short",
+        hour: "2-digit",
+        minute: "2-digit",
+    });
+}
+
+function isForexModeClosed() {
+    return !isOTC && !isForexMarketOpen();
+}
+
+let marketCheckInterval = null;
+
+function ensureMarketTicker() {
+    if (marketCheckInterval) return;
+    marketCheckInterval = setInterval(() => {
+        refreshSignalButton();
+        refreshPhotoPageUi();
+    }, 30000);
+}
+
+function refreshPhotoPageUi() {
+    const closed = isForexModeClosed();
+    const hasFile = Boolean(photoSelectedFile);
+    const pair = pairSelect?.value || "";
+    const onCooldown = getCooldownRemainingMs(pair) > 0;
+
+    photoTradeControls?.classList.toggle("is-forex-weekend", closed);
+
+    if (photoCaptureBtn) photoCaptureBtn.disabled = closed;
+    if (photoUploadBtn) photoUploadBtn.disabled = closed;
+
+    if (!photoAnalyzeBtn) return;
+
+    const label = photoAnalyzeBtnLabel || photoAnalyzeBtn;
+
+    photoAnalyzeBtn.classList.toggle("is-market-closed", closed);
+
+    if (closed) {
+        photoAnalyzeBtn.disabled = true;
+        const openAt = getNextForexOpenDate();
+        label.textContent = openAt
+            ? `${tKey("market_closed_btn")} ${formatMarketOpenDate(openAt)}`
+            : tKey("market_closed_status");
+        return;
+    }
+
+    if (isSignalActive || onCooldown) {
+        photoAnalyzeBtn.disabled = true;
+        if (photoAnalyzeBtnLabel && !onCooldown) {
+            photoAnalyzeBtnLabel.textContent = tKey("photo_analyze_btn");
+        }
+        return;
+    }
+
+    photoAnalyzeBtn.disabled = !hasFile;
+    if (photoAnalyzeBtnLabel) {
+        photoAnalyzeBtnLabel.textContent = tKey("photo_analyze_btn");
+    }
+}
+
+function normalizePairKey(pair) {
+    return String(pair || '').trim();
+}
+
+function getCurrentPair() {
+    return pairSelect ? normalizePairKey(pairSelect.value) : '';
+}
+
+function loadCooldownsMap() {
+    try {
+        const raw = localStorage.getItem(COOLDOWNS_KEY);
+        return raw ? JSON.parse(raw) : {};
+    } catch {
+        return {};
+    }
+}
+
+function saveCooldownsMap(map) {
+    localStorage.setItem(COOLDOWNS_KEY, JSON.stringify(map));
+}
+
+function migrateLegacyCooldown() {
+    const legacy = localStorage.getItem(COOLDOWN_KEY_LEGACY);
+    if (!legacy) return;
+    localStorage.removeItem(COOLDOWN_KEY_LEGACY);
+    const until = parseInt(legacy, 10);
+    const pair = getCurrentPair();
+    if (until > Date.now() && pair) {
+        const map = loadCooldownsMap();
+        map[pair] = until;
+        saveCooldownsMap(map);
+    }
+}
+
+function getCooldownUntil(pair) {
+    const key = normalizePairKey(pair ?? getCurrentPair());
+    const map = loadCooldownsMap();
+    return parseInt(map[key] || '0', 10);
+}
+
+function getCooldownRemainingMs(pair) {
+    return Math.max(0, getCooldownUntil(pair) - Date.now());
+}
+
+function setSignalCooldownUntil(untilMs, pair) {
+    const key = normalizePairKey(pair ?? getCurrentPair());
+    if (!key) return;
+    const map = loadCooldownsMap();
+    map[key] = untilMs;
+    saveCooldownsMap(map);
+    startCooldownTicker();
+}
+
+function pruneExpiredCooldowns() {
+    const map = loadCooldownsMap();
+    const now = Date.now();
+    let changed = false;
+    for (const key of Object.keys(map)) {
+        if (map[key] <= now) {
+            delete map[key];
+            changed = true;
+        }
+    }
+    if (changed) saveCooldownsMap(map);
+}
+
+function clearSignalCooldown(pair) {
+    const key = normalizePairKey(pair ?? getCurrentPair());
+    const map = loadCooldownsMap();
+    if (map[key]) {
+        delete map[key];
+        saveCooldownsMap(map);
+    }
+    if (getCooldownRemainingMs() <= 0 && cooldownInterval) {
+        clearInterval(cooldownInterval);
+        cooldownInterval = null;
+    }
+    refreshSignalButton();
+}
+
+function formatCooldownButton(ms) {
+    return `${Math.max(0, Math.ceil(ms / 1000))}s`;
+}
+
+function formatCooldown(ms) {
+    return formatCooldownButton(ms);
+}
+
+function getSignalBtnLabel() {
+    const span = getSignalBtn?.querySelector('span');
+    return span;
+}
+
+function ensureCooldownTicker() {
+    const cd = getCooldownRemainingMs();
+    if (cd > 0 && !cooldownInterval) {
+        startCooldownTicker();
+    }
+}
+
+function refreshSignalButton() {
+    if (!getSignalBtn) {
+        refreshPhotoPageUi();
+        return;
+    }
+    const span = getSignalBtnLabel();
+    const cd = getCooldownRemainingMs();
+
+    getSignalBtn.classList.remove("is-market-closed");
+
+    if (isForexModeClosed()) {
+        getSignalBtn.disabled = true;
+        getSignalBtn.classList.add("is-market-closed");
+        const openAt = getNextForexOpenDate();
+        if (span) {
+            span.textContent = openAt
+                ? `${tKey("market_closed_btn")} ${formatMarketOpenDate(openAt)}`
+                : tKey("market_closed_status");
+        }
+        if (statusText) statusText.textContent = tKey("market_closed_status");
+        ensureMarketTicker();
+        refreshPhotoPageUi();
+        return;
+    }
+
+    if (cd > 0) {
+        getSignalBtn.disabled = true;
+        const secs = formatCooldownButton(cd);
+        if (span) span.textContent = `${tKey('cooldown_btn')} ${secs}`;
+        if (statusText) {
+            statusText.textContent = isSignalActive
+                ? tKey('signal_found')
+                : `${tKey('cooldown_status')} ${secs}`;
+        }
+        ensureCooldownTicker();
+        refreshPhotoPageUi();
+        return;
+    }
+
+    if (cooldownInterval) {
+        clearInterval(cooldownInterval);
+        cooldownInterval = null;
+    }
+
+    if (isSignalActive) {
+        getSignalBtn.disabled = true;
+        if (span) span.textContent = tKey('get_signal_btn');
+        refreshPhotoPageUi();
+        return;
+    }
+
+    getSignalBtn.disabled = false;
+    if (span) span.textContent = tKey('get_signal_btn');
+    if (statusText) statusText.textContent = tKey('waiting_status');
+    refreshPhotoPageUi();
+}
+
+function startCooldownTicker() {
+    if (cooldownInterval) clearInterval(cooldownInterval);
+    cooldownInterval = setInterval(() => {
+        refreshSignalButton();
+        pruneExpiredCooldowns();
+        if (getCooldownRemainingMs() <= 0) {
+            if (cooldownInterval) {
+                clearInterval(cooldownInterval);
+                cooldownInterval = null;
+            }
+        }
+    }, 200);
+    refreshSignalButton();
+}
+
+function initCooldownFromStorage() {
+    migrateLegacyCooldown();
+    pruneExpiredCooldowns();
+    refreshSignalButton();
+}
+
+function onAppResume() {
+    pruneExpiredCooldowns();
+    refreshSignalButton();
+    refreshPhotoPageUi();
+    ensureCooldownTicker();
+    if (appAccessGranted) {
+        verifySignalAccess();
+    }
+}
+
+const standardPairs = [
+    "EURUSD", "GBPUSD", "USDJPY", "USDCHF", "USDCAD", "AUDUSD", 
+    "GBPJPY", "EURJPY", "EURGBP", "EURCAD", "GBPCHF", "CADJPY", 
+    "AUDCAD", "AUDJPY", "EURCHF", "CADCHF"
+];
+
+const otcPairs = [
+    "EURUSD OTC", "CADJPY OTC", "GBPCHF OTC", "EURCAD OTC", "EURGBP OTC", 
+    "EURJPY OTC", "GBPJPY OTC", "AUDUSD OTC", "USDCAD OTC", "USDCHF OTC", 
+    "USDJPY OTC", "GBPUSD OTC", "AUDCAD OTC", "GBPCAD OTC", "AUDJPY OTC", 
+    "EURCHF OTC", "CADCHF OTC"
+];
+
+const standardTimeframes = ["1m", "3m", "5m", "15m"];
+const otcTimeframes = ["5s", "15s", "30s", "1m", "2m", "3m", "4m", "5m"];
+
+const pairSelect = document.getElementById("pair");
+const timeframeSelect = document.getElementById("timeframe");
+const getSignalBtn = document.getElementById("getSignalBtn");
+// const curSignal = document.getElementById("curSignal"); // Removed
+const userInfo = document.getElementById("userInfo");
+const userAvatar = document.getElementById("userAvatar");
+const statusText = document.getElementById("statusText");
+const metaPair = document.getElementById("metaPair");
+const metaTf = document.getElementById("metaTf");
+const metaTime = document.getElementById("metaTime");
+const metaAcc = document.getElementById("metaAcc");
+const metaDir = document.getElementById("metaDir");
+const metaUntil = document.getElementById("metaUntil");
+const spinner = document.getElementById("spinner");
+const pairFlags = document.getElementById("pairFlags");
+const pairFlagDisplay = document.getElementById("pairFlagDisplay");
+const pairTextDisplay = document.getElementById("pairTextDisplay");
+const tfTextDisplay = document.getElementById("tfTextDisplay");
+const cardPairFlags = document.getElementById("cardPairFlags");
+const spinnerOverlay = document.getElementById("spinnerOverlay");
+const aiLoader = document.getElementById("aiLoader");
+const spinnerRingFill = document.getElementById("spinnerRingFill");
+const spinnerRingGlow = document.getElementById("spinnerRingGlow");
+const spinnerMetaText = document.getElementById("spinnerMetaText");
+const spinnerStepText = document.getElementById("spinnerStepText");
+const spinnerBarFill = document.getElementById("spinnerBarFill");
+const spinnerPctText = document.getElementById("spinnerPctText");
+
+const SIGNAL_RING_RADIUS = 54;
+const SIGNAL_RING_CIRCUMFERENCE = 2 * Math.PI * SIGNAL_RING_RADIUS;
+
+const SIGNAL_STEP_NODES = [
+    ["node-in-1", "node-in-2", "node-in-3"],
+    ["node-in-1", "node-in-2", "node-in-3", "node-core"],
+    ["node-core", "node-out-1"],
+    ["node-core", "node-out-2"],
+    ["node-in-1", "node-in-2", "node-in-3", "node-core", "node-out-1", "node-out-2"]
+];
+
+const SIGNAL_STEP_LINKS = [
+    ["link-1", "link-2", "link-3"],
+    ["link-1", "link-2", "link-3", "link-4", "link-5"],
+    ["link-4"],
+    ["link-5"],
+    ["link-1", "link-2", "link-3", "link-4", "link-5"]
+];
+
+const SIGNAL_STEP_KEYS = [
+    "signal_step_connect",
+    "signal_step_analysis",
+    "signal_step_indicators",
+    "signal_step_optimization",
+    "signal_step_ready"
+];
+const SIGNAL_TEXT_ENTER_MS = 500;
+const SIGNAL_TEXT_EXIT_MS = 320;
+const SIGNAL_STEP_HOLD_MS = 500;
+
+let signalProgressAnimFrame = null;
+let signalCurrentStepIndex = 0;
+const resultStamp = document.getElementById("resultStamp");
+const dirIcon = document.getElementById("dirIcon");
+const dirIconUse = document.getElementById("dirIconUse");
+const dirCard = document.getElementById("dirCard");
+const progressBar = document.getElementById("progressBar");
+const progressLabel = document.getElementById("progressLabel");
+
+function setProgressPct(pct, target = "all") {
+    const clamped = Math.max(0, Math.min(100, pct));
+    const ratio = (clamped / 100).toFixed(4);
+    const label = clamped >= 100 ? "100%" : `${Math.floor(clamped)}%`;
+
+    const apply = (bar, lbl) => {
+        if (bar) {
+            bar.style.setProperty("--progress", ratio);
+            bar.setAttribute("aria-valuenow", String(Math.floor(clamped)));
+        }
+        if (lbl) lbl.textContent = label;
+    };
+
+    if (target === "all" || target === "home") {
+        apply(progressBar, progressLabel);
+    }
+    if (target === "all" || target === "photo") {
+        apply(photoProgressBar, photoProgressLabel);
+    }
+}
+
+let progressResetTimer = null;
+
+function stopProgressReset() {
+    if (progressResetTimer) {
+        clearTimeout(progressResetTimer);
+        progressResetTimer = null;
+    }
+    if (progressBar) {
+        progressBar.classList.remove("is-resetting");
+    }
+}
+
+function resetProgressSmooth(callback, target = "all") {
+    stopProgressReset();
+
+    const entries = [];
+    if ((target === "all" || target === "home") && progressBar) {
+        entries.push({ bar: progressBar, label: progressLabel });
+    }
+    if ((target === "all" || target === "photo") && photoProgressBar) {
+        entries.push({ bar: photoProgressBar, label: photoProgressLabel });
+    }
+
+    if (!entries.length) {
+        setProgressPct(0, target);
+        if (callback) callback();
+        return;
+    }
+
+    let remaining = entries.length;
+    const finishAll = () => {
+        remaining -= 1;
+        if (remaining <= 0) {
+            setProgressPct(0, target);
+            if (callback) callback();
+        }
+    };
+
+    entries.forEach(({ bar, label }) => {
+        const current = parseFloat(
+            bar.style.getPropertyValue("--progress") ||
+            getComputedStyle(bar).getPropertyValue("--progress")
+        ) || 0;
+
+        if (current <= 0.01) {
+            bar.classList.remove("is-filling", "is-resetting");
+            if (label) label.textContent = "0%";
+            finishAll();
+            return;
+        }
+
+        bar.classList.remove("is-filling");
+        bar.classList.add("is-resetting");
+        bar.style.setProperty("--progress", "0");
+        bar.setAttribute("aria-valuenow", "0");
+        if (label) label.textContent = "0%";
+
+        let finished = false;
+        const done = () => {
+            if (finished) return;
+            finished = true;
+            bar.classList.remove("is-resetting");
+            finishAll();
+        };
+
+        const onTransitionEnd = (e) => {
+            if (e.target === bar && e.propertyName === "transform") {
+                bar.removeEventListener("transitionend", onTransitionEnd);
+                done();
+            }
+        };
+
+        bar.addEventListener("transitionend", onTransitionEnd);
+        setTimeout(done, 900);
+    });
+}
+const resultLabel = document.getElementById("resultLabel");
+const resultIconUse = document.getElementById("resultIconUse");
+let progressTimer = null;
+const langBtn = document.getElementById("langBtn");
+const langModal = document.getElementById("langModal");
+const closeLangBtn = document.getElementById("closeLangBtn");
+const pairModal = document.getElementById("pairModal");
+const closePairBtn = document.getElementById("closePairBtn");
+const pairSearchInput = document.getElementById("pairSearchInput");
+const pairList = document.getElementById("pairList");
+const pairSelectTrigger = document.getElementById("pairSelectTrigger");
+const tfModal = document.getElementById("tfModal");
+const closeTfBtn = document.getElementById("closeTfBtn");
+const tfList = document.getElementById("tfList");
+const tfSelectTrigger = document.getElementById("tfSelectTrigger");
+const alertModal = document.getElementById("alertModal");
+const closeAlertBtn = document.getElementById("closeAlertBtn");
+const homeView = document.getElementById("homeView");
+const photoView = document.getElementById("photoView");
+const photoPreviewEmpty = document.getElementById("photoPreviewEmpty");
+const photoPreviewImg = document.getElementById("photoPreviewImg");
+const photoCameraInput = document.getElementById("photoCameraInput");
+const photoFileInput = document.getElementById("photoFileInput");
+const photoCaptureBtn = document.getElementById("photoCaptureBtn");
+const photoUploadBtn = document.getElementById("photoUploadBtn");
+const photoAnalyzeBtn = document.getElementById("photoAnalyzeBtn");
+const photoAnalyzeBtnLabel = document.getElementById("photoAnalyzeBtnLabel");
+const photoClearBtn = document.getElementById("photoClearBtn");
+const photoTradeControls = document.querySelector(".photo-trade-controls");
+const photoSignalWrap = document.getElementById("photoSignalWrap");
+const photoMainCard = document.getElementById("photoMainCard");
+const photoResultStamp = document.getElementById("photoResultStamp");
+const photoCardPairFlags = document.getElementById("photoCardPairFlags");
+const photoMetaPair = document.getElementById("photoMetaPair");
+const photoMetaTf = document.getElementById("photoMetaTf");
+const photoMetaAcc = document.getElementById("photoMetaAcc");
+const photoMetaDir = document.getElementById("photoMetaDir");
+const photoMetaUntil = document.getElementById("photoMetaUntil");
+const photoDirIcon = document.getElementById("photoDirIcon");
+const photoDirIconUse = document.getElementById("photoDirIconUse");
+const photoStatusText = document.getElementById("photoStatusText");
+const photoProgressBar = document.getElementById("photoProgressBar");
+const photoProgressLabel = document.getElementById("photoProgressLabel");
+const photoPreviewSlot = document.getElementById("photoPreviewSlot");
+const photoPreview = document.getElementById("photoPreview");
+
+const PHOTO_MAX_BYTES = 10 * 1024 * 1024;
+const PHOTO_ACCEPT_TYPES = ["image/jpeg", "image/png", "image/webp", "image/heic", "image/heif"];
+
+let photoObjectUrl = null;
+let photoSelectedFile = null;
+const profileView = document.getElementById("profileView");
+const profileAvatar = document.getElementById("profileAvatar");
+let tgUser = null;
+let currentView = "home";
+let profileTabsInitialized = false;
+
+const btnRegular = document.getElementById("btnRegular");
+const btnOTC = document.getElementById("btnOTC");
+const photoBtnRegular = document.getElementById("photoBtnRegular");
+const photoBtnOTC = document.getElementById("photoBtnOTC");
+const photoMarketToggle = document.getElementById("photoMarketToggle");
+const photoPairSelectTrigger = document.getElementById("photoPairSelectTrigger");
+const photoPairTextDisplay = document.getElementById("photoPairTextDisplay");
+const photoPairFlagDisplay = document.getElementById("photoPairFlagDisplay");
+const photoTfSelectTrigger = document.getElementById("photoTfSelectTrigger");
+const photoTfTextDisplay = document.getElementById("photoTfTextDisplay");
+const marketToggleContainer = document.querySelector('.market-toggle-container');
+
+function isOtcPairValue(pairValue) {
+    return /\s+OTC$/i.test(String(pairValue));
+}
+
+function getPairBaseLabel(pairValue) {
+    const clean = String(pairValue).replace(/\s+OTC$/i, "").replace(/\s/g, "");
+    if (clean.length >= 6) return `${clean.slice(0, 3)}/${clean.slice(3, 6)}`;
+    return clean || String(pairValue);
+}
+
+function getPairDisplayLabel(pairValue) {
+    const base = getPairBaseLabel(pairValue);
+    return isOtcPairValue(pairValue) ? `${base} OTC` : base;
+}
+
+function getPairCodes(pairValue) {
+    const clean = String(pairValue).replace(/\s+OTC$/i, "").replace(/\s/g, "");
+    if (clean.length >= 6) return `${clean.slice(0, 3)} · ${clean.slice(3, 6)}`;
+    return "";
+}
+
+function getPairSearchKey(pairValue) {
+    const clean = String(pairValue).replace(/\s+OTC$/i, "").replace(/\s/g, "").toLowerCase();
+    const label = getPairDisplayLabel(pairValue).toLowerCase();
+    return `${pairValue} ${label} ${clean}`.toLowerCase();
+}
+
+function updatePairTriggerDisplay() {
+    if (!pairSelect) return;
+    const label = getPairDisplayLabel(pairSelect.value);
+    const flags = flagsForPair(pairSelect.value);
+    if (pairTextDisplay) pairTextDisplay.textContent = label;
+    if (pairFlagDisplay) pairFlagDisplay.innerHTML = flags;
+    if (photoPairTextDisplay) photoPairTextDisplay.textContent = label;
+    if (photoPairFlagDisplay) photoPairFlagDisplay.innerHTML = flags;
+}
+
+function getPhotoAnalysisParams() {
+    return {
+        pair: pairSelect?.value || "",
+        pairLabel: pairSelect ? getPairDisplayLabel(pairSelect.value) : "",
+        tf: timeframeSelect?.value || "",
+        market: isOTC ? "OTC" : "Regular"
+    };
+}
+
+function syncMarketToggleUi() {
+    const setActive = (regularEl, otcEl, container, otc) => {
+        if (regularEl) regularEl.classList.toggle("active", !otc);
+        if (otcEl) otcEl.classList.toggle("active", otc);
+        if (container) container.classList.toggle("otc-active", otc);
+    };
+
+    const otc = isOTC;
+    setActive(btnRegular, btnOTC, marketToggleContainer, otc);
+    setActive(photoBtnRegular, photoBtnOTC, photoMarketToggle, otc);
+}
+
+function renderPairModalList() {
+    if (!pairList || !pairSelect) return;
+    pairList.innerHTML = "";
+
+    Array.from(pairSelect.options).forEach((opt) => {
+        const item = document.createElement("div");
+        item.className = "pair-item";
+        item.dataset.value = opt.value;
+        item.dataset.search = getPairSearchKey(opt.value);
+        const otc = isOtcPairValue(opt.value);
+        const codes = getPairCodes(opt.value);
+        item.innerHTML = `
+            <div class="pair-item__main">
+                ${flagsForPair(opt.value)}
+                <span class="pair-item__text">
+                    <span class="pair-item__label">${getPairBaseLabel(opt.value)}</span>
+                    ${codes ? `<span class="pair-item__codes">${codes}</span>` : ""}
+                </span>
+            </div>
+            <span class="pair-item__side">
+                <span class="pair-item__badge ${otc ? "pair-item__badge--otc" : "pair-item__badge--forex"}">${otc ? tKey("pair_badge_otc") : tKey("pair_badge_forex")}</span>
+            </span>
+        `;
+        if (opt.value === pairSelect.value) item.classList.add("selected");
+        item.addEventListener("click", () => selectPair(opt.value));
+        pairList.appendChild(item);
+    });
+
+    filterPairModalList(pairSearchInput?.value || "");
+}
+
+function filterPairModalList(query) {
+    if (!pairList) return;
+    const q = String(query).trim().toLowerCase();
+    pairList.querySelectorAll(".pair-item").forEach((item) => {
+        const hay = item.dataset.search || "";
+        item.classList.toggle("hidden", Boolean(q) && !hay.includes(q));
+    });
+}
+
+function selectPair(value) {
+    if (!pairSelect) return;
+    pairSelect.value = value;
+    updatePairTriggerDisplay();
+    pairList?.querySelectorAll(".pair-item").forEach((item) => {
+        item.classList.toggle("selected", item.dataset.value === value);
+    });
+    hidePairModal();
+    pairSelect.dispatchEvent(new Event("change"));
+}
+
+function showPairModal() {
+    if (!pairModal) return;
+    hideTfModal();
+    renderPairModalList();
+    pairModal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    if (pairSearchInput) {
+        pairSearchInput.value = "";
+        filterPairModalList("");
+        setTimeout(() => pairSearchInput.focus(), 50);
+    }
+}
+
+function hidePairModal() {
+    if (!pairModal) return;
+    pairModal.classList.add("hidden");
+    document.body.style.overflow = "";
+    if (pairSearchInput) pairSearchInput.value = "";
+}
+
+function findEquivalentPair(pairValue, pairs) {
+    const clean = String(pairValue).replace(/\s+OTC$/i, "").replace(/\s/g, "");
+    if (!clean) return null;
+    if (isOTC) {
+        const otcVal = `${clean} OTC`;
+        return pairs.includes(otcVal) ? otcVal : null;
+    }
+    return pairs.includes(clean) ? clean : null;
+}
+
+function getExpectedSignalType() {
+    return isOTC ? "OTC" : "REGULAR";
+}
+
+function stopProgressTimer() {
+    if (progressTimer) {
+        clearInterval(progressTimer);
+        progressTimer = null;
+    }
+    stopProgressReset();
+}
+
+function reconcileSignalState() {
+    if (!pairSelect) return;
+
+    const currentPair = getCurrentPair();
+    const stored = localStorage.getItem(ACTIVE_SIGNAL_KEY);
+    let resumed = false;
+
+    if (stored) {
+        try {
+            const state = JSON.parse(stored);
+            const elapsed = Date.now() - state.startTime;
+            const samePair = normalizePairKey(state.pair) === currentPair;
+            const sameMode = state.type === getExpectedSignalType();
+
+            if (samePair && sameMode && elapsed < state.duration) {
+                restoreActiveSignal({ fromPairSwitch: true });
+                resumed = true;
+            } else {
+                isSignalActive = false;
+                stopProgressTimer();
+                setProgressPct(0);
+                syncDirectionStyles();
+                if (elapsed >= state.duration) {
+                    clearSignalState();
+                }
+            }
+        } catch {
+            isSignalActive = false;
+            stopProgressTimer();
+            setProgressPct(0);
+            syncDirectionStyles();
+        }
+    } else {
+        isSignalActive = false;
+        stopProgressTimer();
+        setProgressPct(0);
+        syncDirectionStyles();
+    }
+
+    if (!resumed) {
+        refreshSignalButton();
+        ensureCooldownTicker();
+    }
+}
+
+function updatePairOptions() {
+    if (!pairSelect) return;
+    const pairs = isOTC ? otcPairs : standardPairs;
+    const currentVal = pairSelect.value;
+
+    pairSelect.innerHTML = "";
+    pairs.forEach((p) => {
+        const opt = document.createElement("option");
+        opt.value = p;
+        opt.textContent = getPairDisplayLabel(p);
+        pairSelect.appendChild(opt);
+    });
+
+    const equivalent = findEquivalentPair(currentVal, pairs);
+    if (equivalent) {
+        pairSelect.value = equivalent;
+    } else if (pairs.includes(currentVal)) {
+        pairSelect.value = currentVal;
+    } else {
+        pairSelect.selectedIndex = 0;
+    }
+
+    pairSelect.closest(".pair-picker, .custom-select")?.querySelector(".dropdown-list")?.remove();
+
+    updatePairTriggerDisplay();
+    renderPairModalList();
+    syncMarketUi();
+}
+
+function updateTfTriggerDisplay() {
+    if (!timeframeSelect) return;
+    const tf = timeframeSelect.value;
+    if (tfTextDisplay) tfTextDisplay.textContent = tf;
+    if (photoTfTextDisplay) photoTfTextDisplay.textContent = tf;
+}
+
+function renderTfModalList() {
+    if (!tfList || !timeframeSelect) return;
+    tfList.innerHTML = "";
+
+    Array.from(timeframeSelect.options).forEach((opt) => {
+        const item = document.createElement("div");
+        item.className = "tf-item";
+        item.dataset.value = opt.value;
+        item.innerHTML = `<span class="tf-item__label">${opt.text}</span>`;
+        if (opt.value === timeframeSelect.value) item.classList.add("selected");
+        item.addEventListener("click", () => selectTimeframe(opt.value));
+        tfList.appendChild(item);
+    });
+}
+
+function selectTimeframe(value) {
+    if (!timeframeSelect) return;
+    timeframeSelect.value = value;
+    updateTfTriggerDisplay();
+    tfList?.querySelectorAll(".tf-item").forEach((item) => {
+        item.classList.toggle("selected", item.dataset.value === value);
+    });
+    hideTfModal();
+    timeframeSelect.dispatchEvent(new Event("change"));
+}
+
+function showTfModal() {
+    if (!tfModal) return;
+    hidePairModal();
+    renderTfModalList();
+    tfModal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+}
+
+function hideTfModal() {
+    if (!tfModal) return;
+    tfModal.classList.add("hidden");
+    document.body.style.overflow = "";
+}
+
+function updateTimeframeOptions() {
+    if (!timeframeSelect) return;
+    const tfs = isOTC ? otcTimeframes : standardTimeframes;
+    const prev = timeframeSelect.value;
+
+    timeframeSelect.innerHTML = "";
+    tfs.forEach((tf) => {
+        const opt = document.createElement("option");
+        opt.value = tf;
+        opt.text = tf;
+        timeframeSelect.appendChild(opt);
+    });
+
+    if (tfs.includes(prev)) {
+        timeframeSelect.value = prev;
+    } else {
+        timeframeSelect.selectedIndex = 0;
+    }
+
+    timeframeSelect.closest(".custom-select")?.querySelector(".dropdown-list")?.remove();
+    updateTfTriggerDisplay();
+    renderTfModalList();
+    syncMarketUi();
+    refreshSignalButton();
+}
+
+function setMarketMode(mode, options = {}) {
+    isOTC = (mode === "OTC");
+    syncMarketToggleUi();
+
+    updatePairOptions();
+    updateTimeframeOptions();
+    dismissPhotoSignalCardIfPairMismatch();
+    if (!options.skipReconcile) {
+        reconcileSignalState();
+    }
+    refreshPhotoPageUi();
+    refreshSignalButton();
+}
+
+if (btnRegular) btnRegular.addEventListener("click", () => setMarketMode("Regular"));
+if (btnOTC) btnOTC.addEventListener("click", () => setMarketMode("OTC"));
+if (photoBtnRegular) photoBtnRegular.addEventListener("click", () => setMarketMode("Regular"));
+if (photoBtnOTC) photoBtnOTC.addEventListener("click", () => setMarketMode("OTC"));
+if (photoPairSelectTrigger) photoPairSelectTrigger.addEventListener("click", showPairModal);
+if (photoTfSelectTrigger) photoTfSelectTrigger.addEventListener("click", showTfModal);
+
+function clearSignalCardPreview() {
+    if (metaAcc) metaAcc.textContent = "--%";
+    if (metaDir) {
+        metaDir.textContent = "--";
+        metaDir.classList.remove('up', 'down');
+        syncDirChip();
+    }
+    if (metaUntil) metaUntil.textContent = "--:--";
+    if (statusText && !isSignalActive && getCooldownRemainingMs() <= 0) {
+        statusText.textContent = tKey('waiting_status');
+    }
+    setProgressPct(0);
+    if (resultStamp) {
+        resultStamp.textContent = '';
+        resultStamp.classList.add('hidden');
+        resultStamp.classList.remove('win', 'lose', 'neutral');
+    }
+    const mainCard = document.getElementById('mainCard');
+    if (mainCard) {
+        mainCard.classList.remove('win-glow', 'lose-glow', 'neutral-glow', 'dir-up', 'dir-down');
+    }
+    clearDirectionBorderClasses();
+}
+
+function syncMarketUi(options = {}) {
+    const { clearSignalPreview = false } = options;
+    if (!pairSelect || !timeframeSelect) return;
+
+    updatePairTriggerDisplay();
+    updateTfTriggerDisplay();
+
+    const pairLabel = getPairDisplayLabel(pairSelect.value);
+    if (cardPairFlags) cardPairFlags.innerHTML = flagsForPair(pairSelect.value);
+    if (metaPair) metaPair.textContent = pairLabel;
+    if (metaTf) metaTf.textContent = timeframeSelect.value;
+
+    if (clearSignalPreview && !isSignalActive) {
+        clearSignalCardPreview();
+    }
+}
+
+function onPairChange() {
+    if (!pairSelect) return;
+    dismissPhotoSignalCardIfPairMismatch();
+    syncMarketUi({ clearSignalPreview: true });
+    reconcileSignalState();
+}
+
+function onTimeframeChange() {
+    if (!pairSelect || !timeframeSelect) return;
+    updateTfTriggerDisplay();
+    if (metaTf) metaTf.textContent = timeframeSelect.value;
+    refreshSignalButton();
+}
+
+function updateIframe() {
+    syncMarketUi({ clearSignalPreview: true });
+    refreshSignalButton();
+}
+
+function getSecondsFromTf(tf) {
+    if (tf.endsWith('s')) {
+        return parseInt(tf);
+    } else if (tf.endsWith('m')) {
+        return parseInt(tf) * 60;
+    }
+    return 60; // default 1m
+}
+
+const ACTIVE_SIGNAL_KEY = 'trade_ai_active_signal';
+const PHOTO_SIGNAL_SNAPSHOT_KEY = 'trade_ai_photo_signal_snapshot';
+const PHOTO_CARD_ANIM_MS = 480;
+const PHOTO_CARD_DISMISS_AFTER_END_MS = 1000;
+
+let photoSignalHideTimer = null;
+let photoCardDismissTimer = null;
+
+function startSignalProgress(durationMs, startTime, onFinish, target = "home") {
+    stopProgressTimer();
+
+    const bars = [];
+    if ((target === "all" || target === "home") && progressBar) bars.push(progressBar);
+    if ((target === "all" || target === "photo") && photoProgressBar) bars.push(photoProgressBar);
+
+    bars.forEach((bar) => {
+        bar.classList.add("is-filling");
+        bar.classList.remove("is-resetting");
+    });
+    setProgressPct(0, target);
+
+    progressTimer = setInterval(() => {
+        const elapsed = Date.now() - startTime;
+        const pct = Math.min(100, (elapsed / durationMs) * 100);
+
+        setProgressPct(pct, target);
+
+        if (elapsed >= durationMs) {
+            clearInterval(progressTimer);
+            progressTimer = null;
+            setProgressPct(100, target);
+            resetProgressSmooth(() => {
+                bars.forEach((bar) => bar.classList.remove("is-filling"));
+                if (onFinish) onFinish();
+            }, target);
+        }
+    }, 50);
+}
+
+function saveSignalState(state) {
+    localStorage.setItem(ACTIVE_SIGNAL_KEY, JSON.stringify(state));
+}
+
+function clearSignalState() {
+    localStorage.removeItem(ACTIVE_SIGNAL_KEY);
+}
+
+function signalGenDelay(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function getSignalStepPercent(index) {
+    const safeIndex = Math.max(0, Math.min(index, SIGNAL_STEP_KEYS.length - 1));
+    return Math.round(((safeIndex + 1) / SIGNAL_STEP_KEYS.length) * 100);
+}
+
+function getSignalStepDuration(index) {
+    if (index === 0) {
+        return SIGNAL_TEXT_ENTER_MS + SIGNAL_STEP_HOLD_MS;
+    }
+    return SIGNAL_TEXT_EXIT_MS + SIGNAL_TEXT_ENTER_MS + SIGNAL_STEP_HOLD_MS;
+}
+
+function getCurrentSignalProgress() {
+    if (!spinnerPctText) return 0;
+    const value = parseInt(spinnerPctText.textContent, 10);
+    return Number.isFinite(value) ? value : 0;
+}
+
+function cancelSignalProgressAnim() {
+    if (signalProgressAnimFrame) {
+        cancelAnimationFrame(signalProgressAnimFrame);
+        signalProgressAnimFrame = null;
+    }
+}
+
+function animateSignalProgressTo(targetPct, durationMs) {
+    cancelSignalProgressAnim();
+    const startPct = getCurrentSignalProgress();
+    const start = performance.now();
+
+    return new Promise((resolve) => {
+        const tick = (now) => {
+            const ratio = Math.min(1, (now - start) / durationMs);
+            const pct = Math.round(startPct + (targetPct - startPct) * ratio);
+            setSignalProgress(Math.min(99, pct));
+            if (ratio < 1) {
+                signalProgressAnimFrame = requestAnimationFrame(tick);
+            } else {
+                signalProgressAnimFrame = null;
+                resolve();
+            }
+        };
+        signalProgressAnimFrame = requestAnimationFrame(tick);
+    });
+}
+
+function applySignalRingStroke(offset) {
+    const offsetStr = String(offset);
+    if (spinnerRingFill) spinnerRingFill.style.strokeDashoffset = offsetStr;
+    if (spinnerRingGlow) spinnerRingGlow.style.strokeDashoffset = offsetStr;
+}
+
+function initSignalRingStroke() {
+    const dash = String(SIGNAL_RING_CIRCUMFERENCE);
+    const fullOffset = String(SIGNAL_RING_CIRCUMFERENCE);
+    if (spinnerRingFill) {
+        spinnerRingFill.style.strokeDasharray = dash;
+        spinnerRingFill.style.strokeDashoffset = fullOffset;
+    }
+    if (spinnerRingGlow) {
+        spinnerRingGlow.style.strokeDasharray = dash;
+        spinnerRingGlow.style.strokeDashoffset = fullOffset;
+    }
+}
+
+function updateSignalRingProgress(pct) {
+    if (!spinnerRingFill && !spinnerRingGlow) return;
+    const clamped = Math.max(0, Math.min(100, pct));
+    const offset = SIGNAL_RING_CIRCUMFERENCE * (1 - clamped / 100);
+    applySignalRingStroke(offset);
+}
+
+function setSignalVisualStep(index) {
+    const safeIndex = Math.max(0, Math.min(index, SIGNAL_STEP_KEYS.length - 1));
+    if (aiLoader) aiLoader.dataset.step = String(safeIndex);
+
+    const litNodes = new Set(SIGNAL_STEP_NODES[safeIndex] || []);
+    const litLinks = new Set(SIGNAL_STEP_LINKS[safeIndex] || []);
+
+    aiLoader?.querySelectorAll(".ai-loader__node").forEach((node) => {
+        node.classList.toggle("is-active", litNodes.has(node.id));
+    });
+    aiLoader?.querySelectorAll(".ai-loader__link").forEach((link) => {
+        link.classList.toggle("is-active", litLinks.has(link.id));
+    });
+}
+
+function setSignalProgress(pct) {
+    const clamped = Math.max(0, Math.min(100, Math.round(pct)));
+    if (spinnerBarFill) spinnerBarFill.style.width = `${clamped}%`;
+    if (spinnerPctText) spinnerPctText.textContent = `${clamped}%`;
+    updateSignalRingProgress(clamped);
+}
+
+async function showSignalStepText(index, { animate = true } = {}) {
+    const safeIndex = Math.max(0, Math.min(index, SIGNAL_STEP_KEYS.length - 1));
+    signalCurrentStepIndex = safeIndex;
+    setSignalVisualStep(safeIndex);
+    const label = tKey(SIGNAL_STEP_KEYS[safeIndex]);
+    if (!spinnerStepText) return;
+
+    if (!animate) {
+        spinnerStepText.textContent = label;
+        spinnerStepText.classList.remove("is-exit");
+        spinnerStepText.classList.add("is-visible");
+        return;
+    }
+
+    spinnerStepText.classList.remove("is-visible");
+    spinnerStepText.classList.add("is-exit");
+    await signalGenDelay(SIGNAL_TEXT_EXIT_MS);
+    spinnerStepText.textContent = label;
+    spinnerStepText.classList.remove("is-exit");
+    void spinnerStepText.offsetWidth;
+    spinnerStepText.classList.add("is-visible");
+    await signalGenDelay(SIGNAL_TEXT_ENTER_MS);
+}
+
+function setSignalStep(index, options = {}) {
+    showSignalStepText(index, { animate: options.animate !== false }).catch(() => {});
+}
+
+function formatSpinnerMeta(pairLabel, tf) {
+    const pair = String(pairLabel || "").trim();
+    const timeframe = String(tf || "").trim();
+    if (pair && timeframe) return `${pair} · ${timeframe}`;
+    return pair || timeframe;
+}
+
+function setSpinnerMeta(pairLabel, tf) {
+    if (!spinnerMetaText) return;
+    spinnerMetaText.textContent = formatSpinnerMeta(pairLabel, tf);
+}
+
+function showSignalStepsOverlay(meta = {}) {
+    if (!spinnerOverlay) return;
+    signalCurrentStepIndex = 0;
+    spinnerOverlay.classList.remove("hidden", "is-closing", "is-complete");
+    aiLoader?.classList.remove("is-complete");
+    const pairLabel = meta.pairLabel ?? (pairSelect ? getPairDisplayLabel(pairSelect.value) : "");
+    const tf = meta.tf ?? timeframeSelect?.value ?? "";
+    setSpinnerMeta(pairLabel, tf);
+    setSignalProgress(0);
+    setSignalVisualStep(0);
+    if (spinnerStepText) {
+        spinnerStepText.classList.remove("is-visible", "is-exit");
+        spinnerStepText.textContent = "";
+    }
+    initSignalRingStroke();
+    document.body.style.overflow = "hidden";
+}
+
+async function playSignalCompleteFinale() {
+    setSignalVisualStep(SIGNAL_STEP_KEYS.length - 1);
+    setSignalProgress(100);
+    aiLoader?.classList.add("is-complete");
+    spinnerOverlay?.classList.add("is-complete");
+    await signalGenDelay(750);
+}
+
+async function hideSignalStepsOverlay() {
+    cancelSignalProgressAnim();
+    if (!spinnerOverlay) return;
+
+    spinnerOverlay.classList.add("is-closing");
+    aiLoader?.classList.remove("is-complete");
+    await signalGenDelay(480);
+
+    spinnerOverlay.classList.add("hidden");
+    spinnerOverlay.classList.remove("is-closing", "is-complete");
+    aiLoader?.removeAttribute("data-step");
+    aiLoader?.querySelectorAll(".ai-loader__node.is-active").forEach((n) => n.classList.remove("is-active"));
+    aiLoader?.querySelectorAll(".ai-loader__link.is-active").forEach((l) => l.classList.remove("is-active"));
+    if (spinnerMetaText) spinnerMetaText.textContent = "";
+    document.body.style.overflow = "";
+}
+
+async function playSignalGenerationSequence() {
+    for (let i = 0; i < SIGNAL_STEP_KEYS.length; i++) {
+        const stepMs = getSignalStepDuration(i);
+        const targetPct = getSignalStepPercent(i);
+        const progressTask = animateSignalProgressTo(targetPct, stepMs);
+
+        if (i === 0) {
+            await showSignalStepText(0, { animate: false });
+            await signalGenDelay(SIGNAL_TEXT_ENTER_MS);
+            await signalGenDelay(SIGNAL_STEP_HOLD_MS);
+        } else {
+            await showSignalStepText(i, { animate: true });
+            await signalGenDelay(SIGNAL_STEP_HOLD_MS);
+        }
+
+        await progressTask;
+    }
+}
+
+async function runSignalGeneration(workFn, meta = {}) {
+    showSignalStepsOverlay(meta);
+
+    let apiResult = null;
+    let apiError = null;
+    const apiTask = Promise.resolve()
+        .then(workFn)
+        .then((value) => {
+            apiResult = value;
+        })
+        .catch((err) => {
+            apiError = err;
+        });
+
+    try {
+        await Promise.all([
+            playSignalGenerationSequence().catch((err) => {
+                console.warn("Signal animation failed", err);
+            }),
+            apiTask,
+        ]);
+        await playSignalCompleteFinale();
+    } finally {
+        await hideSignalStepsOverlay();
+    }
+
+    if (apiError) throw apiError;
+    if (meta.requireApiResult !== false && apiResult == null) {
+        throw new Error("Empty API response");
+    }
+    return apiResult;
+}
+
+async function fetchForexSignal(pair, tf) {
+    const params = new URLSearchParams({ pair, tf });
+    const resp = await apiFetch(`/run?${params.toString()}`, { method: "POST" });
+    let payload = null;
+    try {
+        payload = await resp.json();
+    } catch {
+        throw new Error("Invalid API response");
+    }
+    if (!resp.ok) {
+        const detail = payload?.detail;
+        throw new Error(
+            typeof detail === "string" ? detail : Array.isArray(detail) ? detail[0]?.msg : "Request failed"
+        );
+    }
+    if (!payload?.data?.signal) {
+        throw new Error("Signal data missing in API response");
+    }
+    return payload.data;
+}
+
+async function generateSignal() {
+    if (!appAccessGranted) {
+        evaluateAppAccess();
+        return;
+    }
+    if (!signalAccessGranted) {
+        await verifySignalAccess();
+        if (!signalAccessGranted) return;
+    }
+
+    const pair = pairSelect.value;
+    const tf = timeframeSelect.value;
+
+    if (isForexModeClosed()) {
+        showCustomAlert("market_closed");
+        return;
+    }
+
+    if (isSignalActive || getCooldownRemainingMs(pair) > 0) {
+        showCustomAlert(isSignalActive ? 'active' : 'cooldown');
+        return;
+    }
+    
+    isSignalActive = true;
+    refreshSignalButton();
+
+    const pairLabel = pairSelect ? getPairDisplayLabel(pair) : pair;
+    
+    // Clear previous signal UI
+    if (pairFlags) pairFlags.textContent = "";
+    if (cardPairFlags) cardPairFlags.textContent = "";
+    if (metaPair) metaPair.textContent = "";
+    if (metaTf) metaTf.textContent = "";
+    if (metaTime) metaTime.textContent = "";
+    if (metaAcc) metaAcc.textContent = "";
+    if (metaDir) metaDir.textContent = "";
+    if (metaUntil) metaUntil.textContent = "";
+    setProgressPct(0);
+    if (progressLabel) progressLabel.textContent = '';
+    if (resultStamp) { resultStamp.textContent = ''; resultStamp.classList.add('hidden'); resultStamp.classList.remove('win','lose','neutral'); }
+    const mainCard = document.getElementById('mainCard');
+    if (mainCard) { mainCard.classList.remove('win-glow', 'lose-glow', 'neutral-glow', 'dir-up', 'dir-down'); }
+    clearDirectionBorderClasses("all");
+    
+    if (isOTC) {
+        try {
+            await runSignalGeneration(() => Promise.resolve(), { pairLabel, tf, requireApiResult: false });
+
+            const randomSignal = Math.random() > 0.5 ? "BUY" : "SELL";
+            const randomConfidence = Math.floor(Math.random() * (92 - 75 + 1)) + 75;
+
+            if (statusText) statusText.textContent = translations[currentLang].signal_found;
+            if (pairFlags) pairFlags.innerHTML = flagsForPair(pair);
+            if (cardPairFlags) cardPairFlags.innerHTML = flagsForPair(pair);
+            if (metaPair) metaPair.textContent = pairLabel;
+            if (metaTf) metaTf.textContent = tf;
+            if (metaTime) metaTime.textContent = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+            if (metaAcc) metaAcc.textContent = `${randomConfidence}%`;
+
+            if (metaDir) {
+                metaDir.textContent = randomSignal === "BUY" ? translations[currentLang].up : translations[currentLang].down;
+                metaDir.classList.remove("up", "down");
+                metaDir.classList.add(randomSignal === "BUY" ? "up" : "down");
+                syncDirChip();
+            }
+            const dIcon = document.getElementById("dirIcon");
+            if (dIcon) {
+                dIcon.classList.remove("up", "down");
+                dIcon.classList.add(randomSignal === "BUY" ? "up" : "down");
+            }
+            if (dirIconUse) dirIconUse.setAttribute("href", randomSignal === "BUY" ? "#icon-up" : "#icon-down");
+
+            const tfSeconds = getSecondsFromTf(tf);
+            const startTime = Date.now();
+            const durationMs = Math.floor(tfSeconds * 1000);
+            setSignalCooldownUntil(startTime + durationMs, pair);
+            const untilDate = new Date(startTime + durationMs);
+            if (metaUntil) metaUntil.textContent = untilDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+
+            saveSignalState({
+                type: "OTC",
+                pair,
+                pairLabel,
+                tf,
+                startTime,
+                duration: durationMs,
+                signal: randomSignal,
+                confidence: randomConfidence,
+                price: null
+            });
+
+            startSignalProgress(durationMs, startTime, () => {
+                isSignalActive = false;
+                clearSignalState();
+                syncDirectionStyles();
+                refreshSignalButton();
+            });
+        } catch (e) {
+            isSignalActive = false;
+            clearSignalState();
+            clearSignalCooldown(pair);
+            if (statusText) statusText.textContent = tKey("error");
+            refreshSignalButton();
+        }
+        return;
+    }
+
+    try {
+        const data = await runSignalGeneration(
+            () => fetchForexSignal(pair, tf),
+            { pairLabel, tf }
+        );
+
+        data.confidence = Math.floor(Math.random() * (92 - 75 + 1)) + 75;
+
+        const tfSeconds = getSecondsFromTf(tf);
+        const startTime = Date.now();
+        const durationMs = Math.floor(tfSeconds * 1000);
+        setSignalCooldownUntil(startTime + durationMs, pair);
+        const untilDate = new Date(startTime + durationMs);
+
+        const untilWrap = metaUntil?.closest(".dir-timer");
+        if (untilWrap) untilWrap.classList.remove("hidden");
+
+        applySignalDisplay({
+            pair,
+            pairLabel,
+            tf,
+            signal: data.signal,
+            confidence: data.confidence,
+            untilText: untilDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+            timeStr: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+            updateHome: true,
+        });
+
+        saveSignalState({
+            type: "REGULAR",
+            pair,
+            pairLabel,
+            tf,
+            startTime,
+            duration: durationMs,
+            signal: data.signal,
+            confidence: data.confidence,
+            price: data.price,
+            id: data.id,
+        });
+
+        startSignalProgress(durationMs, startTime, async () => {
+            isSignalActive = false;
+            clearSignalState();
+            syncDirectionStyles();
+            if (data.id) {
+                try {
+                    const checkResp = await apiFetch(`/signal/check?signal_id=${data.id}`, {
+                        method: "POST",
+                    });
+                    if (checkResp.ok) {
+                        const checkData = await checkResp.json();
+                        applySignalResultUI(checkData.result);
+                    }
+                } catch (err) {
+                    console.error("Failed to check result", err);
+                }
+            }
+            
+            refreshSignalButton();
+            refreshProfileIfVisible();
+        });
+
+    } catch (e) {
+        console.error("generateSignal failed", e);
+        isSignalActive = false;
+        clearSignalState();
+        clearSignalCooldown(pair);
+        refreshSignalButton();
+        if (statusText) {
+            statusText.textContent = e?.message && e.message !== "App access denied"
+                ? e.message
+                : tKey("error");
+        }
+    }
+}
+
+if (pairSelect) pairSelect.addEventListener("change", onPairChange);
+if (timeframeSelect) timeframeSelect.addEventListener("change", onTimeframeChange);
+if (getSignalBtn) getSignalBtn.addEventListener("click", generateSignal);
+    // Custom Dropdown Logic
+    function initCustomDropdown(container) {
+        const select = container.querySelector('select');
+        const trigger = container.querySelector('.select-trigger');
+        if (!select || !trigger) return;
+        if (select.id === 'pair' || select.id === 'timeframe') return;
+
+        select.style.display = 'none';
+
+        // Create custom list
+        const list = document.createElement('div');
+        list.className = 'dropdown-list';
+        
+        Array.from(select.options).forEach(opt => {
+            const item = document.createElement('div');
+            item.className = 'dropdown-item';
+            // Default text content
+            item.textContent = opt.text;
+            
+            item.dataset.value = opt.value;
+            if (opt.selected) item.classList.add('selected');
+
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                select.value = opt.value;
+                select.dispatchEvent(new Event('change'));
+                list.classList.remove('open');
+                
+                // Update selected class
+                list.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('selected'));
+                item.classList.add('selected');
+            });
+            list.appendChild(item);
+        });
+
+        container.appendChild(list);
+
+        // Toggle list
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Close others
+            document.querySelectorAll('.dropdown-list').forEach(l => {
+                if (l !== list) l.classList.remove('open');
+            });
+            list.classList.toggle('open');
+        });
+    }
+
+    function initCustomDropdowns() {
+        // Native check removed to force custom dropdowns on all devices
+        // const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        // if (isIOS) return; 
+
+        document.querySelectorAll('.custom-select').forEach(container => {
+            initCustomDropdown(container);
+        });
+
+        // Close on outside click
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown-list').forEach(l => l.classList.remove('open'));
+        });
+    }
+
+function restoreActiveSignal(options = {}) {
+    const stored = localStorage.getItem(ACTIVE_SIGNAL_KEY);
+    if (!stored) return;
+    
+    try {
+        const state = JSON.parse(stored);
+        const elapsed = Date.now() - state.startTime;
+
+        if (options.fromPairSwitch && pairSelect && normalizePairKey(pairSelect.value) !== normalizePairKey(state.pair)) {
+            return;
+        }
+        
+        if (elapsed >= state.duration) {
+            clearSignalState();
+            isSignalActive = false;
+            stopProgressTimer();
+            setProgressPct(0);
+            syncDirectionStyles();
+            return;
+        }
+        
+        if (!getSignalBtn || !progressBar) return;
+        
+        isSignalActive = true;
+        setSignalCooldownUntil(state.startTime + state.duration, state.pair);
+        refreshSignalButton();
+        
+        const mode = state.type === 'OTC' ? 'OTC' : 'Regular';
+        setMarketMode(mode, { skipReconcile: true });
+
+        if (pairSelect) {
+            pairSelect.value = state.pair;
+        }
+        if (timeframeSelect) timeframeSelect.value = state.tf;
+
+        updatePairTriggerDisplay();
+        renderPairModalList();
+        syncMarketUi();
+        
+        // Restore UI Texts (Meta)
+        const pairLabel = state.pairLabel || state.pair;
+        if (statusText) statusText.textContent = translations[currentLang].signal_found;
+        if (pairFlags) pairFlags.innerHTML = flagsForPair(state.pair);
+        if (cardPairFlags) cardPairFlags.innerHTML = flagsForPair(state.pair);
+        if (metaPair) metaPair.textContent = pairLabel;
+        if (metaTf) metaTf.textContent = state.tf;
+        if (metaTime) metaTime.textContent = new Date(state.startTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        if (metaAcc) metaAcc.textContent = (typeof state.confidence !== 'undefined') ? `${Number(state.confidence).toFixed(0)}%` : '';
+        
+        if (metaDir) {
+            metaDir.textContent = state.signal === 'BUY' ? translations[currentLang].up : (state.signal === 'SELL' ? translations[currentLang].down : '');
+            metaDir.classList.remove('up','down');
+            if (state.signal === 'BUY') metaDir.classList.add('up');
+            if (state.signal === 'SELL') metaDir.classList.add('down');
+            syncDirChip();
+        }
+        if (dirIcon) {
+            dirIcon.classList.remove('up','down');
+            if (state.signal === 'BUY') dirIcon.classList.add('up');
+            if (state.signal === 'SELL') dirIcon.classList.add('down');
+        }
+        if (dirIconUse) dirIconUse.setAttribute('href', state.signal === 'BUY' ? '#icon-up' : '#icon-down');
+        
+        // Restore Until Time
+        const tfSeconds = getSecondsFromTf(state.tf);
+        const untilDate = new Date(state.startTime + tfSeconds * 1000);
+        if (metaUntil) metaUntil.textContent = untilDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        
+        // Resume Progress
+        startSignalProgress(state.duration, state.startTime, async () => {
+            isSignalActive = false;
+            clearSignalState();
+            syncDirectionStyles();
+            
+            if (state.type === 'OTC') {
+                refreshSignalButton();
+            } else {
+                // Regular result check
+                if (state.id) {
+                    try {
+                        const checkResp = await apiFetch(`/signal/check?signal_id=${state.id}`, {
+                            method: "POST",
+                        });
+                        if (checkResp.ok) {
+                            const checkData = await checkResp.json();
+                            applySignalResultUI(checkData.result);
+                        }
+                    } catch (err) {
+                        console.error("Failed to check result", err);
+                    }
+                }
+                refreshSignalButton();
+                refreshProfileIfVisible();
+            }
+        });
+        
+    } catch (e) {
+        console.error("Failed to restore signal", e);
+        clearSignalState();
+        refreshSignalButton();
+    }
+}
+
+// Initialize
+initCustomDropdowns();
+updatePairTriggerDisplay();
+renderPairModalList();
+updateIframe();
+changeLanguage(currentLang);
+restoreActiveSignal();
+initCooldownFromStorage();
+ensureMarketTicker();
+refreshSignalButton();
+refreshPhotoPageUi();
+onAppResume();
+
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+        onAppResume();
+    }
+});
+
+const tg = getTelegramWebApp();
+evaluateAppAccess();
+
+if (tg) {
+    try {
+        tg.ready();
+        tg.expand();
+        // Request full screen if available
+        if (tg.requestFullscreen) {
+            tg.requestFullscreen();
+        }
+        let u = tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
+        if (!u && tg.initData) {
+            try {
+                const params = new URLSearchParams(tg.initData);
+                const userRaw = params.get('user');
+                if (userRaw) u = JSON.parse(userRaw);
+            } catch (_) {}
+        }
+        if (u) {
+            tgUser = u;
+            if (userInfo) {
+                userInfo.textContent = [u.first_name, u.last_name].filter(Boolean).join(" ") || u.username || `ID ${u.id}`;
+            }
+            apiFetch("/profile", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    id: u.id,
+                    username: u.username,
+                    first_name: u.first_name,
+                    last_name: u.last_name,
+                    language_code: u.language_code,
+                    is_premium: u.is_premium,
+                }),
+            }).catch(() => {});
+            
+            updateUserAvatar(u);
+        }
+        evaluateAppAccess();
+        if (appAccessGranted) {
+            verifySignalAccess();
+        }
+    } catch (_) {}
+} else {
+    evaluateAppAccess();
+}
+
+function updateUserAvatar(u) {
+    const name = [u.first_name, u.last_name].filter(Boolean).join(" ") || u.username || `ID ${u.id}`;
+    const fallback = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=060912&color=93bbfd&size=128`;
+    const src = u.photo_url
+        || (u.username ? `https://unavatar.io/telegram/${u.username}` : fallback);
+
+    [userAvatar, profileAvatar].forEach((img) => {
+        if (!img) return;
+        img.src = src;
+        img.alt = name;
+        img.onerror = () => {
+            img.src = fallback;
+        };
+    });
+}
+
+function revokePhotoObjectUrl() {
+    if (photoObjectUrl) {
+        URL.revokeObjectURL(photoObjectUrl);
+        photoObjectUrl = null;
+    }
+}
+
+function setPhotoPreview(file) {
+    revokePhotoObjectUrl();
+    photoSelectedFile = file || null;
+
+    if (!file) {
+        cancelPhotoCardDismissTimer();
+        dismissPhotoSignalCard({ animate: true });
+        if (photoPreviewImg) {
+            photoPreviewImg.removeAttribute("src");
+            photoPreviewImg.classList.add("hidden");
+        }
+        photoClearBtn?.classList.add("hidden");
+        updatePhotoPreviewLayers();
+        refreshPhotoPageUi();
+        return;
+    }
+
+    cancelPhotoCardDismissTimer();
+    dismissPhotoSignalCard({ animate: true });
+    photoObjectUrl = URL.createObjectURL(file);
+    if (photoPreviewImg) {
+        photoPreviewImg.src = photoObjectUrl;
+        photoPreviewImg.classList.remove("hidden");
+    }
+    photoClearBtn?.classList.remove("hidden");
+    updatePhotoPreviewLayers();
+    refreshPhotoPageUi();
+}
+
+function clearPhotoSelection() {
+    dismissPhotoSignalCard({ animate: true });
+    setPhotoPreview(null);
+    if (photoCameraInput) photoCameraInput.value = "";
+    if (photoFileInput) photoFileInput.value = "";
+}
+
+/** Убирает превью после анализа; карточка сигнала и snapshot сохраняются. */
+function releasePhotoAfterAnalysis() {
+    revokePhotoObjectUrl();
+    photoSelectedFile = null;
+    if (photoPreviewImg) {
+        photoPreviewImg.removeAttribute("src");
+        photoPreviewImg.classList.add("hidden");
+    }
+    photoPreviewEmpty?.classList.remove("hidden");
+    photoClearBtn?.classList.add("hidden");
+    if (photoCameraInput) photoCameraInput.value = "";
+    if (photoFileInput) photoFileInput.value = "";
+    refreshPhotoPageUi();
+}
+
+function handlePhotoFileInput(file) {
+    if (!file) return;
+    if (isForexModeClosed()) return;
+    if (!file.type.startsWith("image/") && !PHOTO_ACCEPT_TYPES.includes(file.type)) {
+        showCustomAlert("photo_error_type");
+        return;
+    }
+    if (file.size > PHOTO_MAX_BYTES) {
+        showCustomAlert("photo_error_size");
+        return;
+    }
+    setPhotoPreview(file);
+}
+
+function loadPhotoSignalSnapshot() {
+    try {
+        const raw = localStorage.getItem(PHOTO_SIGNAL_SNAPSHOT_KEY);
+        return raw ? JSON.parse(raw) : null;
+    } catch {
+        return null;
+    }
+}
+
+function savePhotoSignalSnapshot(payload) {
+    localStorage.setItem(PHOTO_SIGNAL_SNAPSHOT_KEY, JSON.stringify(payload));
+}
+
+function clearPhotoSignalSnapshot() {
+    localStorage.removeItem(PHOTO_SIGNAL_SNAPSHOT_KEY);
+}
+
+function cancelPhotoCardDismissTimer() {
+    if (photoCardDismissTimer) {
+        clearTimeout(photoCardDismissTimer);
+        photoCardDismissTimer = null;
+    }
+}
+
+function dismissPhotoSignalCard({ animate = true } = {}) {
+    cancelPhotoCardDismissTimer();
+    clearPhotoSignalSnapshot();
+    clearPhotoSignalCardPreview();
+    showPhotoSignalCard(false, { animate });
+    updatePhotoPreviewLayers();
+}
+
+function dismissPhotoSignalCardIfPairMismatch() {
+    const snap = loadPhotoSignalSnapshot();
+    if (!snap || !pairSelect) return;
+    if (normalizePairKey(snap.pair) !== normalizePairKey(pairSelect.value)) {
+        dismissPhotoSignalCard({ animate: true });
+    }
+}
+
+function schedulePhotoCardDismissAfterSignalEnd() {
+    cancelPhotoCardDismissTimer();
+    photoCardDismissTimer = setTimeout(() => {
+        photoCardDismissTimer = null;
+        dismissPhotoSignalCard({ animate: true });
+    }, PHOTO_CARD_DISMISS_AFTER_END_MS);
+}
+
+function persistPhotoSignalSnapshot(data) {
+    savePhotoSignalSnapshot({
+        pair: data.pair,
+        pairLabel: data.pairLabel,
+        tf: data.tf,
+        signal: data.signal,
+        confidence: data.confidence,
+        untilText: data.untilText || "",
+        timeStr: data.timeStr || "",
+    });
+}
+
+function showPhotoSignalCard(show, { animate = true } = {}) {
+    if (!photoSignalWrap) return;
+
+    if (photoSignalHideTimer) {
+        clearTimeout(photoSignalHideTimer);
+        photoSignalHideTimer = null;
+    }
+
+    if (show) {
+        photoSignalWrap.classList.remove("hidden");
+        photoPreviewSlot?.classList.add("is-signal");
+        if (!animate) {
+            photoSignalWrap.classList.add("is-visible");
+            return;
+        }
+        photoSignalWrap.classList.remove("is-visible");
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                photoSignalWrap.classList.add("is-visible");
+            });
+        });
+        return;
+    }
+
+    photoSignalWrap.classList.remove("is-visible");
+    photoPreviewSlot?.classList.remove("is-signal");
+
+    const finishHide = () => {
+        photoSignalWrap.classList.add("hidden");
+        updatePhotoPreviewLayers();
+    };
+
+    if (!animate || !photoSignalWrap.classList.contains("is-visible")) {
+        finishHide();
+        return;
+    }
+
+    photoSignalHideTimer = setTimeout(finishHide, PHOTO_CARD_ANIM_MS);
+}
+
+function updatePhotoPreviewLayers() {
+    if (photoSignalWrap && !photoSignalWrap.classList.contains("hidden")) return;
+
+    if (photoSelectedFile) {
+        photoPreviewEmpty?.classList.add("hidden");
+        photoPreviewImg?.classList.remove("hidden");
+    } else {
+        photoPreviewEmpty?.classList.remove("hidden");
+        photoPreviewImg?.classList.add("hidden");
+    }
+}
+
+function clearPhotoSignalCardPreview() {
+    if (photoMetaAcc) photoMetaAcc.textContent = "--%";
+    if (photoMetaDir) {
+        photoMetaDir.textContent = "--";
+        photoMetaDir.classList.remove("up", "down");
+    }
+    if (photoMetaUntil) photoMetaUntil.textContent = "--:--";
+    if (photoStatusText && !isSignalActive && getCooldownRemainingMs() <= 0) {
+        photoStatusText.textContent = tKey("waiting_status");
+    }
+    setProgressPct(0, "photo");
+    if (photoResultStamp) {
+        photoResultStamp.textContent = "";
+        photoResultStamp.classList.add("hidden");
+        photoResultStamp.classList.remove("win", "lose", "neutral");
+    }
+    if (photoMainCard) {
+        photoMainCard.classList.remove("win-glow", "lose-glow", "neutral-glow", "dir-up", "dir-down");
+    }
+    clearDirectionBorderClasses("photo");
+}
+
+function applySignalDisplay({
+    pair,
+    pairLabel,
+    tf,
+    signal,
+    confidence,
+    untilText,
+    timeStr,
+    updateHome = true,
+    updatePhoto = false,
+}) {
+    const flags = flagsForPair(pair);
+    const isBuy = signal === "BUY";
+    const isSell = signal === "SELL";
+    const dirText = isBuy ? tKey("up") : isSell ? tKey("down") : "";
+    const displayTime = timeStr || new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+
+    const fill = ({
+        flagsEl,
+        pairEl,
+        tfEl,
+        accEl,
+        dirEl,
+        untilEl,
+        statusEl,
+        iconEl,
+        iconUseEl,
+    }) => {
+        if (flagsEl) flagsEl.innerHTML = flags;
+        if (pairEl) pairEl.textContent = pairLabel;
+        if (tfEl) tfEl.textContent = tf;
+        if (accEl) accEl.textContent = `${Number(confidence).toFixed(0)}%`;
+        if (untilEl && untilText) untilEl.textContent = untilText;
+        if (statusEl) statusEl.textContent = tKey("signal_found");
+        if (dirEl) {
+            dirEl.textContent = dirText;
+            dirEl.classList.remove("up", "down");
+            if (isBuy) dirEl.classList.add("up");
+            if (isSell) dirEl.classList.add("down");
+        }
+        if (iconEl) {
+            iconEl.classList.remove("up", "down");
+            if (isBuy) iconEl.classList.add("up");
+            if (isSell) iconEl.classList.add("down");
+        }
+        if (iconUseEl) iconUseEl.setAttribute("href", isBuy ? "#icon-up" : "#icon-down");
+    };
+
+    if (updateHome) {
+        fill({
+            flagsEl: cardPairFlags,
+            pairEl: metaPair,
+            tfEl: metaTf,
+            accEl: metaAcc,
+            dirEl: metaDir,
+            untilEl: metaUntil,
+            statusEl: statusText,
+            iconEl: dirIcon,
+            iconUseEl: dirIconUse,
+        });
+        if (metaTime) metaTime.textContent = displayTime;
+    }
+
+    if (updatePhoto) {
+        fill({
+            flagsEl: photoCardPairFlags,
+            pairEl: photoMetaPair,
+            tfEl: photoMetaTf,
+            accEl: photoMetaAcc,
+            dirEl: photoMetaDir,
+            untilEl: photoMetaUntil,
+            statusEl: photoStatusText,
+            iconEl: photoDirIcon,
+            iconUseEl: photoDirIconUse,
+        });
+        persistPhotoSignalSnapshot({
+            pair,
+            pairLabel,
+            tf,
+            signal,
+            confidence,
+            untilText,
+            timeStr: displayTime,
+        });
+        showPhotoSignalCard(true);
+        releasePhotoAfterAnalysis();
+    }
+
+    syncDirectionStyles();
+}
+
+function restorePhotoSignalCardFromSnapshot() {
+    const snap = loadPhotoSignalSnapshot();
+    if (!snap) {
+        showPhotoSignalCard(false, { animate: false });
+        return;
+    }
+
+    if (pairSelect && normalizePairKey(snap.pair) !== normalizePairKey(pairSelect.value)) {
+        dismissPhotoSignalCard({ animate: false });
+        return;
+    }
+
+    applySignalDisplay({
+        pair: snap.pair,
+        pairLabel: snap.pairLabel || snap.pair,
+        tf: snap.tf,
+        signal: snap.signal,
+        confidence: snap.confidence,
+        untilText: snap.untilText,
+        timeStr: snap.timeStr,
+        updateHome: false,
+        updatePhoto: false,
+    });
+    showPhotoSignalCard(true, { animate: false });
+    if (photoStatusText) photoStatusText.textContent = tKey("signal_found");
+    setProgressPct(100, "photo");
+    syncDirectionStyles();
+}
+
+function initPhotoPage() {
+    syncMarketToggleUi();
+    updatePairTriggerDisplay();
+    updateTfTriggerDisplay();
+    refreshPhotoPageUi();
+    restorePhotoSignalCardFromSnapshot();
+}
+
+async function analyzePhotoChart() {
+    if (!appAccessGranted) {
+        evaluateAppAccess();
+        return;
+    }
+    if (!signalAccessGranted) {
+        await verifySignalAccess();
+        if (!signalAccessGranted) return;
+    }
+    if (!photoSelectedFile) return;
+
+    const { pair, pairLabel, tf } = getPhotoAnalysisParams();
+
+    if (isForexModeClosed()) {
+        showCustomAlert("market_closed");
+        return;
+    }
+
+    if (isSignalActive || getCooldownRemainingMs(pair) > 0) {
+        showCustomAlert(isSignalActive ? "active" : "cooldown");
+        return;
+    }
+
+    isSignalActive = true;
+    refreshSignalButton();
+    cancelPhotoCardDismissTimer();
+    showPhotoSignalCard(false, { animate: false });
+
+    if (photoResultStamp) {
+        photoResultStamp.textContent = "";
+        photoResultStamp.classList.add("hidden");
+        photoResultStamp.classList.remove("win", "lose", "neutral");
+    }
+    if (photoMainCard) {
+        photoMainCard.classList.remove("win-glow", "lose-glow", "neutral-glow", "dir-up", "dir-down");
+    }
+    clearDirectionBorderClasses("all");
+    setProgressPct(0, "photo");
+
+    const onPhotoProgressEnd = (afterFinish) => {
+        isSignalActive = false;
+        clearSignalState();
+        if (photoStatusText) photoStatusText.textContent = tKey("signal_found");
+        setProgressPct(100, "photo");
+        syncDirectionStyles();
+        refreshSignalButton();
+        refreshPhotoPageUi();
+        schedulePhotoCardDismissAfterSignalEnd();
+        if (afterFinish) afterFinish();
+    };
+
+    if (isOTC) {
+        try {
+            await runSignalGeneration(() => Promise.resolve(), { pairLabel, tf, requireApiResult: false });
+
+            const randomSignal = Math.random() > 0.5 ? "BUY" : "SELL";
+            const randomConfidence = Math.floor(Math.random() * (92 - 75 + 1)) + 75;
+            const startTime = Date.now();
+            const durationMs = Math.floor(getSecondsFromTf(tf) * 1000);
+            const untilDate = new Date(startTime + durationMs);
+            setSignalCooldownUntil(startTime + durationMs, pair);
+
+            const displayPayload = {
+                pair,
+                pairLabel,
+                tf,
+                signal: randomSignal,
+                confidence: randomConfidence,
+                untilText: untilDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+                timeStr: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+            };
+
+            applySignalDisplay({
+                ...displayPayload,
+                updateHome: true,
+                updatePhoto: true,
+            });
+
+            saveSignalState({
+                type: "OTC",
+                pair,
+                pairLabel,
+                tf,
+                startTime,
+                duration: durationMs,
+                signal: randomSignal,
+                confidence: randomConfidence,
+                price: null,
+                source: "photo",
+            });
+
+            startSignalProgress(durationMs, startTime, () => onPhotoProgressEnd(), "photo");
+        } catch {
+            isSignalActive = false;
+            clearSignalState();
+            clearSignalCooldown(pair);
+            if (photoStatusText) photoStatusText.textContent = tKey("error");
+            refreshSignalButton();
+            refreshPhotoPageUi();
+        }
+        return;
+    }
+
+    try {
+        const data = await runSignalGeneration(
+            () => fetchForexSignal(pair, tf),
+            { pairLabel, tf }
+        );
+
+        data.confidence = Math.floor(Math.random() * (92 - 75 + 1)) + 75;
+
+        const startTime = Date.now();
+        const durationMs = Math.floor(getSecondsFromTf(tf) * 1000);
+        const untilDate = new Date(startTime + durationMs);
+        setSignalCooldownUntil(startTime + durationMs, pair);
+
+        const displayPayload = {
+            pair,
+            pairLabel,
+            tf,
+            signal: data.signal,
+            confidence: data.confidence,
+            untilText: untilDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+            timeStr: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        };
+
+        applySignalDisplay({
+            ...displayPayload,
+            updateHome: true,
+            updatePhoto: true,
+        });
+
+        saveSignalState({
+            type: "REGULAR",
+            pair,
+            pairLabel,
+            tf,
+            startTime,
+            duration: durationMs,
+            signal: data.signal,
+            confidence: data.confidence,
+            price: data.price,
+            id: data.id,
+            source: "photo",
+        });
+
+        startSignalProgress(durationMs, startTime, async () => {
+            onPhotoProgressEnd(async () => {
+                if (data.id) {
+                    try {
+                        const checkResp = await apiFetch(`/signal/check?signal_id=${data.id}`, {
+                            method: "POST",
+                        });
+                        if (checkResp.ok) {
+                            const checkData = await checkResp.json();
+                            applySignalResultUI(checkData.result);
+                        }
+                    } catch (err) {
+                        console.error("Failed to check result", err);
+                    }
+                }
+                refreshProfileIfVisible();
+            });
+        }, "photo");
+    } catch {
+        isSignalActive = false;
+        clearSignalState();
+        clearSignalCooldown(pair);
+        if (photoStatusText) photoStatusText.textContent = tKey("error");
+        refreshSignalButton();
+        refreshPhotoPageUi();
+    }
+}
+
+function onPhotoAnalyzeClick() {
+    analyzePhotoChart();
+}
+
+function updateBackButton() {
+    if (!tg || !tg.BackButton) return;
+    if (currentView === "profile" || currentView === "photo") {
+        tg.BackButton.show();
+    } else {
+        tg.BackButton.hide();
+    }
+}
+
+function switchView(view) {
+    if (view !== "home" && view !== "profile" && view !== "photo") return;
+    currentView = view;
+
+    if (homeView) homeView.classList.toggle("hidden", view !== "home");
+    if (photoView) photoView.classList.toggle("hidden", view !== "photo");
+    if (profileView) profileView.classList.toggle("hidden", view !== "profile");
+
+    document.querySelectorAll(".bottom-nav .nav-item").forEach((item) => {
+        item.classList.toggle("active", item.getAttribute("data-view") === view);
+    });
+
+    if (view === "profile") {
+        loadProfilePage();
+    }
+    if (view === "photo") {
+        initPhotoPage();
+    }
+
+    updateBackButton();
+}
+
+document.querySelectorAll(".bottom-nav .nav-item").forEach((item) => {
+    item.addEventListener("click", () => {
+        const view = item.getAttribute("data-view");
+        if (view) switchView(view);
+    });
+});
+
+photoCaptureBtn?.addEventListener("click", () => {
+    if (isForexModeClosed()) return;
+    photoCameraInput?.click();
+});
+photoUploadBtn?.addEventListener("click", () => {
+    if (isForexModeClosed()) return;
+    photoFileInput?.click();
+});
+photoCameraInput?.addEventListener("change", (e) => {
+    const file = e.target.files?.[0];
+    handlePhotoFileInput(file);
+});
+photoFileInput?.addEventListener("change", (e) => {
+    const file = e.target.files?.[0];
+    handlePhotoFileInput(file);
+});
+photoClearBtn?.addEventListener("click", clearPhotoSelection);
+photoAnalyzeBtn?.addEventListener("click", onPhotoAnalyzeClick);
+
+if (tg && tg.BackButton) {
+    tg.BackButton.onClick(() => {
+        if (currentView === "profile" || currentView === "photo") switchView("home");
+    });
+}
+updateBackButton();
+
+// Language Modal Logic
+function showLangModal() {
+    if (langModal) {
+        langModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function hideLangModal() {
+    if (langModal) {
+        langModal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+}
+
+function showCustomAlert(reason = 'active') {
+    const descEl = alertModal?.querySelector('.alert-desc');
+    const titleEl = alertModal?.querySelector('.alert-title');
+    if (descEl) {
+        if (reason === 'cooldown') {
+            if (titleEl) titleEl.textContent = tKey('alert_title');
+            descEl.textContent = `${tKey('alert_cooldown_desc')} ${formatCooldownButton(getCooldownRemainingMs())}.`;
+        } else if (reason === 'market_closed') {
+            const openAt = getNextForexOpenDate();
+            if (titleEl) titleEl.textContent = tKey('market_closed_status');
+            descEl.textContent = openAt
+                ? `${tKey('market_closed_alert')} ${tKey('market_closed_btn')} ${formatMarketOpenDate(openAt)}.`
+                : tKey('market_closed_alert');
+        } else if (
+            reason === 'photo_analyze_soon' ||
+            reason === 'photo_error_type' ||
+            reason === 'photo_error_size'
+        ) {
+            if (titleEl) titleEl.textContent = tKey('photo_page_title');
+            descEl.textContent = tKey(reason);
+        } else {
+            if (titleEl) titleEl.textContent = tKey('alert_title');
+            descEl.textContent = tKey('alert_desc');
+        }
+    }
+    if (alertModal) {
+        alertModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function hideCustomAlert() {
+    const descEl = alertModal?.querySelector('.alert-desc');
+    const titleEl = alertModal?.querySelector('.alert-title');
+    if (titleEl) {
+        titleEl.setAttribute('data-i18n', 'alert_title');
+        titleEl.textContent = tKey('alert_title');
+    }
+    if (descEl) {
+        descEl.setAttribute('data-i18n', 'alert_desc');
+        descEl.textContent = tKey('alert_desc');
+    }
+    if (alertModal) {
+        alertModal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+}
+
+function changeLanguage(lang) {
+    if (!translations[lang]) return;
+    currentLang = lang;
+    localStorage.setItem('trade_ai_lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key]) {
+            el.setAttribute('placeholder', translations[lang][key]);
+        }
+    });
+
+    updateLangBtnFlag(lang);
+    refreshSignalButton();
+    refreshPhotoPageUi();
+
+    if (spinnerOverlay && !spinnerOverlay.classList.contains("hidden")) {
+        void showSignalStepText(signalCurrentStepIndex, { animate: false });
+        setSignalProgress(getSignalStepPercent(signalCurrentStepIndex));
+        setSignalVisualStep(signalCurrentStepIndex);
+    }
+
+    document.querySelectorAll('.lang-item').forEach(item => {
+        if (item.getAttribute('data-lang') === lang) {
+            item.classList.add('selected');
+        } else {
+            item.classList.remove('selected');
+        }
+    });
+}
+
+if (langBtn) langBtn.addEventListener('click', showLangModal);
+if (closeLangBtn) closeLangBtn.addEventListener('click', hideLangModal);
+if (langModal) langModal.addEventListener('click', (e) => { if (e.target === langModal) hideLangModal(); });
+
+if (pairSelectTrigger) pairSelectTrigger.addEventListener('click', showPairModal);
+if (closePairBtn) closePairBtn.addEventListener('click', hidePairModal);
+if (pairModal) pairModal.addEventListener('click', (e) => { if (e.target === pairModal) hidePairModal(); });
+
+if (tfSelectTrigger) tfSelectTrigger.addEventListener('click', showTfModal);
+if (closeTfBtn) closeTfBtn.addEventListener('click', hideTfModal);
+if (tfModal) tfModal.addEventListener('click', (e) => { if (e.target === tfModal) hideTfModal(); });
+if (pairSearchInput) {
+    pairSearchInput.addEventListener('input', (e) => filterPairModalList(e.target.value));
+    pairSearchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') hidePairModal();
+    });
+}
+
+if (closeAlertBtn) closeAlertBtn.addEventListener('click', hideCustomAlert);
+if (alertModal) alertModal.addEventListener('click', (e) => { if (e.target === alertModal) hideCustomAlert(); });
+
+document.querySelectorAll('.lang-item').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelectorAll('.lang-item').forEach(i => i.classList.remove('selected'));
+        item.classList.add('selected');
+        const langCode = item.getAttribute('data-lang');
+        changeLanguage(langCode);
+        hideLangModal();
+    });
+});
+
+// header profile button removed per mobile design
+
+const profileRoot = document.getElementById('profileRoot');
+let currentHistoryPeriod = 'today';
+
+function applySignalResultUI(resultStatus) {
+    const key = resultStatus.toLowerCase();
+
+    const applyTo = (stampEl, cardEl) => {
+        if (stampEl) {
+            stampEl.textContent = tKey(key);
+            stampEl.classList.remove("hidden", "win", "lose", "neutral");
+            stampEl.classList.add(key);
+        }
+        if (cardEl) {
+            cardEl.classList.remove("win-glow", "lose-glow", "neutral-glow", "dir-up", "dir-down");
+            cardEl.classList.add(`${key}-glow`);
+        }
+    };
+
+    applyTo(resultStamp, document.getElementById("mainCard"));
+    applyTo(photoResultStamp, photoMainCard);
+    syncDirectionStyles();
+}
+
+function refreshProfileIfVisible() {
+    if (currentView === 'profile') loadProfilePage();
+}
+
+function formatHistoryTimestamp(ts) {
+    if (!ts) return '';
+    const d = new Date(String(ts).replace(' ', 'T'));
+    if (Number.isNaN(d.getTime())) return ts;
+    return d.toLocaleString([], { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
+}
+
+function getHistoryResultMeta(result) {
+    if (!result) return { className: 'pending', label: tKey('history_active') };
+    const key = String(result).toLowerCase();
+    if (key === 'win' || key === 'lose' || key === 'neutral') {
+        return { className: key, label: tKey(key) };
+    }
+    return { className: 'pending', label: result };
+}
+
+function setProfileStatsLoading() {
+    const totalEl = document.getElementById('totalSignals');
+    const winCountEl = document.getElementById('winCount');
+    const winRateEl = document.getElementById('winRate');
+    if (totalEl) totalEl.textContent = '0';
+    if (winCountEl) winCountEl.textContent = '0';
+    if (winRateEl) winRateEl.textContent = '0%';
+}
+
+async function loadProfilePage() {
+    if (!profileRoot) return;
+
+    if (!profileTabsInitialized) {
+        profileTabsInitialized = true;
+        const tabs = document.querySelectorAll('.filter-tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                currentHistoryPeriod = tab.getAttribute('data-period');
+                fetchHistory();
+            });
+        });
+    }
+
+    const uName = document.getElementById('profileName');
+    const uSub = document.getElementById('userSubtitle');
+
+    if (tgUser) {
+        const fullName = [tgUser.first_name, tgUser.last_name].filter(Boolean).join(' ') || 'User';
+        if (uName) uName.textContent = fullName;
+        if (uSub) {
+            uSub.textContent = tgUser.username ? `@${tgUser.username}` : '@username';
+        }
+        updateUserAvatar(tgUser);
+        setProfileStatsLoading();
+
+        try {
+            const s = await apiFetch("/stats/user");
+            if (s.ok) {
+                const stats = await s.json();
+                const totalEl = document.getElementById('totalSignals');
+                const winCountEl = document.getElementById('winCount');
+                const winRateEl = document.getElementById('winRate');
+                if (totalEl) totalEl.textContent = String(stats.total_signals ?? 0);
+                if (winCountEl) winCountEl.textContent = String(stats.wins ?? 0);
+                if (winRateEl) winRateEl.textContent = `${stats.win_rate ?? 0}%`;
+            }
+        } catch (_) {}
+
+        await fetchHistory();
+    } else {
+        if (uName) uName.textContent = 'Guest';
+        if (uSub) uSub.textContent = '@username';
+        setProfileStatsLoading();
+        const container = document.getElementById('historyList');
+        if (container) {
+            container.innerHTML = `<div class="profile-guest-hint">${tKey('profile_guest')}</div>`;
+        }
+    }
+}
+
+async function fetchHistory() {
+    const container = document.getElementById('historyList');
+    if (!tgUser || !container) return;
+
+    container.innerHTML = `<div class="profile-loading">${tKey('history_loading')}</div>`;
+
+    try {
+        const h = await apiFetch(`/history/user?limit=50&period=${encodeURIComponent(currentHistoryPeriod)}`);
+        if (h.ok) {
+            const rows = await h.json();
+            renderHistoryCards(rows);
+        } else {
+            container.innerHTML = `<div class="profile-empty">${tKey('history_empty')}</div>`;
+        }
+    } catch (_) {
+        container.innerHTML = `<div class="profile-empty">${tKey('history_empty')}</div>`;
+    }
+}
+
+function renderHistoryCards(rows) {
+    const container = document.getElementById('historyList');
+    if (!container) return;
+    
+    if (!rows.length) {
+        container.innerHTML = `<div class="profile-empty">${tKey('history_empty')}</div>`;
+        return;
+    }
+
+    container.innerHTML = rows.map(r => {
+        const { className: resClass, label: resText } = getHistoryResultMeta(r.result);
+        const pairLabel = getPairDisplayLabel(r.pair);
+        const dirClass = r.signal === 'SELL' ? 'sell' : 'buy';
+        const dirLabel = r.signal === 'SELL' ? tKey('down') : tKey('up');
+
+        return `
+        <article class="history-card">
+            <div class="hc-top">${formatHistoryTimestamp(r.timestamp)}</div>
+            <div class="hc-main">
+                <div class="hc-pair-info">
+                    <span class="hc-flags">${flagsForPair(r.pair)}</span>
+                    <span class="hc-pair-name">${pairLabel}</span>
+                </div>
+                <div class="hc-center">
+                    <span class="hc-tf">${r.timeframe || '—'}</span>
+                    <span class="hc-dir ${dirClass}">${dirLabel}</span>
+                </div>
+                <div class="hc-status ${resClass}">${resText}</div>
+            </div>
+        </article>
+        `;
+    }).join('');
+}
+
+// Helper for flags (reusing existing logic if available or duplicating slightly for safety)
+// Assuming flagsForPair is globally available from earlier script content.
+// If not, I'll ensure it is.
+// Based on previous reads, flagsForPair is defined in global scope.
+
+function getCurrencyCountryCode(cur) {
+    const m = {
+        EUR: 'eu', USD: 'us', GBP: 'gb', JPY: 'jp', CHF: 'ch', CAD: 'ca', AUD: 'au', NZD: 'nz'
+    };
+    return m[cur] || null;
+}
+
+function flagsForPair(pair) {
+    // Clean pair string from OTC suffix
+    const cleanPair = pair.replace(' OTC', '');
+    const base = cleanPair.slice(0,3);
+    const quote = cleanPair.slice(3,6);
+    const baseCode = getCurrencyCountryCode(base);
+    const quoteCode = getCurrencyCountryCode(quote);
+    
+    if (baseCode && quoteCode) {
+        return `
+        <div class="pair-icons">
+            ${flagImgTag(baseCode, "currency-icon base", base)}
+            ${flagImgTag(quoteCode, "currency-icon quote", quote)}
+        </div>
+        `;
+    }
+    // Fallback to emojis if not found
+    return `${flagForCurrency(base)} ${flagForCurrency(quote)}`.trim();
+}
+
+function flagForCurrency(cur) {
+    const m = {
+        EUR: '🇪🇺', USD: '🇺🇸', GBP: '🇬🇧', JPY: '🇯🇵', CHF: '🇨🇭', CAD: '🇨🇦', AUD: '🇦🇺', NZD: '🇳🇿'
+    };
+    return m[cur] || '';
+}
